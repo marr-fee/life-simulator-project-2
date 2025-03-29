@@ -1,15 +1,19 @@
+/* INITIALIZE TIME  */
+let minute;
+let hour;
+let day;
+let month;
+let year;
+
 /* INITIALIZE PLAYER STATS */
 let playerName;
 let playerGender;
 let playerAge = 17;
 let playerFinancialStatus;
 let playerBelief;
+let accounntBalance;
 
 
-console.log(playerAge);
-console.log(playerFinancialStatus);
-console.log(playerGender);
-console.log(playerName);
 
 /* START NAVIGATION BUTTONS AND DOM .........................................................*/
 
@@ -51,6 +55,7 @@ startLifeBtn.addEventListener('click', () => {
 submitPlayerStatBtn.addEventListener('click', () => {
   welcomeDiv.style.display = "none"; // Hide the welcome div when stats are submitted
   gameContainer.style.backgroundColor = "rgb(255, 254, 255)"; // Change background color of the game container
+  gameMainNavMenuDiv.style.display = "flex";
   saveSelectedBelief();
 
 })
@@ -68,6 +73,16 @@ let ageSpan = document.getElementById('age'); // Age span
 // Arrays of male and female names
 const maleNames = ["John", "Michael", "David", "James", "Robert", "William", "Thomas", "Jack", "Daniel"]; 
 const femaleNames = ["Mary", "Jennifer", "Linda", "Patricia", "Elizabeth", "Susan", "Jessica", "Sarah", "Karen"];
+
+
+/* MAIN GAME PLAY PAGE DOM ............................................. */
+let gameMainNavMenuDiv = document.getElementById('game-nav-menu-div');
+let timeOfDayGreetSpan = document.getElementById('time-of-day');
+let playerNameSpan = document.getElementById('player-name-display');
+let accountBalanceSpan = document.getElementById('accnt-balance');
+let dayOfWeekSpan = document.getElementById('day-of-week');
+let hourHandSpan = document.getElementById('hour-hand');
+let minuteHandSpan = document.getElementById('minute-hand');
 
 
 
@@ -100,6 +115,8 @@ function getRandomStats() {
   financialStatusSpan.innerText = playerFinancialStatus; // Display the selected financial status
   ageSpan.innerText = 17; // Set a default age (you can modify this as needed)
   
+  playerNameSpan.innerText = playerName;      
+  
 }
 
 // Function to save selected belief radio input
@@ -121,3 +138,14 @@ function saveSelectedBelief(){
 
 }
 
+
+
+
+
+/*ERROR LOG
+Passing the random player name to the playerName variable is still returning undefined 
+
+ISSUE:  because you're trying to access playerName before the getRandomStats() function has been called, which is where the playerName variable gets assigned a value.
+
+SOLUTION: I updated the player name inside the getRandomstats function instead
+ */

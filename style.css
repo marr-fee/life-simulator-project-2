@@ -244,3 +244,17 @@ input{
 }
 
 /* PAGE 3*/
+
+.player-data-and-time{
+  background-color: green;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+  font-weight: 600;
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  padding: 5px;
+}
