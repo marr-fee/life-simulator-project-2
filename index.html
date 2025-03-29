@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Life simulator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!--FULL GAME CONTAINER-->
+    <div class="game-container" id="main-game-container">
+      <!--INTRO PAGE-->
+
+      <div class="game-details" id="game-detail">
+        <h1>Born Again</h1>
+        <details>
+          <summary>Click to reveal the rules of the game</summary>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi
+            fugiat assumenda iure voluptatibus a culpa sed, incidunt fuga
+            asperiores, laborum quaerat temporibus minima ipsum saepe
+            perspiciatis sapiente necessitatibus tempora nisi quis quod, fugit
+            iste mollitia? Molestias laboriosam voluptatibus nisi delectus
+            numquam asperiores fugit non ex odio, architecto, ad neque facere.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+            fugit ut magni labore voluptas animi est quaerat cumque nihil,
+            distinctio autem minus sint suscipit fugiat? Minima quos molestiae
+            aliquam unde earum minus nesciunt eum nemo? Dignissimos porro, quod
+            obcaecati numquam adipisci natus, sapiente, incidunt odit voluptate
+            a nemo dolor minus. Lorem ipsum dolor sit amet consectetur,
+            adipisicing elit. Quaerat asperiores perspiciatis blanditiis
+            doloribus nisi. Aut repudiandae quasi libero, deleniti modi
+            distinctio laudantium quis accusamus maiores sequi est a dolore odio
+            voluptate adipisci blanditiis error ducimus dignissimos odit
+            voluptates ratione. Ea ratione ex neque distinctio eligendi dolores
+            ipsa molestiae numquam corporis!
+          </p>
+        </details>
+
+        <button id="start-page-next-btn" class="first-next-btn">Next</button>
+      </div>
+
+      <!--START GAME BUTTON-->
+      <button id="start-game-btn" class="start-game-button">
+        <span id="button-span">Start Life</span>
+      </button>
+
+      <!--WELCOME DIV AND STAT ASSIGNMENT SECTION-->
+      <div class="welcome-display" id="welcome-div">
+        <div class="game-title"><h2>Born Again</h2></div>
+        <h3>Welcome to Life</h3>
+
+        <div class="divider"></div>
+
+        <p>
+          You don't get to choose some details rather they will be assigned to
+          you at random
+        </p>
+
+        <div class="divider"></div>
+
+        <!--STATS ASSIGNMENT SECTION-->
+        <div class="stat-title-div">
+          <h3 class="stat-title">
+            Your Gender: <span id="gender" class="stat-span"></span>
+          </h3>
+          <h3 class="stat-title">
+            Your Name:
+            <span id="player-name" class="stat-span"></span>
+          </h3>
+
+          <h3 class="stat-title">
+            Your Financial Status:
+            <span id="financial-status" class="stat-span"></span>
+          </h3>
+          <h3 class="stat-title">
+            Your Age: <span id="age" class="stat-span"></span>
+          </h3>
+          <div class="divider"></div>
+          <h4>You get to choose your beliefs</h4>
+          <div class="divider"></div>
+          <p>Do You Believe In GOD?</p>
+          <label for="yes">YES </label
+          ><input type="radio" name="belief" id="yes" value="yes" />
+          <label for="maybe">Maybe </label
+          ><input type="radio" name="belief" id="maybe" value="maybe" />
+          <label for="no">NO </label
+          ><input type="radio" name="belief" id="no" value="no" />
+          <label for="cannot-say">Prefer not to say </label
+          ><input
+            type="radio"
+            name="belief"
+            id="cannot-say"
+            value="cannot-say"
+          />
+          <button type="submit" id="submit-player-stats">Submit</button>
+        </div>
+      </div>
+      <div class="player-data-and-time"></div>
+      <div class="gameplay-container"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

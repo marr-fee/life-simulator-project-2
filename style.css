@@ -1,0 +1,246 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Game container */
+.game-container{
+  width: 600px;
+  max-width: 100%;
+  min-height: 550px;
+  border: 8px solid black;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  position: relative;
+  background-color: black;
+  color: white;
+  overflow: hidden;
+}
+
+/* PAGE 1 - GAME DETAILS */
+.game-details{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 20px;
+  color: blanchedalmond;
+
+}
+
+.game-details h1{
+  font-size: 80px;
+  margin: 20px auto;
+  position: absolute;
+  top: 15px;
+}
+
+details{
+  width: 100%;
+  max-height: 250px;
+  border: 3px solid black;
+  padding: 15px;
+  border-radius: 20px 0 0 40px;
+  font-size: 18px;
+  line-height: 1.5em;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+}
+
+summary{
+  font-weight: 600;
+  font-size: 20px;
+}
+
+details p{
+  font-style: italic;
+  font-weight: 500;
+  margin-top: 15px;
+}
+
+.first-next-btn{
+  width: 50%;
+  height: auto;
+  padding: 10px 25px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  position: absolute;
+  bottom: 20px;
+  border-radius: 10px;
+  background: linear-gradient(160deg, rgba(255, 166, 0, 0.911), rgba(0, 0, 255, 0.822));
+  color: rgb(255, 255, 255);
+  transition: background 1s ease-in-out;
+}
+.first-next-btn:hover{
+  background: linear-gradient(160deg, rgba(0, 0, 255, 0.705), rgba(255, 166, 0, 0.795));
+}
+
+/* PAGE 2 - START GAME VOID BUTTON */
+.start-game-button{
+  --glow-color: rgb(217, 176, 255);
+  --glow-spread-color: rgba(191, 123, 255, 0.781);
+  --enhanced-glow-color: rgb(231, 206, 255);
+  --btn-color: rgb(100, 61, 136);
+  width: 27%;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.25em solid var(--glow-color);
+  padding: 1em 3em;
+  color: var(--glow-color);
+  font-size: 14px;
+  font-weight: bold;
+  background-color: var(--btn-color);
+  border-radius: 1em;
+  outline: none;
+  box-shadow: 0 0 1em 0.25em var(--glow-color), 0 0 4em 1em var(--glow-spread-color), inset 0 0 0.75em 0.25em var(--glow-color);
+  text-shadow: 0 0 0.5em var(--glow-color);
+  position: relative;
+  transition: all 0.3s;
+  animation: enterStartLife 2s ease;
+  display: none;
+}
+
+.start-game-button::after{
+  content: "";
+  position: absolute;
+  top: 120%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--glow-spread-color);
+  filter: blur(2em);
+  opacity: 0.7;
+  transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
+}
+
+.start-game-button:hover{
+  color: var(--btn-color);
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1em 0.25em var(--glow-color), 0 0 5em 0.25em var(--glow-spread-color), inset 0 0 0.75em 0.25em var(--glow-color);
+}
+
+.start-life{
+  animation: xtremeZoom 3s ease;
+}
+.btn-span{
+  animation: fadeOutText 3s ease;
+}
+
+.start-game-button:active{
+  box-shadow: 0 0 0.6em 0.25em var(--glow-color), 0 0 0.5em 2em var(--glow-spread-color), inset 0 0 0.5em 0.25em var(--glow-color);
+}
+
+/* KEYFRAMES */
+@keyframes enterStartLife{
+  0%{
+    scale: 3;
+    opacity: 0.5;
+  }
+  100%{
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+@keyframes xtremeZoom {
+  0%{
+    scale: 1;
+  }
+  100%{
+    scale: 16;
+  }
+}
+
+@keyframes fadeOutText{
+  0%{
+    opacity: 0.5;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* DIVIDER */
+.divider{
+  width: 100%;
+  margin: 20px auto;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.418);
+}
+
+/* PAGE 3 - GAME WELCOME PAGE AND PERSONAL DETAIL ASSIGNMENT */
+
+.welcome-display{
+  display: none;
+  flex-direction: column;
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.stat-title{
+  margin-bottom: 15px;
+}
+.stat-title-div h3{
+  font-weight: 300;
+}
+
+
+.stat-span{
+  opacity: 0;
+  animation: fadeIn 1s forwards; 
+  margin-left: 10px;
+  font-weight: 600;
+  font-style: italic;
+}
+
+#gender {
+  animation-delay: 5s;
+}
+#player-name {
+  animation-delay: 6s;
+}
+#financial-status {
+  animation-delay: 7s; 
+}
+#age {
+  animation-delay: 8s;
+}
+
+.game-title{
+  text-align: center;
+  margin-top: -30px;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+input{
+  margin: 10px 20px 20px 5px;
+}
+
+#submit-player-stats{
+  display: block;
+  width: 10%;
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 1s forwards; 
+  animation-delay: 9s;
+}
+
+/* PAGE 3*/
