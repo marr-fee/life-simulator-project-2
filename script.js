@@ -1,9 +1,5 @@
 /* INITIALIZE TIME  */
-let minute;
-let hour;
-let day;
-let month;
-let year;
+
 
 /* INITIALIZE PLAYER STATS */
 let playerName;
@@ -51,13 +47,14 @@ startLifeBtn.addEventListener('click', () => {
   getRandomStats();
 })
 
-// Event listener for the submit player stats button
+// Event listener for the submit player stats button which also starts the time
 submitPlayerStatBtn.addEventListener('click', () => {
   welcomeDiv.style.display = "none"; // Hide the welcome div when stats are submitted
   gameContainer.style.backgroundColor = "rgb(255, 254, 255)"; // Change background color of the game container
   gameMainNavMenuDiv.style.display = "flex";
   saveSelectedBelief();
-
+  startTime();
+  
 })
 
 //------------------------
@@ -77,12 +74,10 @@ const femaleNames = ["Mary", "Jennifer", "Linda", "Patricia", "Elizabeth", "Susa
 
 /* MAIN GAME PLAY PAGE DOM ............................................. */
 let gameMainNavMenuDiv = document.getElementById('game-nav-menu-div');
-let timeOfDayGreetSpan = document.getElementById('time-of-day');
+
 let playerNameSpan = document.getElementById('player-name-display');
 let accountBalanceSpan = document.getElementById('accnt-balance');
-let dayOfWeekSpan = document.getElementById('day-of-week');
-let hourHandSpan = document.getElementById('hour-hand');
-let minuteHandSpan = document.getElementById('minute-hand');
+
 
 
 
@@ -137,6 +132,102 @@ function saveSelectedBelief(){
   }
 
 }
+
+
+const daysList = ['SUN','MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+
+const monthsList = ['January', 'February', 'March',
+   'April', 'May', 'June',
+    'July', 'August', 'September',
+     'October', 'November', 'December'];
+
+const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+let currentYear = 2025;
+
+let hours = 0;
+let minutes = 0;
+let day = 1;
+let currentDayIndex = 0;
+let currentDay = daysList[currentDayIndex];
+let currentMonthIndex = 0;
+let currentMonth = monthsList[currentMonthIndex];
+
+/* INITIALIZE TIME */
+function startTime() {
+let updateMinutes = document.getElementById('minutes');
+let updateHours = document.getElementById('hours');
+let updateDays = document.getElementById('days');
+let updateGreeting = document.getElementById('greetings');
+
+
+const timeLoop = setInterval(() => {
+  minutes++;
+
+  if ( minutes === 60 ) {
+    hours++;
+    minutes = 0;
+  };
+  if (hours >= 5 && hours < 12) {
+    updateGreeting.innerText = 'Good Morning';
+  } else if (hours >= 12 && hours < 17) {
+    updateGreeting.innerText = 'Good Afternoon';
+  } else if (hours >= 17 && hours < 21) {
+    updateGreeting.innerText = 'Good Evening';
+  } else if( hours >= 21 && hours < 24){
+    updateGreeting.innerText = 'Good Night';
+  } else {
+    updateGreeting.innerText = 'Sleep Tight';
+  }
+
+  if ( hours === 24 ) {
+   currentDayIndex = (currentDayIndex + 1) % daysList.length;
+    day++;
+ 
+   currentDay = daysList[currentDayIndex]
+    hours = 0;
+  };
+  if (day > daysInMonth[currentMonthIndex]) {
+    currentMonthIndex = (currentMonthIndex + 1) % monthsList.length;
+    currentMonth = monthsList[currentMonthIndex];
+    day = 1;
+
+  };
+  if (currentMonth === 'December') {
+    currentMonthIndex = 0;
+    currentYear++;
+
+  }
+
+
+
+// Format hours, minutes, and days to always show two digits
+const formattedHours = String(hours).padStart(2, '0');
+const formattedMinutes = String(minutes).padStart(2, '0');
+const formattedDays = String(days).padStart(2, '0');
+
+updateMinutes.innerHTML = formattedMinutes;
+updateHours.innerHTML = formattedHours;
+updateDays.innerHTML = currentDay;
+
+// TO STOP TIME IF THESE CONDITIONS ARE TRUE
+  if ( currentMonth === monthsList[3] ) {
+    clearInterval(timeLoop);
+
+  }
+}, 1000);
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
