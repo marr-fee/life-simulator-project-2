@@ -10,7 +10,6 @@
     <!--FULL GAME CONTAINER-->
     <div class="game-container" id="main-game-container">
       <!--INTRO PAGE-->
-
       <div class="game-details" id="game-detail">
         <h1>Born Again</h1>
         <details>
@@ -37,7 +36,9 @@
           </p>
         </details>
 
-        <button id="start-page-next-btn" class="first-next-btn">Next</button>
+        <button id="start-page-next-btn" class="first-next-btn">
+          Continue
+        </button>
       </div>
 
       <!--START GAME BUTTON-->
@@ -48,19 +49,14 @@
       <!--WELCOME DIV AND STAT ASSIGNMENT SECTION-->
       <div class="welcome-display" id="welcome-div">
         <div class="game-title"><h2>Born Again</h2></div>
-        <h3>Welcome to Life</h3>
+        <h3 class="welcm-2-life">Welcome to Life</h3>
 
-        <div class="divider"></div>
-
-        <p>
-          You don't get to choose some details rather they will be assigned to
-          you at random
-        </p>
-
-        <div class="divider"></div>
-
-        <!--STATS ASSIGNMENT SECTION-->
-        <div class="stat-title-div">
+        <div class="random-stats-container">
+          <p class="colored">
+            You don't get to choose some details rather they will be assigned to
+            you at random
+          </p>
+          <!--STATS ASSIGNMENT SECTION-->
           <h3 class="stat-title">
             Your Gender: <span id="gender" class="stat-span"></span>
           </h3>
@@ -70,32 +66,36 @@
           </h3>
 
           <h3 class="stat-title">
-            Your Financial Status:
+            Inherited Financial Status:
             <span id="financial-status" class="stat-span"></span>
           </h3>
           <h3 class="stat-title">
             Your Age: <span id="age" class="stat-span"></span>
           </h3>
-          <div class="divider"></div>
-          <h4>You get to choose your beliefs</h4>
-          <div class="divider"></div>
-          <p>Do You Believe In GOD?</p>
-          <label for="yes">YES </label
-          ><input type="radio" name="belief" id="yes" value="yes" />
-          <label for="maybe">Maybe </label
-          ><input type="radio" name="belief" id="maybe" value="maybe" />
-          <label for="no">NO </label
-          ><input type="radio" name="belief" id="no" value="no" />
-          <label for="cannot-say">Prefer not to say </label
-          ><input
-            type="radio"
-            name="belief"
-            id="cannot-say"
-            value="cannot-say"
-          />
-          <button type="submit" id="submit-player-stats">Submit</button>
         </div>
+        <div class="random-stats-container">
+          <h4 class="colored">You get to choose your beliefs</h4>
+          <p class="big-question">Do You Believe In <strong>GOD</strong>?</p>
+          <div class="big-question-answers">
+            <label for="yes">YES </label
+            ><input type="radio" name="belief" id="yes" value="yes" />
+            <label for="maybe">Maybe </label
+            ><input type="radio" name="belief" id="maybe" value="maybe" />
+            <label for="no">NO </label
+            ><input type="radio" name="belief" id="no" value="no" />
+            <label for="cannot-say">Prefer not to say </label
+            ><input
+              type="radio"
+              name="belief"
+              id="cannot-say"
+              value="cannot-say"
+            />
+          </div>
+        </div>
+        <button type="submit" id="submit-player-stats">Save</button>
       </div>
+
+      <!-- MAIN GAME PAGE TOP DATA DISPLAY ( ACCOUNT BALANCE - GREETING - TIME )-->
       <div class="player-data-and-time" id="game-nav-menu-div">
         <div class="account-balance">
           Account Balance: <span id="accnt-balance">$1,000</span>
@@ -110,9 +110,27 @@
           ></span>
         </div>
       </div>
-      <div class="gameplay-container"></div>
+
+      <!--GAMEPLAY CONTAINER-->
+
+      <div class="gameplay-container" id="game-play-container">
+        <!--GRID HEADER-->
+        <h3>Main Menu</h3>
+
+        <!--GRID CONTAINER-->
+        <div class="gameplay-grid-container">
+          <div class="grid-item">1</div>
+          <div class="grid-item">1</div>
+          <div class="grid-item">1</div>
+          <div class="grid-item">1</div>
+          <div class="grid-item">1</div>
+          <div class="grid-item">1</div>
+          <div class="grid-item">1</div>
+          <div class="grid-item">1</div>
+        </div>
+      </div>
     </div>
 
-    <script src="script.js"></script>
+    <script type="module" src="main.js"></script>
   </body>
 </html>
