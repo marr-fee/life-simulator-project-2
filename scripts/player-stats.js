@@ -1,6 +1,7 @@
 // To handle all stats updates
 
 import { playerNameSpan, accountBalanceSpan, nameSpan, genderSpan, financialStatusSpan, ageSpan } from "./DOM.js";
+import { updateFaith, updateFinance } from "./stat-update-func.js";
 
 
 export const Player = {
@@ -76,7 +77,7 @@ export function getRandomPlayerStats() {
 
 
 
-let playerBelief; // variable to save player selected belief in God
+export let playerBelief; // variable to save player selected belief in God
 
 // Function to save selected belief radio input
 export function saveSelectedBelief(){
@@ -99,22 +100,9 @@ export function saveSelectedBelief(){
 
 export function updatePlayerStats(){
 
-  // Update player's faith based on belief selection
-  if (playerBelief === "yes")Player.personalStats.faith += 20; 
-   else if (playerBelief === "no")Player.personalStats.faith -= 40;
-   else if(playerBelief === "maybe")Player.personalStats.faith -= 10;
-   else Player.personalStats.faith = 50;
+  // Update player's faith level
+  updateFaith();
 
-  // Update player account balance based on financial status
-  if(Player.financialStats.financialStatus === "Extremely Poor"){
-    Player.financialStats.accountBalance = 50;
-  } else if (Player.financialStats.financialStatus === "Poor"){
-    Player.financialStats.accountBalance = 100;
-  } else if (Player.financialStats.financialStatus === "Middle Class") {
-    Player.financialStats.accountBalance = 1000;
-  } else{
-    Player.financialStats.accountBalance = 5000;
-  }
-
-  accountBalanceSpan.innerText = `$${Player.financialStats.accountBalance}`;
+  // Update player finances
+  updateFinance();
 }

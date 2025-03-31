@@ -24,3 +24,5 @@ export let accountBalanceSpan = document.getElementById('accnt-balance');
 
 /* MAIN GAME PLAY PAGE DOM ............................................. */
 export let gameMainNavMenuDiv = document.getElementById('game-nav-menu-div');
+
+export const gridContainer = document.getElementById('grid-container');

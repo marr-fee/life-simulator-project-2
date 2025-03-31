@@ -2,6 +2,7 @@
 import { gameIntroPage, startLifeBtn, buttonSpan, gameContainer, welcomeDiv, gameMainNavMenuDiv, nextPageBtn1, submitPlayerStatBtn, gamePlayContainer } from "./DOM.js";
 import { startTime } from "./time.js";
 import { saveSelectedBelief, updatePlayerStats, getRandomPlayerStats } from "./player-stats.js";
+import { updateMenus, menus } from "./menus.js";
 
 
 // Event listener for the next page button (hides game intro page and shows glowing start game button)
@@ -39,5 +40,5 @@ submitPlayerStatBtn.addEventListener('click', () => {
   saveSelectedBelief();
   startTime();
   updatePlayerStats();
-  
+  updateMenus();
 })
