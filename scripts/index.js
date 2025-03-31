@@ -2,4 +2,10 @@ export * from "./eventListns.js";
 export * from "./DOM.js";
 export * from "./player-stats.js";
 export * from "./time.js";
-export * from "./menus.js"
+export * from "./menus.js";
+export * from "./stat-update-func.js";
+export * from "./menu-update.js";
+export * from "./menu-navigation.js";
+export * from "./R-P-S/main-rps-script.js";
+export * from "./R-P-S/rps-DOM.js";
+export * from "./R-P-S/rps-functions.js";

@@ -1,8 +1,7 @@
 // To hold all DOM actions
 
 
-/* START NAVIGATION BUTTONS AND DOM .........................................................*/
-
+// START NAVIGATION BUTTONS AND DOM .........................................................
 
 export const startLifeBtn = document.getElementById('start-game-btn'); // The glowing button that starts the game
 export const buttonSpan = document.getElementById('button-span'); // Span inside the glowing start button
@@ -13,18 +12,20 @@ export const submitPlayerStatBtn = document.getElementById('submit-player-stats'
 export const welcomeDiv = document.getElementById('welcome-div'); // Welcome div that appears after starting the game
 export const gamePlayContainer = document.getElementById('game-play-container'); // Game play grid display
 
-// Get references to the elements where the player's details will be displayed
+// Get references to the elements where the player's details will be displayed...............................
+
 export let nameSpan = document.getElementById('player-name'); // Name span where the player's name will be displayed
 export let genderSpan = document.getElementById('gender'); // Gender span where the player's gender will be displayed
 export let financialStatusSpan = document.getElementById('financial-status'); // Financial status span
 export let ageSpan = document.getElementById('age'); // Age span
-export let playerNameSpan = document.getElementById('player-name-display');
 
-export let accountBalanceSpan = document.getElementById('accnt-balance');
 
-/* MAIN GAME PLAY PAGE DOM ............................................. */
-export let gameMainNavMenuDiv = document.getElementById('game-nav-menu-div');
 
-export const gridContainer = document.getElementById('grid-container');
+// MAIN GAME PLAY PAGE DOM .............................................
 
-export const menuTitle = document.getElementById('menu-title');
+export let gameMainNavMenuDiv = document.getElementById('game-nav-menu-div'); // Holds account balance, greeting and time display
+export let accountBalanceSpan = document.getElementById('accnt-balance'); // Account balance span
+export let playerNameSpan = document.getElementById('player-name-display'); // player name greeting span
+export const menuTitle = document.getElementById('menu-title'); // To target the grid menu title.
+export const gridContainer = document.getElementById('grid-container'); // container for menu grid
+export const rockPaperScissorsDiv = document.getElementById('roc-pap-sci-div');

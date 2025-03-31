@@ -2,10 +2,10 @@
 import { gameIntroPage, startLifeBtn, buttonSpan, gameContainer, welcomeDiv, gameMainNavMenuDiv, nextPageBtn1, submitPlayerStatBtn, gamePlayContainer } from "./DOM.js";
 import { startTime } from "./time.js";
 import { saveSelectedBelief, updatePlayerStats, getRandomPlayerStats } from "./player-stats.js";
-import { updateMenus, menus } from "./menus.js";
+import { updateMenus } from "./menu-update.js";
 
 
-// Event listener for the next page button (hides game intro page and shows glowing start game button)
+// Event listener for continue button
 nextPageBtn1.addEventListener('click', () =>{
   gameIntroPage.style.display = "none"; // Hides the game intro page
   startLifeBtn.style.display = "flex"; // Displays the glowing start game button
@@ -34,9 +34,10 @@ submitPlayerStatBtn.addEventListener('click', () => {
   welcomeDiv.style.display = "none"; // Hide the welcome div when stats are submitted
   gameContainer.style.background = "rgb(255, 255, 255)"; // Change background color of the game container
   gameContainer.style.justifyContent = "flex-start";  // Change display of the game container to start the grid at the top
-  gameMainNavMenuDiv.style.display = "flex";
+  gameMainNavMenuDiv.style.display = "flex"; // Display of top page nav section to flex
+  gamePlayContainer.style.display = "flex";  // Display of main UI page nav section to flex
 
-  gamePlayContainer.style.display = "flex";
+  // FUNCTIONS to run on click
   saveSelectedBelief();
   startTime();
   updatePlayerStats();

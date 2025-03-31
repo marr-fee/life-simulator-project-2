@@ -1,5 +1,5 @@
 // to handle all menu displays
-import { gridContainer, menuTitle } from "./DOM.js";
+
 
 
 // All menu options saved in menus
@@ -26,50 +26,22 @@ export const menus = {
     branches: [
       {tag: "Hospital", image: "images/icons8-hospital-48.png"}
     ]
+  },
+  Phone: {
+    title: "Phone",
+    branches: [
+      { tag: "Contacts", image: "images/icons8-contact-64.png"},
+      { tag: "Messages", image: "images/icons8-email-48.png"},
+      { tag: "Investments", image: "images/icons8-investment-50.png"},
+      { tag: "Online Bank", image: "images/icons8-bank-48.png"},
+      { tag: "Games", image: "images/icons8-games-50.png"}
+    ]
+  },
+  Games: {
+    title: "Games",
+    branches: [
+      { tag: "R-P-S", image: "images/rock-paper-scissors.png", id: "r-p-s-game"}
+    ]
   }
 }
 
-
-
-
-export function updateMenus(menuTag){
-
-  // Get the selected menu (either 'main' or 'Locations')
-  const menu = menus[menuTag];
- 
-  // Generate the HTML
-  menuTitle.innerHTML = `${menu.title}`;
-
-  let gridItems;
-
-  gridItems = menu.branches.map((branch)=>{
-    return `
-    <div class="grid-item">
-    <img src="${branch.image}" alt="${branch.tag} image" class="menu-grid-icons">
-    <p class="menu-grid-tag">${branch.tag}</p>
-    </div>`;
-
-  })
-  // Append each grid item into the grid container
-  gridContainer.innerHTML = gridItems.join('');
-
-  // Now add event listeners to each grid item after the HTML is generated
-  const gridItemsElements = gridContainer.querySelectorAll('.grid-item');
-
-  // Loop through each grid item in the list
-  gridItemsElements.forEach((gridItem, index) => {
-      // For each grid item, get the corresponding 'branch' from the menu's branches array.
-  // The index of the grid item matches the index of the branch.
-    const branch = menu.branches[index];
-    // When clicked, it calls the navigateMenus function with the branch.tag (menu name) as the argument.
-    gridItem.addEventListener('click', () => navigateMenus(branch.tag));
-  });
-}
-
-export function navigateMenus(menu){
-  if (menu !== "Main Menu"){
-    updateMenus(menu);
-  }
-}
-
-navigateMenus("main");

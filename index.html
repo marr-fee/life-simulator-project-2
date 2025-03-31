@@ -5,10 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Life simulator</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="scripts\R-P-S\rps-styles.css" />
   </head>
   <body>
     <!--FULL GAME CONTAINER-->
+    <!--    START     -->
+
     <div class="game-container" id="main-game-container">
+      <div class="exit-rps-btn" id="rps-exit-btn">
+        <img src="images\back.png" alt="exit icon" />EXIT GAME
+      </div>
       <!--INTRO PAGE-->
       <div class="game-details" id="game-detail">
         <h1>Born Again</h1>
@@ -111,7 +117,7 @@
         </div>
       </div>
 
-      <!--GAMEPLAY CONTAINER-->
+      <!--GAMEPLAY CONTAINER STARTS-->
 
       <div class="gameplay-container" id="game-play-container">
         <!--GRID HEADER-->
@@ -120,7 +126,153 @@
         <!--GRID CONTAINER-->
         <div class="gameplay-grid-container" id="grid-container"></div>
       </div>
+
+      <!--GAMEPLAY CONTAINER ENDS-->
+
+      <!-- ROCK PAPER SCISSORS GAME SECTION STARTS -->
+
+      <div class="r-p-s-container" id="roc-pap-sci-div">
+        <!-- Game title heading -->
+        <h1>ROCK PAPER SCISSORS!</h1>
+
+        <!-- Game rules holder starts here -->
+        <details id="details">
+          <summary>
+            These are the rules of the game.
+            <!-- <span id="summary-toggle">Show more..</span> -->
+          </summary>
+          <p>
+            You and your opponent are to chose between <strong>Rock</strong>,
+            <strong>Paper</strong>, or <strong>Scissors</strong>.
+          </p>
+          <p><strong>Rock</strong> beats <strong>Scissors</strong></p>
+          <p><strong>Paper</strong> beats <strong>Rock</strong></p>
+          <p><strong>Scissors</strong> beats <strong>Paper</strong></p>
+          <p>Whoever wins a round gets <strong>1 point</strong>.</p>
+          <p>First to <strong>10 points</strong> wins the game</p>
+          <p class="good-luck">Good luck!</p>
+        </details>
+        <!-- Game rules holder ends here -->
+
+        <!-- Main Game play container starts here -->
+        <div class="game-play-main-container" id="game-play-main-div">
+          <!-- make your move heading -->
+          <h3>Make your move</h3>
+
+          <!-- Game play buttons starts here -->
+          <div class="game-play-sub-container" id="game-play-btn-container">
+            <div class="rock-btn-container">
+              <h2>Rock</h2>
+              <button id="rock" class="btn">
+                <img
+                  src="scripts\R-P-S\rps-emojis\fist-emoji.svg"
+                  class="emoji"
+                  alt="fist emoji"
+                />
+              </button>
+            </div>
+            <div class="paper-btn-container">
+              <h2>Paper</h2>
+              <button id="paper" class="btn">
+                <img
+                  src="scripts\R-P-S\rps-emojis\raise-hand-emoji.svg"
+                  class="emoji"
+                  alt="hand emoji"
+                />
+              </button>
+            </div>
+            <div class="scissors-btn-container">
+              <h2>Scissors</h2>
+              <button id="scissors" class="btn">
+                <img
+                  src="scripts\R-P-S\rps-emojis\peace-fingers.svg"
+                  alt="peace emoji"
+                  class="emoji"
+                />
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="game-update-message-container"
+            id="game-update-msg-container"
+          >
+            <p id="game-update-msg"></p>
+            <button class="play-again-btn" id="continue-btn">
+              Make next move
+            </button>
+          </div>
+          <!-- Game play buttons ends here -->
+
+          <!-- Game play scores container starts here -->
+          <div
+            class="game-update-score-container"
+            id="game-update-score-container"
+          >
+            <p class="Round-p">
+              <strong>Round <span class="round-count">1</span></strong>
+            </p>
+            <!-- Score update container starts here -->
+            <div class="game-score-update-message">
+              <p>Your Score: <span id="player-score">0</span></p>
+              <p>Computer Score: <span id="computer-score">0</span></p>
+            </div>
+            <!-- Score update container ends here -->
+
+            <div class="divider"></div>
+
+            <!-- Round score update container starts here -->
+            <div class="round-score-update-message">
+              <p>
+                <strong>Game Score</strong>
+              </p>
+              <div class="round-score-update">
+                <span class="player-round-score">0</span>
+                <span>:</span>
+                <span class="computer-round-score">0</span>
+              </div>
+            </div>
+            <!-- Round score update container ends here -->
+          </div>
+          <!-- Game play scores container ends here -->
+        </div>
+        <!-- Main Game play container ends here -->
+
+        <!-- Game reset container starts here -->
+        <div class="game-reset-container" id="game-reset-div">
+          <!-- Game over outcome display container starts here -->
+          <p class="round-over"></p>
+          <p>Final Score</p>
+          <div class="final-score-msg" id="final-score-mesg">
+            <p>Your score: <span id="final-player-score"></span></p>
+            <p>Computer score: <span id="final-computer-score"></span></p>
+          </div>
+          <p class="win-or-lose-message" id="final-win-or-lose-msg"></p>
+          <p id="congrats-betterluck-msg"></p>
+          <!-- Game over outcome display container ends here -->
+
+          <!-- Reset play again button starts here -->
+          <button id="next-round" class="play-again-btn">Next Round</button>
+          <!-- Reset play again button ends here -->
+        </div>
+        <!-- Game reset container ends here -->
+
+        <!-- Round update container starts here-->
+        <div class="new-round-update-div"></div>
+        <!-- Round update container ends here-->
+
+        <!-- Game start over container starts here -->
+        <div class="start-again-btn-container" id="start-again-container">
+          <!-- Game start over button starts here -->
+          <button id="reset-game" class="play-again-btn">Reset Game</button>
+          <!-- Game start over button ends here -->
+        </div>
+        <!-- Game start over container ends here -->
+      </div>
+
+      <!-- ROCK PAPER SCISSORS GAME SECTION ENDS -->
     </div>
+    <!--    FULL GAME CONTAINER ENDS    -->
 
     <script type="module" src="main.js"></script>
   </body>
