@@ -240,16 +240,16 @@ details p{
 }
 
 #gender {
-  animation-delay: 5s;
+  animation-delay: 2s;
 }
 #player-name {
-  animation-delay: 6s;
+  animation-delay: 3s;
 }
 #financial-status {
-  animation-delay: 7s; 
+  animation-delay: 4s; 
 }
 #age {
-  animation-delay: 8s;
+  animation-delay: 5s;
 }
 
 .game-title{
@@ -270,7 +270,7 @@ input{
   text-align: center;
   opacity: 0;
   animation: fadeIn 1s forwards; 
-  animation-delay: 9s;
+  animation-delay: 6s;
   margin: 10px auto;
   padding: 8px 20px;
   font-size: 14px;
@@ -320,7 +320,7 @@ input{
   width: 455px;
   display: grid;
   grid-template-columns: repeat(3, minmax(150px, 1fr));
-  gap: 10px;
+  gap: 15px;
   margin: 15px auto;
   border: none;
 }
@@ -337,4 +337,17 @@ input{
 
 .grid-item:hover{
   background-color: rgb(56, 168, 212);
+}
+
+.menu-grid-icons{
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.menu-grid-tag{
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.849);
 }

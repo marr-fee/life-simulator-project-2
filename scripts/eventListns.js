@@ -40,5 +40,5 @@ submitPlayerStatBtn.addEventListener('click', () => {
   saveSelectedBelief();
   startTime();
   updatePlayerStats();
-  updateMenus();
+  updateMenus("main");
 })
