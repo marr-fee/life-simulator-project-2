@@ -1,6 +1,6 @@
 // To handle eventlisteners
 import { gameIntroPage, startLifeBtn, buttonSpan, gameContainer, welcomeDiv, gameMainNavMenuDiv, nextPageBtn1, submitPlayerStatBtn, gamePlayContainer } from "./DOM.js";
-import { startTime } from "./time.js";
+import { resumeTime, startTime, timeIsPaused } from "./time.js";
 import { saveSelectedBelief, updatePlayerStats, getRandomPlayerStats } from "./player-stats.js";
 import { updateMenus } from "./menu-update.js";
 
@@ -39,7 +39,7 @@ submitPlayerStatBtn.addEventListener('click', () => {
 
   // FUNCTIONS to run on click
   saveSelectedBelief();
-  startTime();
+  resumeTime();
   updatePlayerStats();
   updateMenus("main");
 })

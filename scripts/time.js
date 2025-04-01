@@ -13,7 +13,6 @@ const monthsList = ['January', 'February', 'March',
 
 const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
-let currentYear = 2025;
 
 let hours = 0;
 let minutes = 0;
@@ -22,17 +21,20 @@ let currentDayIndex = 0;
 let currentDay = daysList[currentDayIndex];
 let currentMonthIndex = 0;
 let currentMonth = monthsList[currentMonthIndex];
+let currentYear = 2025;
+
+export let timeIsPaused = true;
 
 /* INITIALIZE TIME */
 
 export function startTime() {
-  let updateMinutes = document.getElementById('minutes');
-  let updateHours = document.getElementById('hours');
-  let updateDays = document.getElementById('days');
-  let updateGreeting = document.getElementById('greetings');
-  
-  
-  const timeLoop = setInterval(() => {
+  if (!timeIsPaused) {
+
+    let updateMinutes = document.getElementById('minutes');
+    let updateHours = document.getElementById('hours');
+    let updateDays = document.getElementById('days');
+    let updateGreeting = document.getElementById('greetings');
+
     // Increase minutes by 1 every second
     minutes++;
   
@@ -40,10 +42,10 @@ export function startTime() {
       hours++;
       minutes = 0;
     };
-  
-     // Update greeting based on time of day
-     updateGreeting.innerText = getGreeting(hours);
-  
+
+    // Update greeting based on time of day
+    updateGreeting.innerText = getGreeting(hours);
+
     if ( hours === 24 ) {
       updateDay();
     };
@@ -56,16 +58,60 @@ export function startTime() {
       currentMonthIndex = 0;
       currentYear++;
     }
-  
+    // Account for leap years 
+    getDaysInMonth(currentMonthIndex, currentYear)
+
     // Format and display time
     updateTime(updateMinutes, updateHours, updateDays);
-  
-  // TO STOP TIME IF THESE CONDITIONS ARE TRUE
+
+      // TO STOP TIME IF THESE CONDITIONS ARE TRUE
     if ( currentMonth === monthsList[3] ) {
       clearInterval(timeLoop);
     }
+  }
+
+
   
-  }, 1000);
+  };
+// Function to account for leap years
+  function getDaysInMonth(monthIndex, year) {
+    if (monthIndex === 1) { // February
+      return isLeapYear(year) ? 29 : 28;
+    }
+    return daysInMonth[monthIndex];
+  }
+  
+  function isLeapYear(year) {
+    return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+  }
+
+let timeLoop = setInterval(startTime, 1000);
+
+  
+  export function pauseTime() {
+    timeIsPaused = true;
+    clearInterval(timeLoop);
+  };
+
+  export function resumeTime(){
+    timeIsPaused = false;
+    setInterval(timeLoop);
+  }
+
+  export function speedUpTime(passingTime){
+    minutes += passingTime;
+
+    while (minutes >= 60){
+      minutes -= 60;
+      hours += 1;
+    }
+    while (hours >= 24){
+      hours -= 24;
+      updateDay();
+    }
+    while (day > getDaysInMonth(currentMonthIndex, currentYear)){
+      updateMonth();  
+    }
   }
 
 
