@@ -9,3 +9,4 @@ export * from "./menu-navigation.js";
 export * from "./R-P-S/main-rps-script.js";
 export * from "./R-P-S/rps-DOM.js";
 export * from "./R-P-S/rps-functions.js";
+export * from "./Tic-Tac-Toe/main-tik-tac-toe.js"

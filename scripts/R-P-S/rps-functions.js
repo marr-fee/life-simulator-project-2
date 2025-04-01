@@ -1,4 +1,4 @@
-import { updateRoundCount, updatePlayerRoundScore, updateComputerRoundScore, updatePlayerScore, updateComputerScore, updateMessage, updateFinalPlayerScore, updateFinalComputerScore, continueGame, startGameAgain, gamePlayButton, leaveRPSgameBtn } from "./rps-DOM.js"
+import { updateRoundCount, updatePlayerRoundScore, updateComputerRoundScore, updatePlayerScore, updateComputerScore, updateMessage, updateFinalPlayerScore, updateFinalComputerScore, continueGame, startGameAgain, gamePlayButton, leaveGameBtns } from "./rps-DOM.js"
 
 import { rockPaperScissorsDiv, gridContainer, menuTitle, gamePlayContainer } from "../DOM.js";
 
@@ -17,7 +17,7 @@ export function openRockPaperScissors(){
   gridContainer.style.display = "none";
   menuTitle.style.display = "none";
   gamePlayContainer.style.paddingTop = "10px";
-  leaveRPSgameBtn.style.display = "flex";
+  leaveGameBtns.style.display = "flex";
 
   playRockPaperScissors();
 }
@@ -27,7 +27,7 @@ export function closeRockPaperScissors(){
   gridContainer.style.display = "grid";
   gamePlayContainer.style.paddingTop = "45px";
   menuTitle.style.display = "block";
-  leaveRPSgameBtn.style.display = "none";
+  leaveGameBtns.style.display = "none";
   updateMenus("Games");
 }
 

@@ -34,13 +34,15 @@ export const menus = {
       { tag: "Messages", image: "images/icons8-email-48.png"},
       { tag: "Investments", image: "images/icons8-investment-50.png"},
       { tag: "Online Bank", image: "images/icons8-bank-48.png"},
-      { tag: "Games", image: "images/icons8-games-50.png"}
+      { tag: "Games", image: "images/icons8-games-50.png"},
+      { tag: "Calculator", image: "images/calculator.png"}
     ]
   },
   Games: {
     title: "Games",
     branches: [
-      { tag: "R-P-S", image: "images/rock-paper-scissors.png", id: "r-p-s-game"}
+      { tag: "R-P-S", image: "images/rock-paper-scissors.png", id: "r-p-s-game"},
+      { tag: "Tik Tak Toe", image: "images/three-in-a-row.png", id: "tik-tak-toe-game"}
     ]
   }
 }

@@ -1,7 +1,7 @@
 // To handle ROCK PAPER SCISSORS LOGIG
 import { pickRandomComputerMove, updateResults, continueGameBtn, startNextRound, resetGame, playerScore, computerScore, roundCount, closeRockPaperScissors } from "./rps-functions.js";
 
-import { nextMoveButton, restartGame, roundOverDisplay, gameFinalOutcome, congratulationMsg, continuPlaying, nextRoundButton, updatePlayerRoundScore, updateComputerRoundScore, updateFinalPlayerScore, updateFinalComputerScore, startGameAgain, leaveRPSgameBtn } from "./rps-DOM.js";
+import { nextMoveButton, restartGame, roundOverDisplay, gameFinalOutcome, congratulationMsg, continuPlaying, nextRoundButton, updatePlayerRoundScore, updateComputerRoundScore, updateFinalPlayerScore, updateFinalComputerScore, startGameAgain, leaveGameBtns } from "./rps-DOM.js";
 
 export let playerRoundScore = 0;
 export let computerRoundScore = 0;
@@ -67,7 +67,7 @@ export function playRockPaperScissors(){
     resetGame();
   });
   
-  leaveRPSgameBtn.addEventListener('click', () => {
+  leaveGameBtns.addEventListener('click', () => {
     closeRockPaperScissors();
   })
 }

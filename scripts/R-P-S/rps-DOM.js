@@ -20,4 +20,4 @@ export let continueGame = document.getElementById("game-update-msg-container");
 export let startGameAgain = document.getElementById("start-again-container");
 export let gamePlayButton = document.getElementById("game-play-btn-container");
 export let continuPlaying = document.getElementById("continue-btn");
-export const leaveRPSgameBtn = document.getElementById('rps-exit-btn');
+export const leaveGameBtns = document.getElementById('rps-exit-btn');

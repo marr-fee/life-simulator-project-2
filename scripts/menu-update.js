@@ -3,6 +3,7 @@ import { menus } from "./menus.js";
 import { navigateMenus } from "./menu-navigation.js";
 import { gridContainer, menuTitle } from "./DOM.js";
 import { openRockPaperScissors } from "./R-P-S/rps-functions.js";
+import { openTikTacToeGame } from "./Tic-Tac-Toe/main-tik-tac-toe.js";
 
 
 export function updateMenus(menuTag){
@@ -40,6 +41,10 @@ export function updateMenus(menuTag){
     if (branch.tag === "R-P-S") {
       gridItem.addEventListener('click', () => {
         openRockPaperScissors();
+      });
+    }else if (branch.tag === "Tik Tak Toe"){
+      gridItem.addEventListener('click', () => {
+        openTikTacToeGame();
       });
     } else {
     gridItem.addEventListener('click', () => navigateMenus(branch.tag));
