@@ -1,7 +1,10 @@
 // To handle all stats updates
 
-import { playerNameSpan, accountBalanceSpan, nameSpan, genderSpan, financialStatusSpan, ageSpan } from "./DOM.js";
+import { playerNameSpan, accountBalanceSpan, nameSpan, genderSpan, financialStatusSpan, ageSpan, welcomeDiv, gameContainer, gameMainNavMenuDiv, gamePlayContainer } from "./DOM.js";
 import { updateFaith, updateFinance } from "./stat-update-func.js";
+import { updateMenus } from "./menu-update.js";
+import { resumeTime } from "./time.js";
+
 
 
 export const Player = {
@@ -90,8 +93,18 @@ export function saveSelectedBelief(){
       selectedValue = radio.value;
     }
   });
+  // To ensure player selects a belief before proceeding
   if (selectedValue){
     playerBelief = selectedValue;
+
+    welcomeDiv.style.display = "none"; // Hide the welcome div when stats are submitted
+    gameContainer.style.background = "rgb(255, 255, 255)"; // Change background color of the game container
+    gameContainer.style.justifyContent = "flex-start";  // Change display of the game container to start the grid at the top
+    gameMainNavMenuDiv.style.display = "flex"; // Display of top page nav section to flex
+    gamePlayContainer.style.display = "flex";  // Display of main UI page nav section to flex
+    resumeTime();
+    updatePlayerStats();
+    updateMenus("main");
   } else{
     alert('You must select a belief')
   }

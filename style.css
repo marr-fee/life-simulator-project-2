@@ -317,12 +317,13 @@ input{
 }
 .gameplay-grid-container{
   height: 100%;
-  width: 455px;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(3, minmax(150px, 1fr));
   gap: 15px;
   margin: 15px auto;
   border: none;
+  padding: 0 30px;
 }
 
 .grid-item{
