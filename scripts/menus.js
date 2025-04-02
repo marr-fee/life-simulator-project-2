@@ -1,5 +1,7 @@
 // to handle all menu displays
 
+import { JobsList } from "./Jobs/job-list.js";
+
 
 
 // All menu options saved in menus
@@ -35,7 +37,8 @@ export const menus = {
       { tag: "Investments", image: "images/icons8-investment-50.png"},
       { tag: "Online Bank", image: "images/icons8-bank-48.png"},
       { tag: "Games", image: "images/icons8-games-50.png"},
-      { tag: "Calculator", image: "images/calculator.png"}
+      { tag: "Calculator", image: "images/calculator.png"},
+      { tag: "Job Search", image: "" }
     ]
   },
   Games: {
@@ -44,6 +47,11 @@ export const menus = {
       { tag: "R-P-S", image: "images/rock-paper-scissors.png", id: "r-p-s-game"},
       { tag: "Tik Tak Toe", image: "images/three-in-a-row.png", id: "tik-tak-toe-game"}
     ]
+  },
+  "Job Search": {
+    title: "Job Search",
+    branches: JobsList.branches
   }
+
 }
 

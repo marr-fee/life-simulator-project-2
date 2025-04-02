@@ -2,7 +2,13 @@
 
 // To handle all time related functions
 
+import { Player } from "./player-stats.js";
+import { autoStatUpdatePerHour } from "./stat-update-func.js";
+
+
 // Initialize time and date constants 
+
+export const PlayerDateOfBirth = "March 20, 2008";
 
 const daysList = ['Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
@@ -14,15 +20,18 @@ const monthsList = ['January', 'February', 'March',
 const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
 
-let hours = 0;
+let hours = 7;
 let minutes = 0;
-let day = 1;
+let day = 20;
 let currentDayIndex = 0;
 let currentDay = daysList[currentDayIndex];
-let currentMonthIndex = 0;
+let currentMonthIndex = 2;
 let currentMonth = monthsList[currentMonthIndex];
 let currentYear = 2025;
+let itIsPlayersBirthday = false;
 
+
+export let isGameOver = false;
 export let timeIsPaused = true;
 
 /* INITIALIZE TIME */
@@ -41,6 +50,7 @@ export function startTime() {
     if ( minutes === 60 ) {
       hours++;
       minutes = 0;
+      autoStatUpdatePerHour();
     };
 
     // Update greeting based on time of day
@@ -58,6 +68,13 @@ export function startTime() {
       currentMonthIndex = 0;
       currentYear++;
     }
+
+    if (currentMonth === 'March' && day === 20 && hours === 0 && minutes === 0){
+     // console.log('Happy Birthday!');
+     itIsPlayersBirthday = true;
+     Player.age++;
+    }
+    
     // Account for leap years 
     getDaysInMonth(currentMonthIndex, currentYear)
 

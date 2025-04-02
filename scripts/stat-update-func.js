@@ -29,3 +29,8 @@ export function updateFinance(){
   
     accountBalanceSpan.innerText = `$${Player.financialStats.accountBalance}`;
 }
+
+export function autoStatUpdatePerHour(){
+  Player.personalStats.stomach -= 1;
+  Player.personalStats.hygiene -= 1;
+}

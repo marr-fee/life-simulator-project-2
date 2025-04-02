@@ -14,15 +14,15 @@ export const Player = {
   
   // Grouped personal stats
   personalStats: {
-    sleep: 50,
+    energy: 80,
     workXp: 0, // Work experience
-    HP: 50, // Health Points
-    hunger: 50,
+    HP: 80, // Health Points
+    stomach: 50,
     hygiene: 50,
     criminality: 0,
     faith: 50,
     popularity: 1,
-    influence: 1,
+    influence: 1
   },
 
   // Grouped social stats
@@ -37,7 +37,7 @@ export const Player = {
     investments: 0,
     accountBalance: 0,
     financialStatus: "", 
-    employmentStatus: "Unemployed", 
+    employmentStatus: "Unemployed"
   },
 }
 
