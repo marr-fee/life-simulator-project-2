@@ -14,18 +14,18 @@ export const gamePlayContainer = document.getElementById('game-play-container');
 
 // Get references to the elements where the player's details will be displayed...............................
 
-export let nameSpan = document.getElementById('player-name'); // Name span where the player's name will be displayed
-export let genderSpan = document.getElementById('gender'); // Gender span where the player's gender will be displayed
-export let financialStatusSpan = document.getElementById('financial-status'); // Financial status span
-export let ageSpan = document.getElementById('age'); // Age span
+export const nameSpan = document.getElementById('player-name'); // Name span where the player's name will be displayed
+export const genderSpan = document.getElementById('gender'); // Gender span where the player's gender will be displayed
+export const financialStatusSpan = document.getElementById('financial-status'); // Financial status span
+export const ageSpan = document.getElementById('age'); // Age span
 
 
 
 // MAIN GAME PLAY PAGE DOM .............................................
 
-export let gameMainNavMenuDiv = document.getElementById('game-nav-menu-div'); // Holds account balance, greeting and time display
-export let accountBalanceSpan = document.getElementById('accnt-balance'); // Account balance span
-export let playerNameSpan = document.getElementById('player-name-display'); // player name greeting span
+export const gameMainNavMenuDiv = document.getElementById('game-nav-menu-div'); // Holds account balance, greeting and time display
+export const accountBalanceSpan = document.getElementById('accnt-balance'); // Account balance span
+export const playerNameSpan = document.getElementById('player-name-display'); // player name greeting span
 export const menuTitle = document.getElementById('menu-title'); // To target the grid menu title.
 export const gridContainer = document.getElementById('grid-container'); // container for menu grid
 export const rockPaperScissorsDiv = document.getElementById('roc-pap-sci-div');

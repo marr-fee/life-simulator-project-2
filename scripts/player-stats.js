@@ -42,8 +42,20 @@ export const Player = {
 }
 
 // Arrays of male and female names
-export const maleNames = ["John", "Michael", "David", "James", "Robert", "William", "Thomas", "Jack", "Daniel", "Steven"]; 
-export const femaleNames = ["Mary", "Jennifer", "Linda", "Patricia", "Elizabeth", "Susan", "Jessica", "Sarah", "Karen", "April"];
+export const maleNames = [
+  'James', 'John', 'Robert', 'Michael', 'William', 'David', 'Joseph', 'Charles', 'Thomas', 'Daniel',
+  'Matthew', 'Anthony', 'Mark', 'Donald', 'Paul', 'Steven', 'Andrew', 'Kenneth', 'George', 'Joshua',
+  'Kevin', 'Brian', 'Edward', 'Ronald', 'Timothy', 'Jason', 'Jeffrey', 'Ryan', 'Gary', 'Nicholas',
+  'Eric', 'Stephen', 'Larry', 'Justin', 'Scott', 'Brandon', 'Benjamin', 'Adam', 'Samuel', 'Gregory',
+  'Frank', 'Alexander', 'Ethan', 'Patrick', 'Henry', 'Kyle', 'Jack', 'Zachary', 'Nathan', 'Richard'
+];
+export const femaleNames = [
+  'Mary', 'Patricia', 'Jennifer', 'Linda', 'Elizabeth', 'Susan', 'Jessica', 'Sarah', 'Karen', 'Nancy',
+  'Betty', 'Helen', 'Sandra', 'Ashley', 'Donna', 'Deborah', 'Laura', 'Sarah', 'Kimberly', 'Michelle',
+  'Emily', 'Stephanie', 'Rebecca', 'Sharon', 'Cynthia', 'Kathleen', 'Maria', 'Debra', 'Amanda', 'Dorothy',
+  'Carol', 'Ruth', 'Megan', 'Angela', 'Hannah', 'Mildred', 'Frances', 'Gloria', 'Eva', 'Cheryl', 'Alice',
+  'Suzanne', 'Kathryn', 'Janet', 'Diane', 'Tina', 'Annie', 'Julie', 'Heather', 'Victoria', 'Olivia'
+];
 
 // Function to get random player stats (name, gender, financial status, age)
 export function getRandomPlayerStats() {

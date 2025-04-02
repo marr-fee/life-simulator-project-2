@@ -10,6 +10,7 @@
   max-width: 100%;
   min-width: 520px;
   min-height: 550px;
+  max-height: 90vh;
   border: 8px solid black;
   margin: 20px auto;
   display: flex;
@@ -21,6 +22,7 @@
   background-color: black;
   color: white;
   overflow: hidden;
+  
 }
 
 /* PAGE 1 - GAME DETAILS */

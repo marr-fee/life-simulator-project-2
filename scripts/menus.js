@@ -41,6 +41,13 @@ export const menus = {
       { tag: "Job Search", image: "" }
     ]
   },
+  Investments: {
+    title: "Investments",
+    branches: [
+      { tag: "Real Estate", image: "images/icons8-real-estate-50.png"},
+      { tag: "Crypto Exchange", image: "images/icons8-crypto-40.png"}
+    ]
+  },
   Games: {
     title: "Games",
     branches: [
@@ -51,6 +58,10 @@ export const menus = {
   "Job Search": {
     title: "Job Search",
     branches: JobsList.branches
+  },
+  Doctor: {
+    title: "Doctor",
+    branches: JobsList.Doctor.branches
   }
 
 }
