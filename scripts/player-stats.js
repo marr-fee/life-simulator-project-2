@@ -62,7 +62,7 @@ export function getRandomPlayerStats() {
 
   const randomGender = Math.random() > 0.5 ? "male" : "female"; 
   
-  const financialStatusOptions = ["Poor", "Middle Class", "Extremely Poor", "Rich"];
+  const financialStatusOptions = ["Poor", "Middle Class", "Extremely Poor", "Rich", "Extremely Rich"];
   let randomFinance;
 
   randomFinance = financialStatusOptions[Math.floor(Math.random() * financialStatusOptions.length)];
