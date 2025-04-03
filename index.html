@@ -4,9 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Life simulator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="scripts\R-P-S\rps-styles.css" />
     <link rel="stylesheet" href="scripts\Tic-Tac-Toe\tik-tac-toe.css" />
+    <link rel="stylesheet" href="scripts\investments\crypto\crypto.css" />
   </head>
   <body>
     <!--FULL GAME CONTAINER-->
@@ -14,7 +21,7 @@
 
     <div class="game-container" id="main-game-container">
       <div class="exit-rps-btn" id="rps-exit-btn">
-        <img src="images\back.png" alt="exit icon" />EXIT GAME
+        <img src="images\back.png" alt="exit icon" />EXIT
       </div>
       <!--INTRO PAGE-->
       <div class="game-details" id="game-detail">
@@ -117,8 +124,8 @@
           ></span>
         </div>
       </div>
-
-      <!--GAMEPLAY CONTAINER STARTS-->
+      <!----------------------------------------------------------->
+      <!--GAMEPLAY MENUS CONTAINER STARTS-->
 
       <div class="gameplay-container" id="game-play-container">
         <!--GRID HEADER-->
@@ -128,8 +135,8 @@
         <div class="gameplay-grid-container" id="grid-container"></div>
       </div>
 
-      <!--GAMEPLAY CONTAINER ENDS-->
-
+      <!--GAMEPLAY MENUS CONTAINER ENDS-->
+      <!----------------------------------------------------------->
       <!-- ROCK PAPER SCISSORS GAME SECTION STARTS -->
 
       <div class="r-p-s-container" id="roc-pap-sci-div">
@@ -272,7 +279,7 @@
       </div>
 
       <!-- ROCK PAPER SCISSORS GAME SECTION ENDS -->
-
+      <!----------------------------------------------------------->
       <!-- TIK TAC TOE GAME SECTION STARTS-->
 
       <div class="tic-tac-toe-container" id="tik-tac-toe-div">
@@ -292,6 +299,75 @@
         <button id="restart">Restart Game</button>
       </div>
       <!-- TIK TAC TOE GAME SECTION ENDS-->
+      <!----------------------------------------------------------->
+      <!-- CRYPTO INVESTMENT SECTION STARTS -->
+      <div class="crypto-ex-container" id="crypto-container">
+        <div class="crypto-ex-welcome-page" id="crypto-welcome-page">
+          <div class="welcome-page-text">
+            <h1 class="app-name">MarrFee</h1>
+            <h2>Cryptocurrency</h2>
+            <h3>Exchange Platform</h3>
+          </div>
+        </div>
+
+        <!--main crypto page-->
+        <button class="exit-app-buttonn" id="exit-app-btn">Exit</button>
+        <div class="crypto-ex-main-page" id="crypto-main-page">
+          <div class="head-section">
+            <h2>Crypto Exchange</h2>
+            <h3>My Portfolio</h3>
+          </div>
+          <div class="divider"></div>
+          <!-- portfolio balance section-->
+          <div class="crypto-balance-add-withdraw">
+            <div class="balence-div">
+              <p>portfolio balance</p>
+              <span id="crypto-portfolio-balance">0.00</span>
+            </div>
+            <!-- withdraw and deposite buttons-->
+            <div>
+              <button class="add-funds-button" id="add-crypto-funds-btn">
+                Add Funds</button
+              ><button class="withdraw-button" id="withdraw-crypto-btn">
+                Withdraw
+              </button>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="coins-grid-container" id="crypto-grid-container"></div>
+          <div class="deposit-container" id="add-funds-container">
+            <h2>Add Funds</h2>
+            <label for="deposit-amount">Enter Amount to Deposit: </label>
+            <input
+              type="text"
+              id="deposit-amount"
+              placeholder="0,00"
+              readonly
+            />
+            <!-- Number keypad -->
+            <div class="keypad">
+              <button class="key" data-value="1">1</button>
+              <button class="key" data-value="2">2</button>
+              <button class="key" data-value="3">3</button>
+              <button class="key" data-value="4">4</button>
+              <button class="key" data-value="5">5</button>
+              <button class="key" data-value="6">6</button>
+              <button class="key" data-value="7">7</button>
+              <button class="key" data-value="8">8</button>
+              <button class="key" data-value="9">9</button>
+              <button class="key" data-value="0">0</button>
+              <button class="key" id="clear">Clear</button>
+              <button class="key" id="submit">Deposit</button>
+            </div>
+            <p id="deposit-feedback"></p>
+            <button id="close-add-crypto-funds-btn">Close</button>
+          </div>
+        </div>
+      </div>
+      <!-- CRYPTO INVESTMENT SECTION ENDS -->
+      <!----------------------------------------------------------->
     </div>
     <!--    FULL GAME CONTAINER ENDS    -->
 

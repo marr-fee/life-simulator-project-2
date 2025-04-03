@@ -36,9 +36,15 @@ export const Player = {
   financialStats: {
     investments: 0,
     accountBalance: 0,
-    financialStatus: "", 
-    employmentStatus: "Unemployed"
+    financialStatus: ""
   },
+  Possessions: {
+    playerHasHome: false,
+    playerHasCar: false
+  },
+  employmentStatus: {
+    playerHasJob: false
+  }
 }
 
 // Arrays of male and female names
@@ -113,6 +119,7 @@ export function saveSelectedBelief(){
     gameContainer.style.background = "rgb(255, 255, 255)"; // Change background color of the game container
     gameContainer.style.justifyContent = "flex-start";  // Change display of the game container to start the grid at the top
     gameMainNavMenuDiv.style.display = "flex"; // Display of top page nav section to flex
+    gameMainNavMenuDiv.style.zIndex = "5"; // Display of top page nav section at all times
     gamePlayContainer.style.display = "flex";  // Display of main UI page nav section to flex
     resumeTime();
     updatePlayerStats();

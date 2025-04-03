@@ -26,6 +26,7 @@ export function updateFinance(){
      else if (Player.financialStats.financialStatus === "Rich")
       Player.financialStats.accountBalance = 5000;
      else Player.financialStats.accountBalance = 50000;
+     Player.socialStats.selfEsteem += 20;
     
   
     accountBalanceSpan.innerText = `$${Player.financialStats.accountBalance}`;

@@ -4,6 +4,7 @@ import { navigateMenus, menuHistory } from "./menu-navigation.js";
 import { gameContainer, gameMainNavMenuDiv, gridContainer, menuTitle } from "./DOM.js";
 import { openRockPaperScissors } from "./R-P-S/rps-functions.js";
 import { openTikTacToeGame } from "./Tic-Tac-Toe/main-tik-tac-toe.js";
+import { openCryptoPage } from "./investments/crypto/cryptoFunctions.js";
 
 
 export function updateMenus(menuTag){
@@ -72,6 +73,10 @@ export function updateMenus(menuTag){
       }else if (branch.tag === "Tik Tak Toe"){
         gridItem.addEventListener('click', () => {
           openTikTacToeGame();
+        });
+      }else if (branch.tag === "Crypto Exchange"){
+        gridItem.addEventListener('click', () => {
+          openCryptoPage();
         });
       } else {
       gridItem.addEventListener('click', () => navigateMenus(branch.tag));

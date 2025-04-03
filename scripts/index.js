@@ -9,4 +9,8 @@ export * from "./menu-navigation.js";
 export * from "./R-P-S/main-rps-script.js";
 export * from "./R-P-S/rps-DOM.js";
 export * from "./R-P-S/rps-functions.js";
-export * from "./Tic-Tac-Toe/main-tik-tac-toe.js"
+export * from "./Tic-Tac-Toe/main-tik-tac-toe.js";
+export * from "./investments/crypto/crypto-index.js";
+export * from "./investments/crypto/crypto-DOM.js";
+export * from "./investments/crypto/cryptoFunctions.js";
+export * from "./close-apps-btn.js";

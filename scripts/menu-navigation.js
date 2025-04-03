@@ -26,7 +26,6 @@ export function navigateMenus(menu){
     menuHistory.push(menu);
     updateMenus(menu);
 
-    console.log(menuHistory)
   }
   
 }
