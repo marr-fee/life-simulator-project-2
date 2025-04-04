@@ -1,0 +1,114 @@
+
+.calculator-holder{
+  display: none;
+  background-color: rgba(0, 0, 0, 0.863);
+  width: 45%;
+  height: 430px;
+  border: 3px solid black;
+  border-radius: 30px;
+  flex-direction: column;
+  padding: 0 5px;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.226);
+}
+
+.calculator-holder h3{
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 5px;
+  text-decoration: underline;
+  color: rgba(150, 148, 148, 0.822);
+}
+
+.calculator-display-screen{
+  width: 100%;
+  height: 100px;
+  background-color: yellowgreen;
+  margin-top: 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.226);
+  position: relative;
+  padding: 0;
+}
+.calc-display-screen-top, .calc-display-screen-bottom{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.calc-display-screen-top{
+  height: 30%;
+}
+.calc-display-screen-bottom{
+  height: 70%;
+}
+
+.calc-display-screen-bottom input{
+  padding: 0 5px;
+  font-size: 35px;
+  display: block;
+  width: 97%;
+  margin: 0 auto;
+  height: 100%;
+  font-weight: bold;
+  color: black;
+  border: none;
+  text-align: right;
+  background: none;
+}
+
+.calc-display-screen-top input{
+  padding: 3px 5px;
+  font-size: 14px;
+  display: block;
+  width: 97%;
+  margin: 0 auto;
+  height: 100%;
+  color: rgba(0, 0, 0, 0.863);
+  border: none;
+  text-align: right;
+  background: none;
+}
+
+.calc-buttons-container{
+  width: 100%;
+  margin: 15px auto;
+  text-align: center;
+}
+
+.calc-buttons-container button{
+  width: 55px;
+  padding: 10px;
+  margin: 5px auto;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.226);
+  border-radius: 5px;
+}
+
+.calc-clear-button{
+  display: block !important;
+  width: 60% !important;
+  background-color: rgba(87, 33, 33, 0.726);
+  color: white;
+  margin-left: 6px !important;
+}
+
+.calc-eval-btn{
+  background-color: rgba(4, 90, 40, 0.63);
+  color: white;
+}
+
+.calc-clear-button:hover{
+  background-color: red;
+  cursor: pointer;
+}
+.calc-eval-btn:hover{
+  background-color: rgba(0, 0, 0, 0.808);
+  cursor: pointer;
+}

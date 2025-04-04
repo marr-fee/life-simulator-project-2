@@ -5,6 +5,7 @@ import { gameContainer, gameMainNavMenuDiv, gridContainer, menuTitle } from "./D
 import { openRockPaperScissors } from "./R-P-S/rps-functions.js";
 import { openTikTacToeGame } from "./Tic-Tac-Toe/main-tik-tac-toe.js";
 import { openCryptoPage } from "./investments/crypto/cryptoFunctions.js";
+import { openCalculatorApp } from "./calculator/calculator.js";
 
 
 export function updateMenus(menuTag){
@@ -78,6 +79,10 @@ export function updateMenus(menuTag){
         gridItem.addEventListener('click', () => {
           openCryptoPage();
         });
+      }else if (branch.tag === "Calculator"){
+        gridItem.addEventListener('click', () => {
+          openCalculatorApp();
+        });
       } else {
       gridItem.addEventListener('click', () => navigateMenus(branch.tag));
       }
@@ -93,3 +98,4 @@ export function updateMenus(menuTag){
   }
 
 }
+

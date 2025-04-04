@@ -38,7 +38,7 @@ export const menus = {
       { tag: "Online Bank", image: "images/icons8-bank-48.png"},
       { tag: "Games", image: "images/icons8-games-50.png"},
       { tag: "Calculator", image: "images/calculator.png"},
-      { tag: "Job Search", image: "" }
+      { tag: "Job Search", image: "images/job.png" }
     ]
   },
   Investments: {
@@ -62,6 +62,7 @@ export const menus = {
   Doctor: {
     title: "Doctor",
     branches: JobsList.Doctor.branches
+    
   }
 
 }

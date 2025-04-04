@@ -48,7 +48,7 @@ export function closeCryptoPage(){
   cryptoPageContainer.style.display = "none";
   cryptoWelcomePage.style.display = "none";
   cryptoMainPage.style.display = "none";
-  updateMenus("Investments");
+
   };
   
 export function openAddFundsDiv(){

@@ -73,7 +73,7 @@
   align-items: center;
 }
 
-.exit-app-buttonn{
+.exit-app-button{
   display: none;
   justify-content: center;
   align-items: center;
@@ -82,13 +82,17 @@
   position: absolute;
   left: 5px;
   top: 35px;
-  z-index: 6;
+  z-index: 8;
   color: white;
   border: 1px solid rgb(253, 253, 253);
   padding: 5px 15px;
   background-color: rgba(255, 0, 0, 0.733);
 }
 
+.exit-app-button:hover{
+  background-color: rgba(255, 0, 0, 0.973);
+  cursor: pointer;
+}
 .head-section{
   text-align: center;
   margin-top: 30px;
@@ -234,7 +238,13 @@
   background-color: #cac6c6;
   font-size: 30px;
 }
-
+#crypto-options{
+  padding: 2px 7px;
+  border: none;
+  font-size: 12px;
+  border-radius: 2px;
+  margin-left: 5px;
+}
 
 /* Styling the number keypad */
 .keypad {

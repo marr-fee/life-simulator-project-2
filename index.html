@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="scripts\R-P-S\rps-styles.css" />
     <link rel="stylesheet" href="scripts\Tic-Tac-Toe\tik-tac-toe.css" />
     <link rel="stylesheet" href="scripts\investments\crypto\crypto.css" />
+    <link rel="stylesheet" href="scripts\calculator\calculator-style.css" />
   </head>
   <body>
     <!--FULL GAME CONTAINER-->
@@ -301,6 +302,8 @@
       <!-- TIK TAC TOE GAME SECTION ENDS-->
       <!----------------------------------------------------------->
       <!-- CRYPTO INVESTMENT SECTION STARTS -->
+      <button class="exit-app-button" id="exit-app-btn">Exit</button>
+
       <div class="crypto-ex-container" id="crypto-container">
         <div class="crypto-ex-welcome-page" id="crypto-welcome-page">
           <div class="welcome-page-text">
@@ -311,7 +314,7 @@
         </div>
 
         <!--main crypto page-->
-        <button class="exit-app-buttonn" id="exit-app-btn">Exit</button>
+
         <div class="crypto-ex-main-page" id="crypto-main-page">
           <div class="head-section">
             <h2>Crypto Exchange</h2>
@@ -337,15 +340,47 @@
           <div class="divider"></div>
 
           <div class="coins-grid-container" id="crypto-grid-container"></div>
+          <!--DEPOSIT CONTAINER-->
           <div class="deposit-container" id="add-funds-container">
             <h2>Add Funds</h2>
             <label for="deposit-amount">Enter Amount to Deposit: </label>
             <input
               type="text"
               id="deposit-amount"
-              placeholder="0,00"
+              placeholder="$0.00"
               readonly
             />
+            <div class="coin-choice-div">
+              <label for="crypto-options"
+                >Choose crypto to buy:
+                <select name="crypto-options" id="crypto-options">
+                  <option value="maf">
+                    MAF
+                    <p id="coin-price">$23440</p>
+                  </option>
+                  <option value="slt">
+                    SLT
+                    <p id="coin-price">$2090</p>
+                  </option>
+                  <option value="vlk">
+                    VLK
+                    <p id="coin-price">$67000</p>
+                  </option>
+                  <option value="swl">
+                    SWL
+                    <p id="coin-price">$72.4</p>
+                  </option>
+                  <option value="oli">
+                    OLI
+                    <p id="coin-price">$2.33</p>
+                  </option>
+                  <option value="osb">
+                    OSB
+                    <p id="coin-price">$22.45</p>
+                  </option>
+                </select>
+              </label>
+            </div>
             <!-- Number keypad -->
             <div class="keypad">
               <button class="key" data-value="1">1</button>
@@ -367,6 +402,66 @@
         </div>
       </div>
       <!-- CRYPTO INVESTMENT SECTION ENDS -->
+      <!----------------------------------------------------------->
+
+      <!-- CALCULATOR SECTION STARTS -->
+
+      <div class="calculator-holder" id="calculator-container">
+        <h3>Marr+fee=</h3>
+        <!-- CALCULATOR SCREEN-->
+        <div class="calculator-display-screen">
+          <div class="calc-display-screen-top">
+            <input type="text" id="calculator-screen-top" readonly />
+          </div>
+          <div class="calc-display-screen-bottom">
+            <input
+              type="text"
+              placeholder="0"
+              id="calculator-screen-bottom"
+              readonly
+            />
+          </div>
+        </div>
+        <!--CALCULATOR KEYS-->
+        <div class="calc-buttons-container">
+          <button class="calculator-button" data-value="1">1</button>
+          <button class="calculator-button" data-value="2">2</button>
+          <button class="calculator-button" data-value="3">3</button>
+          <button class="calculator-button" data-value=" + ">+</button>
+          <br />
+
+          <button class="calculator-button" data-value="4">4</button>
+          <button class="calculator-button" data-value="5">5</button>
+          <button class="calculator-button" data-value="6">6</button>
+          <button class="calculator-button" data-value=" - ">-</button>
+          <br />
+
+          <button class="calculator-button" data-value="7">7</button>
+          <button class="calculator-button" data-value="8">8</button>
+          <button class="calculator-button" data-value="9">9</button>
+          <button class="calculator-button" data-value=" * ">*</button>
+          <br />
+
+          <button class="calculator-button" data-value="0">0</button>
+          <button class="calculator-button" data-value=".">.</button>
+
+          <button class="calculator-button" data-value=" / ">/</button>
+          <button class="calc-eval-btn calculator-button" data-value=" = ">
+            =
+          </button>
+          <br />
+
+          <button
+            class="calc-clear-button calculator-button"
+            data-value="clear"
+          >
+            Clear
+          </button>
+        </div>
+      </div>
+
+      <!-- CALCULATOR SECTION ENDS -->
+
       <!----------------------------------------------------------->
     </div>
     <!--    FULL GAME CONTAINER ENDS    -->
