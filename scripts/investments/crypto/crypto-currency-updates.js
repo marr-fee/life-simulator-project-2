@@ -10,29 +10,24 @@ export function geteRandomCryptoChangeValue(){
 
 
   if (randomCryptoChange >= 1 && randomCryptoChange < 10)
-    updateCryptoPrices(0.001, 0.005);
+    updateCryptoPrices(0.0002, 0.0004);
     
   else if (randomCryptoChange >= 10 && randomCryptoChange < 40)
-    updateCryptoPrices(0.0001, 0.0005);
+    updateCryptoPrices(0.00008, 0.00009);
     
   else if (randomCryptoChange >= 40 && randomCryptoChange < 41)
-    updateCryptoPrices(0.01, 0.05); // 10% 50%
+    updateCryptoPrices(0.001, 0.005); // 10% 50%
     
   else if (randomCryptoChange >= 41 && randomCryptoChange < 80)
-    updateCryptoPrices(0.00002, 0.00007);
+    updateCryptoPrices(0.000002, 0.000007);
     
   else if (randomCryptoChange >= 80 && randomCryptoChange < 99)
-    updateCryptoPrices(0.005, 0.009);
+    updateCryptoPrices(0.0005, 0.0009);
 
     else
-    updateCryptoPrices(0.3, 0.9);
+    updateCryptoPrices(0.03, 0.09);
 
   updateCryptoPortfolioBalance();
-  //console.log(Player.cryptoHoldings);
-  //console.log(cryptos.pricePerUnit);
-  //console.log(cryptos.previousPrice);
-  //console.log(cryptos.percentChange);
-  //console.log(currentPrice);
   
 }
 
@@ -57,10 +52,10 @@ function initializePreviousPrices() {
 // Update every second
 setInterval(() => {
   // update your clock display or app state here
-
+  initializePreviousPrices();
   const storedData = JSON.parse(localStorage.getItem("previousPrice"));
   const now = Date.now();
-  const twentyFourHours = 24 * 60 * 60 * 1000;
+  const twentyFourHours = 60 * 1000;
 
   cryptos.forEach(crypto => {
     const prevData = storedData[crypto.abbriviation];
@@ -78,8 +73,9 @@ setInterval(() => {
 
       // Optionally update your DOM element here
       const percentChangeElement = document.querySelector(`#change-${crypto.abbriviation}`);
-      if (changeElement) {
-        percentChangeElement.textContent = `${percentChange.toFixed(2)}%`;
+      if (percentChangeElement) {
+        percentChange > 0 ? percentChangeElement.innerHTML = `+${percentChange.toFixed(2)}%` :
+        percentChangeElement.innerHTML = `${percentChange.toFixed(2)}%`;
         percentChangeElement.style.backgroundColor = percentChange < 0 ? "red" : "green";
         percentChangeElement.style.color = percentChange < 0 ? "white" : "white";
       }

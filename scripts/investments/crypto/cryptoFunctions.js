@@ -32,8 +32,8 @@ function updateCoinsOnCryptoPage(){
   gridItems = cryptos.map((crypto) => {
     return `<div class="crypto-grid-items">
     <div class="crypto-title">${crypto.abbriviation}<span>/USDC</span></div>
-    <div class="${crypto.name}-last-price">$${crypto.pricePerUnit.toFixed(2)}</div>
-    <div class="crypto-24hr-change"><span id="change-${crypto.abbriviation}"></span>${crypto.twentyFourHourChange.toFixed(2)}%</div>
+    <div class="${crypto.name}-last-price prices">$${crypto.pricePerUnit.toFixed(2)}</div>
+    <div class="crypto-24hr-change" id="change-${crypto.abbriviation}"><span>${crypto.twentyFourHourChange.toFixed(2)}%</span></div>
     </div>`
   })
 
@@ -72,5 +72,11 @@ export function closeAddFundsDiv(){
   addCryptoFundsContainer.style.display = "none";
   depositAmountField.value = '';  // Clear the input field
   depositFeedback.textContent = ''; // Clear feedback
+}
+
+export function formatCryptoAmount(amount) {
+  return amount < 1
+    ? amount.toLocaleString(undefined, { minimumFractionDigits: 5, maximumFractionDigits: 8 })
+    : amount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 

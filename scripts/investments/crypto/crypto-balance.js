@@ -4,6 +4,7 @@ import { accountBalanceSpan } from "../../DOM.js";
 import { Player } from "../../player-stats.js";
 import { depositBtn, depositAmountField, depositFeedback, clearBtn, cryptoPortfolioBalanceSpan } from "./crypto-DOM.js";
 import { cryptos } from "./crypto-index.js";
+import { formatCryptoAmount } from "./cryptoFunctions.js";
 
 
 
@@ -50,10 +51,13 @@ depositBtn.addEventListener('click', () => {
 
     Player.cryptoHoldings[selectedCrypto.abbriviation] += unitsBought;
 
-    
- 
+    // display for 3 seconds
     depositFeedback.textContent = `You have successfully deposited $${depositAmount.toFixed(2)}${selectedCrypto.abbriviation}.`;
-    depositFeedback.style.color = "green";
+      depositFeedback.style.color = "green";
+    // clear display after 3s
+    setTimeout(()=>{
+      depositFeedback.textContent = '';
+    },3000)
     depositAmountField.value = ''; // Clear input field after deposit
     Player.financialStats.accountBalance -= Number(depositAmount);
     cryptoBanalce += Number(depositAmount) 
@@ -98,6 +102,10 @@ export function updateCryptoPortfolioBalance() {
   cryptos.forEach(crypto => {
     const coinAbbr = crypto.abbriviation; // Get coin abbreviation (e.g., "MAF", "SLT", etc.)
     const amountHeld = Player.cryptoHoldings[coinAbbr] || 0; // Get how much of this coin the player owns
+
+    const formattedAmountHeld = amountHeld < 1
+      ? amountHeld.toLocaleString(undefined, { minimumFractionDigits: 5, maximumFractionDigits: 8 })
+      : units.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
     // Add the value of this holding to the total (amount * current price)
     totalBalance += amountHeld * crypto.pricePerUnit;

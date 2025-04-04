@@ -34,5 +34,6 @@ submitPlayerStatBtn.addEventListener('click', () => {
 
   // FUNCTIONS to run on click
   saveSelectedBelief();
+
   
 })

@@ -94,7 +94,11 @@ export function updateMenus(menuTag){
     gameContainer.style.overflowY = "scroll";
     gameContainer.style.scrollbarWidth = "thin";
     gameMainNavMenuDiv.style.position = "sticky";
-    gameMainNavMenuDiv.style.marginBottom = "-25px"
+    gameMainNavMenuDiv.style.marginBottom = "-25px";
+  } else {
+    gameContainer.style.overflowY = "hidden";
+    gameContainer.style.scrollbarWidth = "none";
+    gameMainNavMenuDiv.style.position = "sticky";
   }
 
 }

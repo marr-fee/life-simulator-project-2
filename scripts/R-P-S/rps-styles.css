@@ -208,14 +208,14 @@
   transition: background-color 0.3s ease;
 }
 
-.exit-rps-btn{
+.exit-rps-btn, .exit-app-btn{
   display: none;
   justify-content: center;
   align-items: center;
   font-size: 12px;
   font-weight: bold;
   position: absolute;
-  left: 0;
+  left: 2px;
   top: 35px;
   z-index: 6;
   color: white;
