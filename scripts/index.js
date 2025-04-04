@@ -13,6 +13,8 @@ export * from "./Tic-Tac-Toe/main-tik-tac-toe.js";
 export * from "./investments/crypto/crypto-index.js";
 export * from "./investments/crypto/crypto-DOM.js";
 export * from "./investments/crypto/cryptoFunctions.js";
+export * from "./investments/crypto/crypto-currency-updates.js";
+export * from "./investments/crypto/crypto-balance.js";
 export * from "./close-apps-btn.js";
 export * from "./calculator/calculator-DOM.js";
 export * from "./calculator/calculator.js";

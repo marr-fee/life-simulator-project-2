@@ -4,12 +4,12 @@ import { closeAddFundsDiv, openAddFundsDiv } from "./cryptoFunctions.js"
 
 
 export const cryptos = [
-  { name: "Marrfeecoin", abbriviation: "MAF", "Price per unit": 23440, isCoinStable: true },
-  { name: "Starlight", abbriviation: "SLT", "Price per unit": 2090, isCoinStable: true },
-  { name: "Volkancoin", abbriviation: "VLK", "Price per unit": 67000, isCoinStable: true },
-  { name: "Leroyswitch", abbriviation: "SWL", "Price per unit": 72.4, isCoinStable: false },
-  { name: "Oliviacoin", abbriviation: "OLI", "Price per unit": 2.33, isCoinStable: false },
-  { name: "Osagiebucks", abbriviation: "OSB", "Price per unit": 22.45, isCoinStable: false }
+  { name: "Marrfeecoin", abbriviation: "MAF", pricePerUnit: 25440, twentyFourHourChange: 0.00 },
+  { name: "Starlight", abbriviation: "SLT", pricePerUnit: 2390, twentyFourHourChange: 0.00 },
+  { name: "Volkancoin", abbriviation: "VLK", pricePerUnit: 67060, twentyFourHourChange: 0.00 },
+  { name: "Leroyswitch", abbriviation: "SWL", pricePerUnit: 72.4, twentyFourHourChange: 0.00 },
+  { name: "Oliviacoin", abbriviation: "OLI", pricePerUnit: 2.43, twentyFourHourChange: 0.00 },
+  { name: "Osagiebucks", abbriviation: "OSB", pricePerUnit: 22.45, twentyFourHourChange: 0.00 }
 ]
 
 addFundsCryptoBtn.addEventListener('click', ()=>{

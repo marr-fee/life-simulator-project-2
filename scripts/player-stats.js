@@ -4,6 +4,7 @@ import { playerNameSpan, accountBalanceSpan, nameSpan, genderSpan, financialStat
 import { updateFaith, updateFinance } from "./stat-update-func.js";
 import { updateMenus } from "./menu-update.js";
 import { resumeTime } from "./time.js";
+import { cryptos } from "./investments/crypto/crypto-index.js";
 
 
 
@@ -36,8 +37,10 @@ export const Player = {
   financialStats: {
     investments: 0,
     accountBalance: 0,
-    financialStatus: ""
+    financialStatus: "",
+    cryptoBalance: 0
   },
+  cryptoHoldings: {},
   Possessions: {
     playerHasHome: false,
     playerHasCar: false
@@ -47,6 +50,9 @@ export const Player = {
   }
 }
 
+cryptos.forEach(crypto => {
+  Player.cryptoHoldings[crypto.abbriviation] = 0;
+});
 // Arrays of male and female names
 export const maleNames = [
   'James', 'John', 'Robert', 'Michael', 'William', 'David', 'Joseph', 'Charles', 'Thomas', 'Daniel',

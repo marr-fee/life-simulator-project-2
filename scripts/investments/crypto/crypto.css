@@ -160,7 +160,7 @@
 
 .crypto-grid-items{
   display: grid;
-  grid-template-columns: 6fr 1fr 1fr;
+  grid-template-columns: 4fr 1fr 1fr;
   padding: 5px 5px 5px 10px;
   width: 100%;
   min-width: 100%;
@@ -198,6 +198,7 @@
   text-align: center;
   border: none;
   margin-right: 10px;
+  margin-left: 10px;
   font-size: 10px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.247);
