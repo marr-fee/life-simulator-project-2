@@ -2,6 +2,7 @@
 import { pickRandomComputerMove, updateResults, continueGameBtn, startNextRound, resetGame, playerScore, computerScore, roundCount, closeRockPaperScissors } from "./rps-functions.js";
 
 import { nextMoveButton, restartGame, roundOverDisplay, gameFinalOutcome, congratulationMsg, continuPlaying, nextRoundButton, updatePlayerRoundScore, updateComputerRoundScore, updateFinalPlayerScore, updateFinalComputerScore, startGameAgain, leaveGameBtns } from "./rps-DOM.js";
+import { Player } from "../player-stats.js";
 
 export let playerRoundScore = 0;
 export let computerRoundScore = 0;
@@ -26,6 +27,7 @@ export function playRockPaperScissors(){
     updateResults(playerMove, computerMove);
   
     if (playerScore === 10 && computerScore < 10){
+      Player.personalStats.moral++;
       roundOverDisplay.innerHTML = `<strong>Round ${roundCount} Over!</strong>`;
       playerRoundScore++;
       updatePlayerRoundScore.innerText = playerRoundScore;
@@ -40,6 +42,7 @@ export function playRockPaperScissors(){
       startGameAgain.style.display = "none";
   
     } else if (playerScore < 10 && computerScore === 10) {
+      Player.personalStats.moral--;
       roundOverDisplay.innerHTML = `<strong>Round ${roundCount} Over!</strong>`;
       computerRoundScore++;
       updateComputerRoundScore.innerText = computerRoundScore;

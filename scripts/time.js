@@ -2,6 +2,7 @@
 
 // To handle all time related functions
 
+import { getCryptoAllTimeHigh, getCryptoAllTimeLow } from "./investments/crypto/cryptoFunctions.js";
 import { Player } from "./player-stats.js";
 import { autoStatUpdatePerHour } from "./stat-update-func.js";
 
@@ -51,6 +52,8 @@ export function startTime() {
       hours++;
       minutes = 0;
       autoStatUpdatePerHour();
+      getCryptoAllTimeHigh();
+      getCryptoAllTimeLow();
     };
 
     // Update greeting based on time of day

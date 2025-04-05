@@ -21,9 +21,6 @@
     <!--    START     -->
 
     <div class="game-container" id="main-game-container">
-      <div class="exit-rps-btn" id="rps-exit-btn">
-        <img src="images\back.png" alt="exit icon" />EXIT
-      </div>
       <!--INTRO PAGE-->
       <div class="game-details" id="game-detail">
         <h1>Born Again</h1>
@@ -139,7 +136,9 @@
       <!--GAMEPLAY MENUS CONTAINER ENDS-->
       <!----------------------------------------------------------->
       <!-- ROCK PAPER SCISSORS GAME SECTION STARTS -->
-
+      <div class="exit-rps-btn" id="rps-exit-btn">
+        <img src="images\back.png" alt="exit icon" />EXIT
+      </div>
       <div class="r-p-s-container" id="roc-pap-sci-div">
         <!-- Game title heading -->
         <h1>ROCK PAPER SCISSORS!</h1>
@@ -362,11 +361,10 @@
                   <option value="SWL">Leroyswitch (SWL)</option>
                   <option value="OLI">Oliviacoin (OLI)</option>
                   <option value="OSB">Osagiebucks (OSB)</option>
-                  <option value="MXD">Moxillad (MXD)</option>
-                  <option value="ZAX">Zapplex (ZAX)</option>
                 </select>
               </label>
             </div>
+            <p id="deposit-feedback"></p>
             <!-- Number keypad -->
             <div class="keypad">
               <button class="key" data-value="1">1</button>
@@ -382,7 +380,7 @@
               <button class="key" id="clear">Clear</button>
               <button class="key" id="submit">Deposit</button>
             </div>
-            <p id="deposit-feedback"></p>
+
             <button id="close-add-crypto-funds-btn">Close</button>
           </div>
         </div>

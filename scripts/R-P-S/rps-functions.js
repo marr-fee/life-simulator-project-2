@@ -1,9 +1,10 @@
 import { updateRoundCount, updatePlayerRoundScore, updateComputerRoundScore, updatePlayerScore, updateComputerScore, updateMessage, updateFinalPlayerScore, updateFinalComputerScore, continueGame, startGameAgain, gamePlayButton, leaveGameBtns } from "./rps-DOM.js"
 
-import { rockPaperScissorsDiv, gridContainer, menuTitle, gamePlayContainer } from "../DOM.js";
+import { rockPaperScissorsDiv, gridContainer, menuTitle, gamePlayContainer, gameMainNavMenuDiv } from "../DOM.js";
 
 import { playRockPaperScissors} from "./main-rps-script.js";
 import { updateMenus } from "../menu-update.js";
+import { menuHistory } from "../menu-navigation.js";
 
 
 
@@ -18,6 +19,7 @@ export function openRockPaperScissors(){
   menuTitle.style.display = "none";
   gamePlayContainer.style.paddingTop = "10px";
   leaveGameBtns.style.display = "flex";
+  gameMainNavMenuDiv.style.marginBottom = "-30px"
 
   playRockPaperScissors();
 }
@@ -28,7 +30,7 @@ export function closeRockPaperScissors(){
   gamePlayContainer.style.paddingTop = "45px";
   menuTitle.style.display = "block";
   leaveGameBtns.style.display = "none";
-  updateMenus("Games");
+  updateMenus(menuHistory[menuHistory.length -1]);
 }
 
 export function pickRandomComputerMove(){

@@ -23,7 +23,8 @@ export const Player = {
     criminality: 0,
     faith: 50,
     popularity: 1,
-    influence: 1
+    influence: 1,
+    moral: 50,
   },
 
   // Grouped social stats

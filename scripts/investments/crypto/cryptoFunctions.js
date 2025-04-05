@@ -54,13 +54,26 @@ export function updateCryptoPrices(minChange, maxChange){
 
     const change = Math.random() * (maxChange - minChange) + minChange;
     const randomChange = Math.random() < 0.5 ? -change : change;
+
+    const previousPrice = crypto.pricePerUnit;
     crypto.pricePerUnit *= (1 + randomChange);
+
+     // Push the new price into the priceHistory array
+     crypto.priceHistory.push(crypto.pricePerUnit);
+
+     if (crypto.priceHistory.length > 20) {
+      crypto.priceHistory.shift(); // Remove the oldest price when the array exceeds 100
+    }
+    
     const priceUpdateElement = document.querySelector(`.${crypto.name}-last-price`)
     if (priceUpdateElement){
       priceUpdateElement.textContent = `$${crypto.pricePerUnit.toFixed(2)}`;
     }
+    
   });
+
 }
+
   
 export function openAddFundsDiv(){
   addCryptoFundsContainer.style.display = "flex";
@@ -80,3 +93,68 @@ export function formatCryptoAmount(amount) {
     : amount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
+export function clearCryptoTransacFeedbackMessage(){
+  // clear display after 3s
+  setTimeout(()=>{
+    depositFeedback.textContent = '';
+  },3000)
+}
+
+export function getCryptoAllTimeHigh() {
+  // Retrieve existing data from localStorage, or initialize as empty if not available
+  const storedData = JSON.parse(localStorage.getItem("cryptoAllTimeHighs")) || {};
+
+  // Loop through each crypto
+  cryptos.forEach((crypto) => {
+    // Initialize all-time high from localStorage or set it to current price if not found
+    let allTimeHigh = storedData[crypto.abbriviation] || crypto.pricePerUnit;
+
+    // Logic to track price changes over time
+    crypto.priceHistory.forEach((price) => {
+      if (price > allTimeHigh) {
+        allTimeHigh = price; // Update all-time high if new higher price found
+      }
+    });
+
+    // Update stored data with the new all-time high for the specific crypto
+    storedData[crypto.abbriviation] = allTimeHigh;
+  });
+
+  // Save the updated data back to localStorage once, after the loop finishes
+  localStorage.setItem("cryptoAllTimeHighs", JSON.stringify(storedData));
+
+  // Log all-time highs for all cryptos
+  cryptos.forEach((crypto) => {
+    const allTimeHigh = storedData[crypto.abbriviation] || crypto.pricePerUnit;
+   // console.log(`All-Time High for ${crypto.name}: $${allTimeHigh.toFixed(2)}`);
+  });
+}
+
+export function getCryptoAllTimeLow() {
+  // Retrieve stored all-time lows from localStorage or initialize if not present
+  const storedData = JSON.parse(localStorage.getItem("cryptoAllTimeLows")) || {};
+
+  // Loop through each crypto
+  cryptos.forEach((crypto) => {
+    // Get the current all-time low from stored data or the current price if not available
+    let allTimeLow = storedData[crypto.abbriviation] || crypto.pricePerUnit;
+
+    // Loop through the price history and find the minimum price (all-time low)
+    crypto.priceHistory.forEach((price) => {
+      if (price < allTimeLow) {
+        allTimeLow = price;
+      }
+    });
+
+    // Update stored data with the new all-time low for this crypto
+    storedData[crypto.abbriviation] = allTimeLow;
+  });
+
+  // Save the updated all-time lows back to localStorage once, after the loop finishes
+  localStorage.setItem("cryptoAllTimeLows", JSON.stringify(storedData));
+
+  // Log all-time lows for all cryptos
+  cryptos.forEach((crypto) => {
+    const allTimeLow = storedData[crypto.abbriviation] || crypto.pricePerUnit;
+  });
+}

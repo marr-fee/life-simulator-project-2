@@ -46,7 +46,10 @@ export function updateCalculation(operator) {
   
         // Show expression up top, result at the bottom
         calcScreenTop.value = expression;
-        calcScreenBottom.value = result;
+        calcScreenBottom.value = Number(result).toLocaleString(undefined, {
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 8
+        });
   
         // Save result if needed
         calculation = result.toString();
