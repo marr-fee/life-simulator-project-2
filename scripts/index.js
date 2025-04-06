@@ -18,3 +18,6 @@ export * from "./investments/crypto/crypto-balance.js";
 export * from "./close-apps-btn.js";
 export * from "./calculator/calculator-DOM.js";
 export * from "./calculator/calculator.js";
+export * from "./houses/house-list.js";
+export * from "./houses/housing-homepage.js"
+export * from "./houses/housing-functions.js"

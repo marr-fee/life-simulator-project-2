@@ -1,8 +1,8 @@
-// To handle eventlisteners
+// To handle game startup eventlisteners
 import { gameIntroPage, startLifeBtn, buttonSpan, gameContainer, welcomeDiv, nextPageBtn1, submitPlayerStatBtn, gamePlayContainer } from "./DOM.js";
+import { updateCryptoPrices } from "./investments/crypto/cryptoFunctions.js";
 
 import { saveSelectedBelief, updatePlayerStats, getRandomPlayerStats } from "./player-stats.js";
-
 
 
 // Event listener for continue button
@@ -31,9 +31,7 @@ startLifeBtn.addEventListener('click', () => {
 
 // Event listener for the submit player stats button which also starts the time
 submitPlayerStatBtn.addEventListener('click', () => {
-
-  // FUNCTIONS to run on click
+  // FUNCTION to run on click
   saveSelectedBelief();
-
-  
+  updateCryptoPrices
 })

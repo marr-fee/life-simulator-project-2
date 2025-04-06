@@ -19,7 +19,7 @@ export function openCryptoPage(){
 
 }
 
-function updateCoinsOnCryptoPage(){
+export function updateCoinsOnCryptoPage(){
   
   let currentGridItems = `<div class="crypto-grid-items">
     <div class="crypto-titles">Coins<span>/USDC</span></div>
@@ -122,12 +122,6 @@ export function getCryptoAllTimeHigh() {
 
   // Save the updated data back to localStorage once, after the loop finishes
   localStorage.setItem("cryptoAllTimeHighs", JSON.stringify(storedData));
-
-  // Log all-time highs for all cryptos
-  cryptos.forEach((crypto) => {
-    const allTimeHigh = storedData[crypto.abbriviation] || crypto.pricePerUnit;
-   // console.log(`All-Time High for ${crypto.name}: $${allTimeHigh.toFixed(2)}`);
-  });
 }
 
 export function getCryptoAllTimeLow() {

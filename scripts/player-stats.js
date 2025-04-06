@@ -44,7 +44,9 @@ export const Player = {
   cryptoHoldings: {},
   Possessions: {
     playerHasHome: false,
-    playerHasCar: false
+    playerHasCar: false,
+    ownedHousingProperties: [],
+    monthlyRent: []
   },
   employmentStatus: {
     playerHasJob: false

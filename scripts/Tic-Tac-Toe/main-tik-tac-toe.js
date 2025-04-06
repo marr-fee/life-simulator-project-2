@@ -15,15 +15,6 @@ export function openTikTacToeGame(){
 
 }
 
-export function closeTikTacToeGame(){
-  tikTacToeDiv.style.display = "none";
-  gridContainer.style.display = "grid";
-  gamePlayContainer.style.paddingTop = "45px";
-  menuTitle.style.display = "block";
-  leaveGameBtns.style.display = "none";
-  updateMenus("Games");
-}
-
 export const tikTacToeDiv = document.getElementById('tik-tac-toe-div')
 const board = document.getElementById('board');
 const cells = document.querySelectorAll('.cell');
@@ -99,6 +90,14 @@ export function playTikTacToeGame(){
   
 }
 
+export function closeTikTacToeGame(){
+  tikTacToeDiv.style.display = "none";
+  gridContainer.style.display = "grid";
+  gamePlayContainer.style.paddingTop = "45px";
+  menuTitle.style.display = "block";
+  leaveGameBtns.style.display = "none";
+  updateMenus("Games");
+}
   leaveGameBtns.addEventListener('click', () => {
     closeTikTacToeGame();
   })

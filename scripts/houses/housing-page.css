@@ -1,0 +1,322 @@
+
+
+.housing-page-container{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  overflow: hidden;
+}
+
+.housing-app-welcome-page{
+  font-family: "Lobster", serif;
+  color: #2b2323;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 10px;
+  background-image: url("images/three-bed-apt.jpg");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: zoomIn 0.5s ease-in-out;
+}
+.housing-app-welcome-page h1{
+  font-size: 38px;
+}
+.housing-app-welcome-page img{
+  width: 100px;
+  height: 100px;
+}
+
+.housing-webpage{
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  color: black;
+  margin: 0 auto;
+  box-sizing: border-box;
+  overflow: scroll;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  position: relative;
+}
+.housing-page-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 15px 5px 5px 15px;
+  text-align: center;
+}
+section{
+  width: 100%;
+  margin: 20px auto;
+}
+
+.housing-page-header img{
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+}
+.website-name{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-family: "Lobster", sans-serif;
+}
+.housing-page-greeting{
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  width: 100%;
+}
+
+.search-bar input{
+  width: 80%;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid black;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.151);
+  width: 100%;
+  margin-left: -5px;
+}
+
+.promo-message{
+  background-color: yellow;
+  width: 100%;
+  margin: 0 auto 10px;
+  padding: 5px;
+  text-align: center;
+  color: red;
+  font-weight: bold;
+}
+
+.housing-grid-container{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  gap: 15px;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.blur{
+  filter: blur(20px);
+}
+
+.grid-items{
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.267);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: "Quicksand", sans-serif;
+}
+
+.grid-items p{
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+}
+.grid-items span{
+  font-weight: 600;
+  color: rgb(255, 116, 3);
+}
+.housing-img{
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.listed-house-name{
+  margin-top: 10px;
+}
+
+.house-price{
+  margin-top: 5px;
+}
+.house-price, .value{
+  text-align: left !important;
+  width: 100%;
+  font-weight: 400 !important;
+  padding-left: 5px;
+}
+
+.rent-buy-btns{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.rent-buy-btns button{
+  width: 110px;
+  padding: 10px 15px;
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "Quicksand", sans-serif;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.301);
+}
+
+.rent-house-btn{
+  background-color: rgb(9, 87, 139);
+  color: white;
+  transition: background-color 0.3s ease-in-out;
+}
+.rent-house-btn:hover{
+  background-color: rgb(7, 61, 97);
+}
+.buy-house-btn{
+  background-color: rgb(5, 124, 35);
+  color: white;
+  transition: background-color 0.3s ease-in-out;
+}
+.buy-house-btn:hover{
+  background-color: rgb(3, 73, 24);
+}
+
+.footer{
+  width: 100%;
+  height: 150px;
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: aliceblue;
+  font-family: "Quicksand", sans-serif;
+  background-color: #2b2323;
+}
+
+.payment-transaction-div{
+  width: 95%;
+  height: 400px;
+  background-color: rgb(243, 238, 238);
+  position: absolute;
+  top: 15%;
+  left: 11px;
+  z-index: 7;
+  border-radius: 20px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.349);
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 20px;
+  animation: zoomIn 0.3s ease-in-out;
+}
+
+.chat-bubble{
+  width: 80%;
+  height: auto;
+  padding: 15px;
+  background-color: aqua;
+  background: linear-gradient(150deg, rgba(255, 166, 0, 0.507), rgba(0, 0, 255, 0.473));
+  position: relative;
+  border-radius: 15px 35px 35px 0px;
+}
+.housing-transaction-feedback{
+  margin-top: 10px;
+  width: 80%;
+  height: auto;
+  padding: 20px;
+  background-color: aqua;
+  background: linear-gradient(150deg, rgba(255, 166, 0, 0.507), rgba(0, 0, 255, 0.473));
+  position: relative;
+  border-radius: 15px 25px 35px 0px;
+  font-weight: normal;
+  display: none;
+  animation: slideIn 0.3s ease-in-out;
+  font-size: 5px;
+}
+
+@keyframes slideIn{
+  0%{
+    transform: translateX(-50%);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
+.chat-bubble p{
+  color: #2e1d1d;
+  font-size: 12px;
+  line-height: 1.7em;
+  font-weight: 500;
+  font-family: "Quicksand", sans-serif;
+}
+.gold{
+  font-weight: bold;
+  color: rgb(15, 28, 146);
+}
+
+.red{
+  font-weight: bold;
+  color: rgb(146, 5, 5);
+}
+
+.payment-transaction-div button{
+  position: absolute;
+  width: 180px;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.267);
+  color: white;
+}
+
+#confirm-house-payment{
+  bottom: 20px;
+  left: 60px;
+  background-color: rgba(48, 18, 218, 0.856);
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+}
+#confirm-house-payment:hover{
+  background-color: rgb(11, 24, 202);
+}
+
+#cancle-house-payment{
+  bottom: 20px;
+  right: 60px;
+  background-color: rgb(206, 2, 2);
+  transition: background-color 0.3s ease-in-out;
+}
+#cancle-house-payment:hover{
+  background-color: rgb(121, 6, 6);
+  cursor: pointer;
+}
+
+.receipt-img{
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+}

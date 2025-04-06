@@ -13,7 +13,8 @@ export const menus = {
     {tag: "Locations", image: "images/icons8-location-100.png"},
     {tag: "Phone", image: "images/icons8-phone-48.png"},
     {tag: "Stats", image: "images/icons8-bar-chart-48.png"},
-    {tag: "Settings", image: "images/icons8-options-100.png"}
+    {tag: "Settings", image: "images/icons8-options-100.png"},
+    {tag: "House Listing", image: "scripts/houses/images/agreement.png"}
   ]
   },
   Locations: {
@@ -26,7 +27,26 @@ export const menus = {
   City: {
     title: "City",
     branches: [
-      {tag: "Hospital", image: "images/icons8-hospital-48.png"}
+      {tag: "Hospital", image: ""},
+      { tag: "Shopping Mall", image: "" },
+      { tag: "Public Park", image: "" },
+      { tag: "Bank", image: "" },
+      { tag: "Beach", image: "" },
+      { tag: "Restaurant", image: "" },
+      { tag: "City Hall", image: "" },
+      { tag: "Train Station", image: "" },
+      { tag: "Hospital", image: "" },
+      { tag: "Apartment Complex", image: "" },
+      { tag: "Downtown", image: "" },
+      { tag: "Museum", image: "" },
+      { tag: "Stadium", image: "" }
+    ]
+  },
+  Village: {
+    title: "Village",
+    branches: [
+      { tag: "Village Market", image: "" },
+      { tag: "Farm", image: "" },
     ]
   },
   Phone: {

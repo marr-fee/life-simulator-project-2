@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="scripts\Tic-Tac-Toe\tik-tac-toe.css" />
     <link rel="stylesheet" href="scripts\investments\crypto\crypto.css" />
     <link rel="stylesheet" href="scripts\calculator\calculator-style.css" />
+    <link rel="stylesheet" href="scripts\houses\housing-page.css" />
   </head>
   <body>
     <!--FULL GAME CONTAINER-->
@@ -55,7 +56,7 @@
 
       <!--START GAME BUTTON-->
       <button id="start-game-btn" class="start-game-button">
-        <span id="button-span">Start Life</span>
+        <span id="button-span">Start&nbsp;Life</span>
       </button>
 
       <!--WELCOME DIV AND STAT ASSIGNMENT SECTION-->
@@ -445,6 +446,68 @@
       </div>
 
       <!-- CALCULATOR SECTION ENDS -->
+
+      <!----------------------------------------------------------->
+
+      <!--HOUSING SECTION STARTS-->
+
+      <div class="housing-page-container" id="housing-list-container">
+        <div class="housing-app-welcome-page" id="housing-list-welcome-page">
+          <img src="scripts\houses\images\house.png" alt="house emoji" />
+          <h1 class="housing-app-title">MarrFee Living</h1>
+          <p>Find you perfect haven</p>
+        </div>
+        <!-- payments transaction pop up-->
+        <div class="payment-transaction-div" id="payment-completion-div">
+          <div class="chat-bubble" id="chat-bbl"></div>
+          <div
+            class="housing-transaction-feedback"
+            id="housing-transac-feedback"
+          ></div>
+          <button id="confirm-house-payment">Confirm</button>
+          <button id="cancle-house-payment">Cancel</button>
+        </div>
+        <!-- main page-->
+        <div class="housing-webpage" id="housing-webpg">
+          <!--header-->
+          <div class="housing-page-header">
+            <!-- company title and logo-->
+            <div class="website-name">
+              <img
+                src="scripts\houses\images\house.png"
+                alt="house emoji"
+              />MarrFee&nbsp;Living
+            </div>
+            <div class="housing-page-greeting">Hello Kenneth</div>
+            <div class="search-bar">
+              <input
+                type="search"
+                name="search"
+                id="search-bar"
+                placeholder="Search"
+              />
+            </div>
+          </div>
+          <!--promo message-->
+          <div class="promo-message">
+            <p>
+              Our discount season is coming soon, be sure to keep an eye out 😉
+            </p>
+          </div>
+          <!-- housing list grid-->
+          <section>
+            <div
+              class="housing-grid-container"
+              id="housing-list-grid-container"
+            ></div>
+            <div class="footer">
+              we hope you found what you were looking for 😊
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <!--HOUSING SECTION ENDS-->
 
       <!----------------------------------------------------------->
     </div>

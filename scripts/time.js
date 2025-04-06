@@ -67,7 +67,7 @@ export function startTime() {
       updateMonth();
     };
   
-    if (currentMonth === 'December') {
+    if (currentMonth === 'December' && day === 31 && hours === 23 && minutes === 59) {
       currentMonthIndex = 0;
       currentYear++;
     }
@@ -85,9 +85,9 @@ export function startTime() {
     updateTime(updateMinutes, updateHours, updateDays);
 
       // TO STOP TIME IF THESE CONDITIONS ARE TRUE
-    if ( currentMonth === monthsList[3] ) {
-      clearInterval(timeLoop);
-    }
+    //if ( currentMonth === monthsList[3] ) {
+     // clearInterval(timeLoop);
+    //}
   }
 
 

@@ -6,11 +6,12 @@ import { openRockPaperScissors } from "./R-P-S/rps-functions.js";
 import { openTikTacToeGame } from "./Tic-Tac-Toe/main-tik-tac-toe.js";
 import { openCryptoPage } from "./investments/crypto/cryptoFunctions.js";
 import { openCalculatorApp } from "./calculator/calculator.js";
+import { openHouseListingPage } from "./houses/housing-functions.js";
 
 
 export function updateMenus(menuTag){
 
-  // Get the selected menu (either 'main' or 'Locations')
+  // Get the selected menu 
   const menu = menus[menuTag];
  
   // Generate the HTML
@@ -38,23 +39,22 @@ export function updateMenus(menuTag){
   </div>`;
 
 
-  // Now add event listeners to each grid item after the HTML is generated
+  // add event listeners to each grid item after the HTML is generated
   const gridItemsElements = gridContainer.querySelectorAll('.grid-item');
 
   // Loop through each grid item in the list
   gridItemsElements.forEach((gridItem, index) => {
      
-     gridItemCount += 1;
-
-      // For each grid item, get the corresponding 'branch' from the menu's branches array.
+     gridItemCount += 1; // to check how many grid items are in the container to handle overflow and scrolling
   
-    // If it's the "Back" button, add the event listener separately
+    //  add the event listener separately for "Back" button
     if (gridItem.id === "back-to-previous") {
       
       gridItem.addEventListener('click', () => {
         navigateMenus("Back"); // Navigate back to the previous menu
       });
       document.getElementById('back-to-previous').style.display = menuHistory.length > 1 ? "flex" : "none"
+
     }else if (gridItem.id === "back-to-main"){
       gridItem.addEventListener('click', () => {
         navigateMenus("main"); // Navigate back to the main menu 
@@ -65,7 +65,6 @@ export function updateMenus(menuTag){
   // The index of the grid item matches the index of the branch.
       const branch = menu.branches[index];
 
-      
       // If the branch.tag is R-P-S, trigger the game directly
       if (branch.tag === "R-P-S") {
         gridItem.addEventListener('click', () => {
@@ -83,6 +82,12 @@ export function updateMenus(menuTag){
         gridItem.addEventListener('click', () => {
           openCalculatorApp();
         });
+      }else if (branch.tag === "Apartment Complex" || branch.tag === "Real Estate" || branch.tag === "House Listing"){
+        gridItem.addEventListener('click', () => {
+          openHouseListingPage();
+          gameContainer.style.overflowY = "hidden";
+          gameContainer.style.scrollbarWidth = "none";
+        });
       } else {
       gridItem.addEventListener('click', () => navigateMenus(branch.tag));
       }
@@ -94,11 +99,12 @@ export function updateMenus(menuTag){
     gameContainer.style.overflowY = "scroll";
     gameContainer.style.scrollbarWidth = "thin";
     gameMainNavMenuDiv.style.position = "sticky";
-    gameMainNavMenuDiv.style.marginBottom = "-25px";
+    gameMainNavMenuDiv.style.marginBottom = "-20px"; // had to because setting to sticky added a strange margin
   } else {
     gameContainer.style.overflowY = "hidden";
     gameContainer.style.scrollbarWidth = "none";
     gameMainNavMenuDiv.style.position = "sticky";
+    gameMainNavMenuDiv.style.marginBottom = "-5px"; 
   }
 
 }
