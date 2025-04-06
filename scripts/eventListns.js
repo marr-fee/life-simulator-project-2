@@ -2,7 +2,7 @@
 import { gameIntroPage, startLifeBtn, buttonSpan, gameContainer, welcomeDiv, nextPageBtn1, submitPlayerStatBtn, gamePlayContainer } from "./DOM.js";
 import { updateCryptoPrices } from "./investments/crypto/cryptoFunctions.js";
 
-import { saveSelectedBelief, updatePlayerStats, getRandomPlayerStats } from "./player-stats.js";
+import { saveSelectedBelief, updatePlayerStats, getRandomPlayerStats, Player} from "./player-stats.js";
 
 
 // Event listener for continue button
@@ -33,5 +33,6 @@ startLifeBtn.addEventListener('click', () => {
 submitPlayerStatBtn.addEventListener('click', () => {
   // FUNCTION to run on click
   saveSelectedBelief();
-  updateCryptoPrices
+ // console.log(Player.Possessions.playerHasHome);
+  
 })

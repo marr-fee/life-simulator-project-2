@@ -33,16 +33,19 @@ depositBtn.addEventListener('click', () => {
   if (isNaN(depositAmount) || depositAmount <= 0) {
     depositFeedback.textContent = "Please enter a valid amount to deposit.";
     depositFeedback.style.color = "red";
+    depositAmountField.value = ''; // Clear input field after deposit
     // clear display after 3s
     clearCryptoTransacFeedbackMessage();
   }else if (Player.financialStats.accountBalance < depositAmount) {
     depositFeedback.textContent = "Insufficient Funds to make this deposit";
     depositFeedback.style.color = "red";
+    depositAmountField.value = ''; // Clear input field after deposit
     // clear display after 3s
     clearCryptoTransacFeedbackMessage();    
   }else if (depositAmount < 20) {
     depositFeedback.textContent = "min. Deposit: $20";
     depositFeedback.style.color = "red";
+    depositAmountField.value = ''; // Clear input field after deposit
     // clear display after 3s
     clearCryptoTransacFeedbackMessage(); 
   } else {

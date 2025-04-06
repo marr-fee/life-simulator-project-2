@@ -6,7 +6,8 @@ import { openRockPaperScissors } from "./R-P-S/rps-functions.js";
 import { openTikTacToeGame } from "./Tic-Tac-Toe/main-tik-tac-toe.js";
 import { openCryptoPage } from "./investments/crypto/cryptoFunctions.js";
 import { openCalculatorApp } from "./calculator/calculator.js";
-import { openHouseListingPage } from "./houses/housing-functions.js";
+import { checkAccess, openHouseListingPage } from "./houses/housing-functions.js";
+import { Player } from "./player-stats.js";
 
 
 export function updateMenus(menuTag){
@@ -81,6 +82,12 @@ export function updateMenus(menuTag){
       }else if (branch.tag === "Calculator"){
         gridItem.addEventListener('click', () => {
           openCalculatorApp();
+        });
+      }else if (branch.tag === "My Home"){
+        gridItem.addEventListener('click', () => {
+          checkAccess();
+          console.log("Player has home:",Player.Possessions.playerHasHome);
+          
         });
       }else if (branch.tag === "Apartment Complex" || branch.tag === "Real Estate" || branch.tag === "House Listing"){
         gridItem.addEventListener('click', () => {

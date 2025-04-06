@@ -2,11 +2,12 @@ import { exitAppBtn } from "../investments/crypto/crypto-DOM.js";
 import { gridContainer, menuTitle } from "../DOM.js";
 import { houseingWebsiteMainDiv, housePaymentCompletionDiv, chatBubbleHousing, housePurchaseFeeedbackDiv, housingWebsiteContainer, housingWebsiteWelcomDiv, initializeHouseList } from "./housing-homepage.js";
 import { gameMainNavMenuDiv } from "../DOM.js";
+import { Player } from "../player-stats.js";
 
 
 export function calculateAmountAfterTax(percent, bill){
   let totalAmount;
-  totalAmount = bill + ((percent * bill) / (100 * 1));
+  totalAmount = bill + (percent * bill) / 100;
   return Math.floor(totalAmount);
 }
 
@@ -41,4 +42,11 @@ export function openHouseListingPage(){
     //gameMainNavMenuDiv.style.marginBottom = "-30px"
   
     initializeHouseList();
+}
+
+export function checkAccess(){
+  if(Player.Possessions.playerHasHome === false){
+    alert('you do not have a house yet, go buy');
+  }
+    else if(Player.Possessions.playerHasHome === true) {alert('welcome');} 
 }
