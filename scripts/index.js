@@ -20,4 +20,6 @@ export * from "./calculator/calculator-DOM.js";
 export * from "./calculator/calculator.js";
 export * from "./houses/house-list.js";
 export * from "./houses/housing-homepage.js"
-export * from "./houses/housing-functions.js"
+export * from "./houses/housing-functions.js";
+export * from "./player-expences.js";
+export * from "./messaging/chat-bubble.js";

@@ -130,6 +130,7 @@ section{
   justify-content: flex-start;
   align-items: center;
   font-family: "Quicksand", sans-serif;
+  overflow: hidden;
 }
 
 .grid-items p{
@@ -148,6 +149,11 @@ section{
   height: 220px;
   object-fit: cover;
   border-radius: 10px 10px 0 0;
+  transition: transform 1s ease-in-out;
+}
+.housing-img:hover{
+ transform: scale(1.05);
+ cursor: pointer;
 }
 
 .listed-house-name{

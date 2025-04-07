@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="scripts\investments\crypto\crypto.css" />
     <link rel="stylesheet" href="scripts\calculator\calculator-style.css" />
     <link rel="stylesheet" href="scripts\houses\housing-page.css" />
+    <link rel="stylesheet" href="scripts\messaging\messaging.css" />
   </head>
   <body>
     <!--FULL GAME CONTAINER-->
@@ -465,7 +466,7 @@
             id="housing-transac-feedback"
           ></div>
           <button id="confirm-house-payment">Confirm</button>
-          <button id="cancle-house-payment">Cancel</button>
+          <button id="cancle-house-payment">Cancle</button>
         </div>
         <!-- main page-->
         <div class="housing-webpage" id="housing-webpg">
@@ -508,6 +509,116 @@
       </div>
 
       <!--HOUSING SECTION ENDS-->
+
+      <!----------------------------------------------------------->
+
+      <!-- TEXT MESSAGE SECTION STARTS -->
+
+      <div class="messaging-app-container" id="text-msg-app-div">
+        <!-- left section-->
+        <div class="left-section-container">
+          <!-- search box -->
+          <div class="search-box-container">
+            <input
+              type="search"
+              name="search-text-msg"
+              id="search-text-msg"
+              placeholder="Search.."
+            />
+            <img
+              src="scripts\messaging\images\search(1).png"
+              alt="search icon"
+              class="search-icon"
+            />
+          </div>
+
+          <!-- friend list -->
+          <div class="friend-list-grid-container">
+            <div class="message-grid-items">
+              <img
+                src="scripts\messaging\images\profile(1).png"
+                alt="user icon"
+                class="user-dp-left"
+              />
+              <div class="receiver-name-text-msg">
+                <h2 id="recepient-name-left" class="receiver-name-left">
+                  Lorem lem
+                </h2>
+                <p id="recepient-msg-abrv">Lorem ipsum dolor sit.</p>
+              </div>
+            </div>
+
+            <div class="message-grid-items">
+              <img
+                src="scripts\messaging\images\profile.png"
+                alt="user icon"
+                class="user-dp-left"
+              />
+              <div class="receiver-name-text-msg">
+                <h2 id="recepient-name-left" class="receiver-name-left">
+                  Lorem lem
+                </h2>
+                <p id="recepient-msg-abrv">Lorem ipsum dolor sit.</p>
+              </div>
+            </div>
+            <div class="message-grid-items">
+              <img
+                src="scripts\messaging\images\man.png"
+                alt="user icon"
+                class="user-dp-left"
+              />
+              <div class="receiver-name-text-msg">
+                <h2 id="recepient-name-left" class="receiver-name-left">
+                  Lorem lem
+                </h2>
+                <p id="recepient-msg-abrv">Lorem ipsum dolor sit.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- right section -->
+        <div class="right-section-container">
+          <!-- recepient name and active status -->
+          <div class="chatbox-header-container">
+            <img
+              src="scripts\messaging\images\profile(1).png"
+              alt="user icon"
+              class="user-dp"
+            />
+            <div class="receiver-img-name">
+              <h2 id="recepient-name">Lorem lem</h2>
+              <p id="recepient-last-seen">Lorem ipsum dolor sit.</p>
+            </div>
+          </div>
+
+          <!-- chat container -->
+          <div class="chat-section">
+            <div class="chat-container" id="concersation-container"></div>
+          </div>
+
+          <!-- user input container -->
+          <div class="user-input-section">
+            <img
+              src="scripts\messaging\images\link.png"
+              alt="attatchment icon"
+              class="link-icon"
+            />
+            <textarea
+              name="user-message"
+              id="player-message-input"
+              placeholder="Type here..."
+            ></textarea>
+            <img
+              src="scripts\messaging\images\send-message.png"
+              alt="send icon"
+              class="send-icon"
+              id="send-message-btn"
+            />
+          </div>
+        </div>
+      </div>
+      <!-- TEXT MESSAGE SECTION ENDS -->
 
       <!----------------------------------------------------------->
     </div>

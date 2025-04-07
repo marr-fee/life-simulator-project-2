@@ -27,7 +27,7 @@
 
 /* PAGE 1 - GAME DETAILS */
 .game-details{
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
