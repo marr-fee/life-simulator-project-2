@@ -46,7 +46,7 @@ export const Player = {
     playerHasHome: false,
     playerHasCar: false,
     ownedHousingProperties: [],
-    monthlyRent: []
+    monthlyRent: [],
   },
   employmentStatus: {
     playerHasJob: false
@@ -148,7 +148,37 @@ export function updatePlayerStats(){
   updateFinance();
 }
 
-export function getPlayerInfo(){
+
+
+
+// Function to get specific player information based on the key provided (e.g., 'name', 'stats', etc.)
+export function getPlayerInfo(infoKey) {
   const playerInfo = Player;
-  console.log(playerInfo.name);
+
+
+  if (!infoKey) return;
+
+  // Return the specific piece of player info requested
+  switch (infoKey.toLowerCase()) {
+    case 'name':
+      return playerInfo.name;
+    case 'relationship status':
+      return playerInfo.socialStats.relationshipStatus;
+    case 'age':
+      return playerInfo.age;
+    case 'rent stats':
+      return playerInfo.Possessions.monthlyRent;
+    case 'my home stats':
+    return playerInfo.Possessions.playerHasHome;
+    case 'account balance stats':
+      return playerInfo.financialStats.accountBalance;
+    case 'employment staus':
+      return playerInfo.employmentStatus.playerHasJob;
+    case 'financial status':
+      return playerInfo.financialStats.financialStatus;
+   //  You can add more keys here to return different player data
+    default:
+      console.error('Invalid infoKey provided.');
+      return null;
+  }
 }

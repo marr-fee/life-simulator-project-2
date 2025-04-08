@@ -4,7 +4,7 @@ import { updateCryptoPrices } from "./investments/crypto/cryptoFunctions.js";
 
 import { saveSelectedBelief, updatePlayerStats, getRandomPlayerStats, Player, getPlayerInfo} from "./player-stats.js";
 import { chatData } from "./messaging/messg-chat.js";
-import { getCurrentDate, getCurrentGreeting, getCurrentTime } from "./time.js";
+import { getCurrentDate, getCurrentTime } from "./time.js";
 
 
 // Event listener for continue button
@@ -40,11 +40,7 @@ submitPlayerStatBtn.addEventListener('click', () => {
 
   const timeResponses = chatData.responses.mood.good.response.time;
   const randomTimeResponse = timeResponses[Math.floor(Math.random() * timeResponses.length)](); // Get random time
- // console.log(Player.Possessions.playerHasHome);
+
   
-  getCurrentDate();
-  getCurrentTime();
-  getCurrentDate();
-  getCurrentGreeting();
-  getPlayerInfo();
+  
 })

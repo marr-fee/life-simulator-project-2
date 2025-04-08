@@ -2,6 +2,7 @@
 import { gameMainNavMenuDiv, gridContainer, menuTitle, gameContainer } from "../DOM.js";
 import { exitAppBtn } from "../investments/crypto/crypto-DOM.js";
 import { closeGrid, openGrid } from "../menu-navigation.js";
+import { getPlayerInfo } from "../player-stats.js";
 import { getCurrentDate, getCurrentTime } from "../time.js";
 import { addMessage } from "./chat-bubble.js";
 import { chatData } from "./messg-chat.js";
@@ -22,6 +23,7 @@ export function openMessagingApp() {
   menuTitle.style.display = 'none';
   getCurrentDate();
   getCurrentTime();
+  getPlayerInfo('name')
 }
 
 // Close the messaging app and revert UI
@@ -96,6 +98,70 @@ export function getResponses(userInput) {
     const hobbyReply = getRandomResponse(generalResponses.hobbies);
     return addNpcMessage(hobbyReply);
   }
+
+  //----------------------------------------------------------------------------------------------------------------
+
+  if (userInput.includes("good morning") || userInput.includes("good afternoon") || userInput.includes("good evening") || userInput.includes("good night") || userInput.includes("afternoon") || userInput.includes("evening") || userInput.includes("night") || userInput.includes("morning")) {
+    const greetReply = getRandomResponse(generalResponses.dayGreeting);
+    return addNpcMessage(greetReply);
+  }
+  
+  if (userInput.includes("my info") || userInput.includes("player info") || userInput.includes("what can you tell me about myself? ") || userInput.includes("what can you tell me about me? ") || userInput.includes("what do you know about me? ") || userInput.includes("check my stats") || userInput.includes("tell me about me") || userInput.includes("what is my current situation?") || userInput.includes("how are my stats doing?")) {
+    const playerInfoReply = getRandomResponse(generalResponses.playerInfo);
+    return addNpcMessage(playerInfoReply);
+  }
+  
+  if (userInput.includes("motivate me") || userInput.includes("motivation") || userInput.includes("inspire me") || userInput.includes("i need motivation")) {
+    const motivationReply = getRandomResponse(generalResponses.motivation);
+    return addNpcMessage(motivationReply);
+  }
+  
+  if (userInput.includes("say something nice") || userInput.includes("compliment me") || userInput.includes("do you like me") || userInput.includes("am i doing good")) {
+    const complimentReply = getRandomResponse(generalResponses.compliments);
+    return addNpcMessage(complimentReply);
+  }
+  
+  if (userInput.includes("daily goals") || userInput.includes("what should i do today") || userInput.includes("plan for today") || userInput.includes("what are you doing today")  || userInput.includes("what your day look like") || userInput.includes("any advice today"))  {
+    const goalsReply = getRandomResponse(generalResponses.dailyGoals);
+    return addNpcMessage(goalsReply);
+  }
+  
+  if (userInput.includes("who are you") || userInput.includes("tell me about yourself") || userInput.includes("tell me about you") || userInput.includes("what are you") || userInput.includes("are you a bot")) {
+    const botInfoReply = getRandomResponse(generalResponses.askAboutBot);
+    return addNpcMessage(botInfoReply);
+  }
+  
+  if (userInput.includes("plans for today") || userInput.includes("what's the plan") || userInput.includes("what do we do now") || userInput.includes("suggest something")) {
+    const plansReply = getRandomResponse(generalResponses.plansForToday);
+    return addNpcMessage(plansReply);
+  }
+  
+  if (userInput.includes("how are you feeling") || userInput.includes("how's your mood") || userInput.includes("how you doing") || userInput.includes("feeling okay")) {
+    const feelingReply = getRandomResponse(generalResponses.feelingCheck);
+    return addNpcMessage(feelingReply);
+  }
+  
+  if (userInput.includes("encourage me") || userInput.includes("i'm feeling down") || userInput.includes("say something encouraging") || userInput.includes("i need support")) {
+    const encourageReply = getRandomResponse(generalResponses.encouragement);
+    return addNpcMessage(encourageReply);
+  }
+  
+  if (userInput.includes("hidden tips") || userInput.includes("secret") || userInput.includes("give me a secret") || userInput.includes("tell me a secret") || userInput.includes("hidden info")) {
+    const secretReply = getRandomResponse(generalResponses.mysteryTips);
+    return addNpcMessage(secretReply);
+  }
+
+  if (userInput.includes("bye") || userInput.includes("bye bye") || userInput.includes("gotta go now") || userInput.includes("good bye") || userInput.includes("I'm outta here") || userInput.includes("see you later")) {
+    const secretReply = getRandomResponse(generalResponses.goodbye);
+    return addNpcMessage(secretReply);
+  }
+
+  if (userInput.includes("thanks") || userInput.includes("thank you")) {
+    const secretReply = getRandomResponse(generalResponses.goodbye);
+    return addNpcMessage(secretReply);
+  }
+
+  //----------------------------------------------------------------------------------------------------------------
 
   if (userInput.includes("dream") || userInput.includes("future") || userInput.includes("goal") || userInput.includes("what are your goals?") || userInput.includes("what are your dreams?") || userInput.includes("what are your plans for the future?")) {
     const dreamReply = getRandomResponse(generalResponses.dreams);

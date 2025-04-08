@@ -98,6 +98,7 @@ export function updateMenus(menuTag){
       }else if (branch.tag === "Apartment Complex" || branch.tag === "Real Estate" || branch.tag === "House Listing"){
         gridItem.addEventListener('click', () => {
           openHouseListingPage();
+          
           gameContainer.style.overflowY = "hidden";
           gameContainer.style.scrollbarWidth = "none";
         });

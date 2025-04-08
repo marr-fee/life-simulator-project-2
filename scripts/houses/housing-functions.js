@@ -47,3 +47,15 @@ export function checkAccess(){
   }
     else if(Player.Possessions.playerHasHome === true) {alert('welcome');} 
 }
+
+
+export function rentHouse(selectedHouse, playerHousingBill) {
+  Player.Possessions.ownedHousingProperties.push({
+    type: selectedHouse.houseType,
+    rent: playerHousingBill.toLocaleString(),
+  })
+
+  console.log(`Rented a ${selectedHouse.houseType} for $${playerHousingBill.toLocaleString()}`);
+  console.log( Player.Possessions.ownedHousingProperties);
+
+}

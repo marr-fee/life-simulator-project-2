@@ -3,7 +3,7 @@ import { houseList } from "./house-list.js";
 import { Player } from "../player-stats.js";
 import { accountBalanceSpan } from "../DOM.js";
 import { exitAppBtn } from "../investments/crypto/crypto-DOM.js";
-import { calculateAmountAfterTax } from "./housing-functions.js";
+import { calculateAmountAfterTax, rentHouse } from "./housing-functions.js";
 
 
 
@@ -230,6 +230,7 @@ confirmHousePaymentBtn.addEventListener('click', () => {
   Player.financialStats.accountBalance -= finalAmount;
   accountBalanceSpan.innerText = `$${Player.financialStats.accountBalance}`;
   Player.Possessions.playerHasHome = true;
+  rentHouse(selectedHouse, playerHousingBill);
 
   // === Rent flow ===
   if (isRenting) {
@@ -326,3 +327,5 @@ export function closeHousingTransactionChatBubble() {
   exitAppBtn.style.top = "120px";
   selectedHouse = null;
 }
+
+

@@ -140,7 +140,7 @@ let timeLoop = setInterval(startTime, 1000);
   }
 
 
-function getGreeting(hour) {
+export function getGreeting(hour) {
     if (hour >= 5 && hour < 12) return 'Good Morning';
     if (hour >= 12 && hour < 17) return 'Good Afternoon';
     if (hour >= 17 && hour < 21) return 'Good Evening';
@@ -174,8 +174,9 @@ function updateTime(minutesElem, hoursElem, daysElem) {
   const formattedMinutes = String(minutes).padStart(2, '0');
   const timeDisplay =  `${formattedHours}: ${formattedMinutes}`
   return timeDisplay;
-  
 }
+
+
 
 export function getCurrentDate(){
   const dateDisplay = `${currentDay} ${currentMonth}, ${currentYear}`;
@@ -185,9 +186,4 @@ export function getCurrentDate(){
 export function getCurrentDay(){
   const dayDisplay = currentDay;
   console.log(dayDisplay); 
-}
-
-export function getCurrentGreeting(){
-  const getCurrentGreet = getGreeting(hours);
-  console.log(getCurrentGreet);
 }
