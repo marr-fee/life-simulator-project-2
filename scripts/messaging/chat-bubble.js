@@ -6,8 +6,8 @@ function scrollToBottom() {
     chatContainer.scrollTop = chatContainer.scrollHeight;
 }
 
-// Example of adding a new message dynamically
-function addMessage(message, imageDp, senderBlock, senderBbl, imgVisibility ) {
+
+export function addMessage(message, imageDp, senderBlock, senderBbl, imgVisibility ) {
     const messageBlockElement = document.createElement('div');
     messageBlockElement.classList.add(senderBlock);
     const receiverDp = document.createElement('img');
@@ -26,17 +26,17 @@ function addMessage(message, imageDp, senderBlock, senderBbl, imgVisibility ) {
 }
 
 // Add a new message every 2 seconds (for demonstration)
-setInterval(() => {
+/*setInterval(() => {
   const senderBlock = Math.random() > 0.5 ? 'my-chat-bbl-cntr' : 'npc-chat-bbl-contnr';
   const senderBubble = senderBlock === 'my-chat-bbl-cntr' ? 'my-chat-bubble' : 'npc-chat-buble';
   const imageDp = senderBubble === 'npc-chat-buble' ? 'scripts/messaging/images/profile(1).png' : '';
   const imgVisibility = senderBubble === 'npc-chat-buble' ? 'visible' : 'hidden';
   
 
-  addMessage('New message', imageDp,  senderBlock, senderBubble, imgVisibility);
+  //addMessage('New message', imageDp,  senderBlock, senderBubble, imgVisibility);
 
   
   // Initial scroll to the bottom
   scrollToBottom();
-}, 3000);
+}, 3000);*/
 

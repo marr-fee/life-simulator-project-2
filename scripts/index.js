@@ -23,3 +23,5 @@ export * from "./houses/housing-homepage.js"
 export * from "./houses/housing-functions.js";
 export * from "./player-expences.js";
 export * from "./messaging/chat-bubble.js";
+export * from "./messaging/msg-functions.js";
+export * from "./messaging/messg-chat.js"

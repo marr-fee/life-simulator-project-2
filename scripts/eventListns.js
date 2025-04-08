@@ -2,7 +2,9 @@
 import { gameIntroPage, startLifeBtn, buttonSpan, gameContainer, welcomeDiv, nextPageBtn1, submitPlayerStatBtn, gamePlayContainer } from "./DOM.js";
 import { updateCryptoPrices } from "./investments/crypto/cryptoFunctions.js";
 
-import { saveSelectedBelief, updatePlayerStats, getRandomPlayerStats, Player} from "./player-stats.js";
+import { saveSelectedBelief, updatePlayerStats, getRandomPlayerStats, Player, getPlayerInfo} from "./player-stats.js";
+import { chatData } from "./messaging/messg-chat.js";
+import { getCurrentDate, getCurrentGreeting, getCurrentTime } from "./time.js";
 
 
 // Event listener for continue button
@@ -33,6 +35,16 @@ startLifeBtn.addEventListener('click', () => {
 submitPlayerStatBtn.addEventListener('click', () => {
   // FUNCTION to run on click
   saveSelectedBelief();
+  const dateResponses = chatData.responses.mood.good.response.date;
+  const randomDateResponse = dateResponses[Math.floor(Math.random() * dateResponses.length)](); // Get random date
+
+  const timeResponses = chatData.responses.mood.good.response.time;
+  const randomTimeResponse = timeResponses[Math.floor(Math.random() * timeResponses.length)](); // Get random time
  // console.log(Player.Possessions.playerHasHome);
   
+  getCurrentDate();
+  getCurrentTime();
+  getCurrentDate();
+  getCurrentGreeting();
+  getPlayerInfo();
 })

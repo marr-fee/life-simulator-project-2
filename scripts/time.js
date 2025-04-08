@@ -5,6 +5,8 @@
 import { getCryptoAllTimeHigh, getCryptoAllTimeLow } from "./investments/crypto/cryptoFunctions.js";
 import { Player } from "./player-stats.js";
 import { autoStatUpdatePerHour } from "./stat-update-func.js";
+import { chatData } from "./messaging/messg-chat.js";
+
 
 
 // Initialize time and date constants 
@@ -21,14 +23,14 @@ const monthsList = ['January', 'February', 'March',
 const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
 
-let hours = 7;
-let minutes = 0;
-let day = 20;
+export let hours = 7;
+export let minutes = 0;
+export let day = 20;
 let currentDayIndex = 0;
-let currentDay = daysList[currentDayIndex];
+export let currentDay = daysList[currentDayIndex];
 let currentMonthIndex = 2;
-let currentMonth = monthsList[currentMonthIndex];
-let currentYear = 2025;
+export let currentMonth = monthsList[currentMonthIndex];
+export let currentYear = 2025;
 let itIsPlayersBirthday = false;
 
 
@@ -54,6 +56,9 @@ export function startTime() {
       autoStatUpdatePerHour();
       getCryptoAllTimeHigh();
       getCryptoAllTimeLow();
+      const timeResponses = chatData.responses.mood.good.response.time;
+      const randomTimeResponse = timeResponses[Math.floor(Math.random() * timeResponses.length)](); // Get random time
+ // console.log(Player.Possessions.playerHasHome);
     };
 
     // Update greeting based on time of day
@@ -163,3 +168,26 @@ function updateTime(minutesElem, hoursElem, daysElem) {
     hoursElem.innerHTML = formattedHours;
     daysElem.innerHTML = currentDay;
   }
+
+ export function getCurrentTime(){
+  const formattedHours = String(hours).padStart(2, '0');
+  const formattedMinutes = String(minutes).padStart(2, '0');
+  const timeDisplay =  `${formattedHours}: ${formattedMinutes}`
+  return timeDisplay;
+  
+}
+
+export function getCurrentDate(){
+  const dateDisplay = `${currentDay} ${currentMonth}, ${currentYear}`;
+  return dateDisplay; 
+}
+
+export function getCurrentDay(){
+  const dayDisplay = currentDay;
+  console.log(dayDisplay); 
+}
+
+export function getCurrentGreeting(){
+  const getCurrentGreet = getGreeting(hours);
+  console.log(getCurrentGreet);
+}

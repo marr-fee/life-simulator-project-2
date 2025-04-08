@@ -147,3 +147,8 @@ export function updatePlayerStats(){
   // Update player finances
   updateFinance();
 }
+
+export function getPlayerInfo(){
+  const playerInfo = Player;
+  console.log(playerInfo.name);
+}

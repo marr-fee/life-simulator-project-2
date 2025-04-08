@@ -6,13 +6,14 @@ import { closeCryptoPage } from "./investments/crypto/cryptoFunctions.js";
 import { menuHistory } from "./menu-navigation.js";
 import { updateMenus } from "./menu-update.js";
 import { closeHouseListingPage } from "./houses/housing-functions.js";
+import { closeMessagingApp } from "./messaging/msg-functions.js";
 
 exitAppBtn.addEventListener('click', ()=>{
   closeCryptoPage();
   closeCalculatorApp();
   closeHouseListingPage();
+  closeMessagingApp();
   exitAppBtn.style.display = "none";
-  exitAppBtn.style.top = "35px"
   menuTitle.style.display = "block";
   updateMenus(menuHistory[menuHistory.length -1]);
 })

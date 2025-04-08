@@ -7,10 +7,9 @@
   height: 550px;
   max-height: 550px;
   width: 100%;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
-  background-color: rgb(255, 255, 255);
   position: relative;
   font-family: "Quicksand", sans-serif;
   background-color: white;
@@ -125,7 +124,7 @@
   color: black;
   padding: 5px 15px;
   margin: 0;
-  height: 15%;
+  height: 10%;
   position: relative;
   display: flex;
   gap: 10px;
@@ -216,20 +215,20 @@
 .user-input-section{
   position: relative;
   flex-shrink: 0;
-  height: 15%;
+  height: 20%;
   background-color: rgb(255, 255, 255);
-  background: linear-gradient(150deg, rgba(233, 231, 225, 0.699), rgba(220, 209, 240, 0.849));
+  background: linear-gradient(150deg, rgba(243, 184, 243, 0.699), rgba(170, 175, 245, 0.849));
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.137);
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5px;
+  padding: 0 5px 20px 5px;
 }
 .user-input-section textarea{
   margin: 0 auto;
   width: 75%;
-  height: 100%;
+  height: 70%;
   resize: none; /* disables manual resizing */
   overflow-y: auto; /* scrolls when needed */
   scrollbar-width: thin;

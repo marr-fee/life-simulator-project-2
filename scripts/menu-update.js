@@ -8,6 +8,7 @@ import { openCryptoPage } from "./investments/crypto/cryptoFunctions.js";
 import { openCalculatorApp } from "./calculator/calculator.js";
 import { checkAccess, openHouseListingPage } from "./houses/housing-functions.js";
 import { Player } from "./player-stats.js";
+import { openMessagingApp } from "./messaging/msg-functions.js";
 
 
 export function updateMenus(menuTag){
@@ -87,6 +88,11 @@ export function updateMenus(menuTag){
         gridItem.addEventListener('click', () => {
           checkAccess();
           console.log("Player has home:",Player.Possessions.playerHasHome);
+          
+        });
+      }else if (branch.tag === "Messages"){
+        gridItem.addEventListener('click', () => {
+          openMessagingApp();
           
         });
       }else if (branch.tag === "Apartment Complex" || branch.tag === "Real Estate" || branch.tag === "House Listing"){

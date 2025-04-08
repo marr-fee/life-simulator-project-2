@@ -1,5 +1,7 @@
 // To handle navigation around the menu branches
 
+import { gridContainer, menuTitle } from "./DOM.js";
+import { exitAppBtn } from "./investments/crypto/crypto-DOM.js";
 import { updateMenus } from "./menu-update.js";
 //import { leaveGameBtns } from "./R-P-S/rps-DOM.js";
 //import { rockPaperScissorsDiv, gridContainer, menuTitle } from "./DOM.js";
@@ -44,6 +46,16 @@ function goToMain(){
   //gridContainer.style.display = "grid";  // Show the main menu
   //menuTitle.style.display = "block";  // Show menu title again
   //leaveGameBtns.style.display = "none"
+}
+
+export function closeGrid(){
+  gridContainer.style.display = 'none';
+  menuTitle.style.display = 'none';
+}
+export function openGrid(){
+  gridContainer.style.display = 'grid';
+  menuTitle.style.display = 'block';
+  exitAppBtn.style.display = "none";
 }
 
 navigateMenus("main");

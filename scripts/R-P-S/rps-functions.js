@@ -27,7 +27,7 @@ export function openRockPaperScissors(){
 export function closeRockPaperScissors(){
   rockPaperScissorsDiv.style.display = "none";
   gridContainer.style.display = "grid";
-  gamePlayContainer.style.paddingTop = "45px";
+  gamePlayContainer.style.paddingTop = "30px";
   menuTitle.style.display = "block";
   leaveGameBtns.style.display = "none";
   updateMenus(menuHistory[menuHistory.length -1]);

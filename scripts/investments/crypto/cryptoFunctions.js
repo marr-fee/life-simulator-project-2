@@ -46,7 +46,7 @@ export function closeCryptoPage(){
   cryptoPageContainer.style.display = "none";
   cryptoWelcomePage.style.display = "none";
   cryptoMainPage.style.display = "none";
-
+  exitAppBtn.style.top = '30px';
   };
 
 export function updateCryptoPrices(minChange, maxChange){
