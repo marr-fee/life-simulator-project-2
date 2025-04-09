@@ -17,17 +17,15 @@ export function openRockPaperScissors(){
   rockPaperScissorsDiv.style.display = "block";
   gridContainer.style.display = "none";
   menuTitle.style.display = "none";
-  gamePlayContainer.style.paddingTop = "10px";
+  gamePlayContainer.style.display = "none";
   leaveGameBtns.style.display = "flex";
-  gameMainNavMenuDiv.style.marginBottom = "-30px"
-
   playRockPaperScissors();
 }
 
 export function closeRockPaperScissors(){
   rockPaperScissorsDiv.style.display = "none";
   gridContainer.style.display = "grid";
-  gamePlayContainer.style.paddingTop = "30px";
+  gamePlayContainer.style.display = "flex";
   menuTitle.style.display = "block";
   leaveGameBtns.style.display = "none";
   updateMenus(menuHistory[menuHistory.length -1]);

@@ -1,6 +1,6 @@
 
 import { updateMenus } from "../menu-update.js";
-import { gridContainer, menuTitle, gamePlayContainer } from "../DOM.js";
+import { gridContainer, menuTitle, gamePlayContainer, gameMainNavMenuDiv } from "../DOM.js";
 import { leaveGameBtns } from "../R-P-S/rps-DOM.js";
 
 
@@ -8,8 +8,9 @@ export function openTikTacToeGame(){
   tikTacToeDiv.style.display = "flex";
   gridContainer.style.display = "none";
   menuTitle.style.display = "none";
-  gamePlayContainer.style.paddingTop = "10px";
+  gamePlayContainer.style.display = 'none'
   leaveGameBtns.style.display = "flex";
+  gameMainNavMenuDiv.style.display ='flex';
 
   playTikTacToeGame();
 
@@ -93,7 +94,7 @@ export function playTikTacToeGame(){
 export function closeTikTacToeGame(){
   tikTacToeDiv.style.display = "none";
   gridContainer.style.display = "grid";
-  gamePlayContainer.style.paddingTop = "30px";
+  gamePlayContainer.style.display = 'flex';
   menuTitle.style.display = "block";
   leaveGameBtns.style.display = "none";
   updateMenus("Games");

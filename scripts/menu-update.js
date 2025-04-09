@@ -1,7 +1,7 @@
 // To handle menu update functions 
 import { menus } from "./menus.js";
 import { navigateMenus, menuHistory } from "./menu-navigation.js";
-import { gameContainer, gameMainNavMenuDiv, gridContainer, menuTitle } from "./DOM.js";
+import { gameContainer, gameMainNavMenuDiv, gridCntrHolder, gridContainer, menuTitle } from "./DOM.js";
 import { openRockPaperScissors } from "./R-P-S/rps-functions.js";
 import { openTikTacToeGame } from "./Tic-Tac-Toe/main-tik-tac-toe.js";
 import { openCryptoPage } from "./investments/crypto/cryptoFunctions.js";
@@ -109,17 +109,17 @@ export function updateMenus(menuTag){
   });
   
   // add scroll bar if grid menu overflows
-  if (gridItemCount > 12){
-    gameContainer.style.overflowY = "scroll";
-    gameContainer.style.scrollbarWidth = "thin";
-    gameMainNavMenuDiv.style.position = "sticky";
-    gameMainNavMenuDiv.style.marginBottom = "-20px"; // had to because setting to sticky added a strange margin
-  } else {
-    gameContainer.style.overflowY = "hidden";
-    gameContainer.style.scrollbarWidth = "none";
-    gameMainNavMenuDiv.style.position = "sticky";
-    gameMainNavMenuDiv.style.marginBottom = "-5px"; 
-  }
+  //if (gridItemCount > 12){
+    //gridCntrHolder.style.overflowY = "scroll";
+    //gridCntrHolder.style.scrollbarWidth = "thin";
+    //gameMainNavMenuDiv.style.position = "sticky";
+    //gameMainNavMenuDiv.style.marginBottom = "-20px"; // had to because setting to sticky added a strange margin
+ // } else {
+    ///gridCntrHolder.style.overflowY = "hidden";
+   /// gridCntrHolder.style.scrollbarWidth = "none";
+    //gameMainNavMenuDiv.style.position = "sticky";
+    //gameMainNavMenuDiv.style.marginBottom = "-5px"; 
+  //}
 
 }
 

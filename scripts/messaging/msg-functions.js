@@ -1,5 +1,5 @@
 
-import { gameMainNavMenuDiv, gridContainer, menuTitle, gameContainer } from "../DOM.js";
+import { gameMainNavMenuDiv, gridContainer, menuTitle, gameContainer, gamePlayContainer } from "../DOM.js";
 import { exitAppBtn } from "../investments/crypto/crypto-DOM.js";
 import { closeGrid, openGrid } from "../menu-navigation.js";
 import { getPlayerInfo } from "../player-stats.js";
@@ -17,9 +17,9 @@ const displayPicture = 'scripts/messaging/images/profile(1).png';
 export function openMessagingApp() {
   textMessagingContainer.style.display = 'flex';
   exitAppBtn.style.display = 'flex';
-  gameMainNavMenuDiv.style.display = "flex";
-  gameMainNavMenuDiv.style.position = 'absolute';
+  gameMainNavMenuDiv.style.display = "none";
   gridContainer.style.display = 'none';
+  gamePlayContainer.style.display ='none';
   menuTitle.style.display = 'none';
   getCurrentDate();
   getCurrentTime();
@@ -32,7 +32,9 @@ export function closeMessagingApp() {
   exitAppBtn.style.display = 'none';
   gridContainer.style.display = 'grid';
   menuTitle.style.display = 'block';
-  gameMainNavMenuDiv.style.position = 'absolute';
+  gamePlayContainer.style.display ='flex';
+  gameMainNavMenuDiv.style.display = "flex";
+
 }
 
 // Send the user's message and get a response

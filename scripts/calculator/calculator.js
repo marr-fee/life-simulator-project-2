@@ -1,7 +1,7 @@
 
 // SHORTER CODE
 
-import { gameMainNavMenuDiv, gridContainer, menuTitle } from "../DOM.js";
+import { gameMainNavMenuDiv, gamePlayContainer, gridCntrHolder, gridContainer, menuTitle } from "../DOM.js";
 import { exitAppBtn } from "../investments/crypto/crypto-DOM.js";
 import { calcScreenBottom, calcScreenTop, calculatorContainer } from "./calculator-DOM.js";
 
@@ -86,13 +86,18 @@ export function openCalculatorApp(){
   calculatorContainer.style.display = "flex";
   gridContainer.style.display = "none";
   exitAppBtn.style.display = "block";
+  gridCntrHolder.style.display = 'none';
+  gamePlayContainer.style.display = 'none';
+
   gameMainNavMenuDiv.style.display = "flex";
   menuTitle.style.display = "none";
 };
 export function closeCalculatorApp(){
   calculatorContainer.style.display = "none";
+  gridCntrHolder.style.display = 'flex';
   gridContainer.style.display = "grid";
   exitAppBtn.style.display = "none";
+  gamePlayContainer.style.display = 'flex';
 };
 
 // LONGER MORE DECRIPTIVE

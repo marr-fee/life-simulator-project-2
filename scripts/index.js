@@ -1,3 +1,5 @@
+import { gridCntrHolder, menuTitle } from "./DOM.js";
+
 export * from "./eventListns.js";
 export * from "./DOM.js";
 export * from "./player-stats.js";
@@ -25,5 +27,4 @@ export * from "./player-expences.js";
 export * from "./messaging/chat-bubble.js";
 export * from "./messaging/msg-functions.js";
 export * from "./messaging/messg-chat.js";
-
 

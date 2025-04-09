@@ -1,5 +1,5 @@
 // To handle game startup eventlisteners
-import { gameIntroPage, startLifeBtn, buttonSpan, gameContainer, welcomeDiv, nextPageBtn1, submitPlayerStatBtn, gamePlayContainer, startLifeBtnContr } from "./DOM.js";
+import { gameIntroPage, startLifeBtn, buttonSpan, gameContainer, welcomeDiv, nextPageBtn1, submitPlayerStatBtn, gamePlayContainer, startLifeBtnContr, gameMainNavMenuDiv } from "./DOM.js";
 import { updateCryptoPrices } from "./investments/crypto/cryptoFunctions.js";
 
 import { saveSelectedBelief, updatePlayerStats, getRandomPlayerStats, Player, getPlayerInfo} from "./player-stats.js";
@@ -45,7 +45,7 @@ submitPlayerStatBtn.addEventListener('click', () => {
 
   const timeResponses = chatData.responses.mood.good.response.time;
   const randomTimeResponse = timeResponses[Math.floor(Math.random() * timeResponses.length)](); // Get random time
-
+  gameMainNavMenuDiv.style.display = 'flex';
   
   
 })

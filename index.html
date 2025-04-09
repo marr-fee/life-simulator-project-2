@@ -170,6 +170,7 @@
         <button type="submit" id="submit-player-stats">PROCEED</button>
       </div>
 
+      <!--GAMEPLAY MENUS CONTAINER STARTS-->
       <!-- MAIN GAME PAGE TOP DATA DISPLAY ( ACCOUNT BALANCE - GREETING - TIME )-->
       <div class="player-data-and-time" id="game-nav-menu-div">
         <div class="account-balance">
@@ -186,14 +187,14 @@
         </div>
       </div>
       <!----------------------------------------------------------->
-      <!--GAMEPLAY MENUS CONTAINER STARTS-->
-
       <div class="gameplay-container" id="game-play-container">
         <!--GRID HEADER-->
         <h3 id="menu-title"></h3>
 
         <!--GRID CONTAINER-->
-        <div class="gameplay-grid-container" id="grid-container"></div>
+        <div class="game-grid-container" id="game-grid-holder">
+          <div class="gameplay-grid-container" id="grid-container"></div>
+        </div>
       </div>
 
       <!--GAMEPLAY MENUS CONTAINER ENDS-->
@@ -335,7 +336,7 @@
         <!-- Game start over container starts here -->
         <div class="start-again-btn-container" id="start-again-container">
           <!-- Game start over button starts here -->
-          <button id="reset-game" class="play-again-btn">Reset Game</button>
+          <button id="reset-game" class="reset-gm-btn">Reset Game</button>
           <!-- Game start over button ends here -->
         </div>
         <!-- Game start over container ends here -->
@@ -651,6 +652,11 @@
             <div class="receiver-img-name">
               <h2 id="recepient-name">Lorem lem</h2>
               <p id="recepient-last-seen">Lorem ipsum dolor sit.</p>
+            </div>
+
+            <div class="message-date-time">
+              <span id="msg-day"></span><span id="msg-hour"></span> :
+              <span id="msg-minute"></span>
             </div>
           </div>
 

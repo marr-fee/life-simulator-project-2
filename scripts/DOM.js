@@ -28,5 +28,6 @@ export const gameMainNavMenuDiv = document.getElementById('game-nav-menu-div'); 
 export let accountBalanceSpan = document.getElementById('accnt-balance'); // Account balance span
 export const playerNameSpan = document.getElementById('player-name-display'); // player name greeting span
 export const menuTitle = document.getElementById('menu-title'); // To target the grid menu title.
+export const gridCntrHolder = document.getElementById('game-grid-holder')
 export const gridContainer = document.getElementById('grid-container'); // container for menu grid
 export const rockPaperScissorsDiv = document.getElementById('roc-pap-sci-div');

@@ -46,6 +46,9 @@ export function startTime() {
     let updateHours = document.getElementById('hours');
     let updateDays = document.getElementById('days');
     let updateGreeting = document.getElementById('greetings');
+    const msgAppHourDisplay = document.getElementById('msg-hour');
+    const msgAppMinutesDisplay = document.getElementById('msg-minute');
+    const msgAppDayDisplay = document.getElementById('msg-day');
 
     // Increase minutes by 1 every second
     minutes++;
@@ -88,6 +91,7 @@ export function startTime() {
 
     // Format and display time
     updateTime(updateMinutes, updateHours, updateDays);
+    updateTime(msgAppMinutesDisplay, msgAppHourDisplay, msgAppDayDisplay);
 
       // TO STOP TIME IF THESE CONDITIONS ARE TRUE
     //if ( currentMonth === monthsList[3] ) {
