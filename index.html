@@ -10,6 +10,12 @@
       href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Quicksand:wght@300..700&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lobster&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="scripts\R-P-S\rps-styles.css" />
     <link rel="stylesheet" href="scripts\Tic-Tac-Toe\tik-tac-toe.css" />
@@ -56,40 +62,95 @@
       </div>
 
       <!--START GAME BUTTON-->
-      <button id="start-game-btn" class="start-game-button">
-        <span id="button-span">Start&nbsp;Life</span>
-      </button>
+      <div class="start-game-button-container" id="start-game-btn-contr">
+        <button id="start-game-btn" class="start-game-button">
+          <span id="button-span">Start&nbsp;Life</span>
+        </button>
+      </div>
 
       <!--WELCOME DIV AND STAT ASSIGNMENT SECTION-->
       <div class="welcome-display" id="welcome-div">
         <div class="game-title"><h2>Born Again</h2></div>
         <h3 class="welcm-2-life">Welcome to Life</h3>
-
-        <div class="random-stats-container">
-          <p class="colored">
-            You don't get to choose some details rather they will be assigned to
-            you at random
-          </p>
-          <!--STATS ASSIGNMENT SECTION-->
-          <h3 class="stat-title">
-            Your Gender: <span id="gender" class="stat-span"></span>
-          </h3>
-          <h3 class="stat-title">
-            Your Name:
-            <span id="player-name" class="stat-span"></span>
-          </h3>
-
-          <h3 class="stat-title">
-            Inherited Financial Status:
-            <span id="financial-status" class="stat-span"></span>
-          </h3>
-          <h3 class="stat-title">
-            Your Age: <span id="age" class="stat-span"></span>
-          </h3>
+        <div class="welcm-msg-div-cntr">
+          <div class="welcome-notice">
+            <p>
+              You don't get to choose some details rather they will be assigned
+              to you at random
+            </p>
+            <h3 class="stat-title">
+              ** Inherited Financial Status:
+              <span id="financial-status" class="stat-span"></span>
+            </h3>
+          </div>
         </div>
+
+        <!--STATS ASSIGNMENT SECTION-->
+
         <div class="random-stats-container">
+          <div class="blur-bg"></div>
+          <h1 class="license-title">Personal License</h1>
+          <div class="divider-license"></div>
+          <div class="license-details-container">
+            <div class="license-photo-name-container">
+              <div class="license-photo-container">
+                <img
+                  src="images\boss.png"
+                  alt="license photo"
+                  id="player-profile-pic"
+                />
+              </div>
+              <div class="names-player">
+                <h1><span id="p-name">FgcvyqwN</span></h1>
+                <h1><span>LjhdcyvN</span></h1>
+              </div>
+            </div>
+            <div class="license-stats-container">
+              <p>LN: <span class="stat-span">37588BW9</span></p>
+              <p>EXP: <span class="stat-span">07/11/2030</span></p>
+              <p>FN: <span id="player-name" class="stat-span"></span></p>
+              <p>LN: <span class="stat-span"></span></p>
+              <p class="street-name">
+                0123 ANYSTREET,<br />
+                ANYTOWN, CA012345
+              </p>
+              <p>DOB: <span class="stat-span">20/03/2008</span></p>
+              <div class="extra-player-dettails">
+                <p>
+                  SEX:&nbsp;
+                  <span id="gender" class="stat-span sex-stat"></span>
+                </p>
+                <p>HGT:&nbsp; <span>5'7"</span></p>
+                <p>WGT:&nbsp; <span>167lb</span></p>
+                <p>EYES:&nbsp; <span>BLUE</span></p>
+                <p>HAIR:&nbsp; <span>BRN</span></p>
+              </div>
+            </div>
+            <div class="right-license-div">
+              <div class="age-class">
+                <h3>CLASS C</h3>
+                <p>age:<span id="age" class="stat-span"></span></p>
+              </div>
+
+              <div class="blur-photo-iss-num">
+                <div class="blur-prof-pic-conttr">
+                  <img
+                    src="images\boss.png"
+                    alt="license photo"
+                    id="player-prof-pic-blur"
+                  />
+                </div>
+                <p>ISS</p>
+                <p>20/03/2025</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="random-belief-container">
           <h4 class="colored">You get to choose your beliefs</h4>
           <p class="big-question">Do You Believe In <strong>GOD</strong>?</p>
+
           <div class="big-question-answers">
             <label for="yes">YES </label
             ><input type="radio" name="belief" id="yes" value="yes" />
@@ -106,7 +167,7 @@
             />
           </div>
         </div>
-        <button type="submit" id="submit-player-stats">Save</button>
+        <button type="submit" id="submit-player-stats">PROCEED</button>
       </div>
 
       <!-- MAIN GAME PAGE TOP DATA DISPLAY ( ACCOUNT BALANCE - GREETING - TIME )-->

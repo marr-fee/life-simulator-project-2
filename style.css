@@ -4,19 +4,25 @@
   box-sizing: border-box;
 }
 
-/* Game container */
-.game-container{
-  width: 600px;
-  max-width: 100%;
-  min-width: 520px;
-  min-height: 550px;
-  max-height: 90vh;
-  border: 8px solid black;
-  margin: 20px auto;
+body{
+  height: 100vh;
+  background: linear-gradient(150deg, rgba(0, 0, 0, 0.712), black);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+/* Game container */
+.game-container{
+  width: 80vw;
+  max-width: 100%;
+  min-width: 520px;
+  min-height: 520px;
+  height: 90vh;
+  border: 8px solid black;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.192);
+  margin: 0 auto;
+  display: flex;
   padding: 0;
   position: relative;
   background-color: black;
@@ -32,24 +38,22 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: 20px;
+  margin: 20px auto;
   color: blanchedalmond;
-
 }
 
 .game-details h1{
   font-size: 80px;
   margin: 20px auto;
   position: absolute;
-  top: 15px;
+  top: 10px;
 }
 
 details{
   width: 100%;
   max-height: 250px;
-  border: 3px solid black;
+  border: none;
   padding: 15px;
-  border-radius: 20px 0 0 40px;
   font-size: 18px;
   line-height: 1.5em;
   overflow-y: scroll;
@@ -58,7 +62,8 @@ details{
 
 summary{
   font-weight: 600;
-  font-size: 20px;
+  font-size: 1rem;
+  text-align: center;
 }
 
 details p{
@@ -68,9 +73,9 @@ details p{
 }
 
 .first-next-btn{
-  width: 50%;
+  width: 40%;
   height: auto;
-  padding: 13px 25px;
+  padding: 15px 25px;
   font-size: 16px;
   font-weight: 600;
   border: none;
@@ -85,6 +90,16 @@ details p{
 }
 
 /* PAGE 2 - START GAME VOID BUTTON */
+
+.start-game-button-container{
+   width: 100%;
+   height: 100%;
+   display: none;
+   position: relative;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
 .start-game-button{
   --glow-color: rgb(217, 176, 255);
   --glow-spread-color: rgba(191, 123, 255, 0.781);
@@ -108,7 +123,6 @@ details p{
   position: relative;
   transition: all 0.3s;
   animation: enterStartLife 2s ease;
-  display: none;
 }
 
 .start-game-button::after{
@@ -178,7 +192,76 @@ details p{
   }
 }
 
+.change-background{
+  animation: backgroundColor 6s linear;
+}
 /* PAGE 3 - GAME WELCOME PAGE AND PERSONAL DETAIL ASSIGNMENT */
+@keyframes backgroundColor {
+  0% {
+    background: linear-gradient(150deg, rgb(177, 136, 214), rgb(177, 136, 214));
+  }
+  5% {
+    background: linear-gradient(150deg, rgb(179, 138, 216), rgb(179, 138, 216));
+  }
+  10% {
+    background: linear-gradient(150deg, rgb(181, 140, 218), rgb(181, 140, 218));
+  }
+  15% {
+    background: linear-gradient(150deg, rgb(183, 142, 220), rgb(183, 142, 220));
+  }
+  20% {
+    background: linear-gradient(150deg, rgb(185, 144, 222), rgb(185, 144, 222));
+  }
+  25% {
+    background: linear-gradient(150deg, rgb(187, 146, 224), rgb(187, 146, 224));
+  }
+  30% {
+    background: linear-gradient(150deg, rgb(189, 148, 226), rgb(189, 148, 226));
+  }
+  35% {
+    background: linear-gradient(150deg, rgb(191, 150, 228), rgb(191, 150, 228));
+  }
+  40% {
+    background: linear-gradient(150deg, rgb(193, 152, 230), rgb(193, 152, 230));
+  }
+  45% {
+    background: linear-gradient(150deg, rgb(195, 154, 232), rgb(195, 154, 232));
+  }
+  50% {
+    background: linear-gradient(150deg, rgb(197, 156, 234), rgb(197, 156, 234));
+  }
+  55% {
+    background: linear-gradient(150deg, rgb(199, 158, 236), rgb(199, 158, 236));
+  }
+  60% {
+    background: linear-gradient(150deg, rgb(201, 160, 238), rgb(201, 160, 238));
+  }
+  65% {
+    background: linear-gradient(150deg, rgb(203, 162, 240), rgb(203, 162, 240));
+  }
+  70% {
+    background: linear-gradient(150deg, rgb(205, 164, 242), rgb(205, 164, 242));
+  }
+  75% {
+    background: linear-gradient(150deg, rgb(207, 166, 244), rgb(207, 166, 244));
+  }
+  80% {
+    background: linear-gradient(150deg, rgb(209, 168, 246), rgb(209, 168, 246));
+  }
+  85% {
+    background: linear-gradient(150deg, rgb(211, 170, 248), rgb(211, 170, 248));
+  }
+  90% {
+    background: linear-gradient(150deg, rgb(213, 172, 250), rgb(213, 172, 250));
+  }
+  95% {
+    background: linear-gradient(150deg, rgb(215, 174, 252), rgb(215, 174, 252));
+  }
+  100% {
+    background: linear-gradient(150deg, rgb(217, 176, 255), rgb(217, 176, 255));
+  }
+}
+
 
 .welcome-display{
   display: none;
@@ -190,6 +273,7 @@ details p{
   width: 100%;
   position: relative;
   border: 1px solid black;
+  overflow: hidden;
 }
 
 .stat-title{
@@ -203,26 +287,225 @@ details p{
   text-align: center;
   width: 100%;
   text-decoration: underline;
+  font-family: "Dancing Script", cursive;  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: italic;
 
+}
+.welcm-msg-div-cntr{
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.301);
+  overflow: hidden;
+
+}
+.welcome-notice{
+  display:  flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  color: white;
+  margin: 0 auto;
+  width: 100%;
+  animation: infiniteSlide 25s linear  infinite;
+}
+
+@keyframes infiniteSlide {
+  0%{
+    transform: translateX(93%);
+  }
+  49%{
+    transform: translateX(0);
+  }
+  100%{
+    transform: translateX(-100%);
+  }
 }
 
 .big-question, .big-question-answers{
-  padding: 5px 10px;
+  padding: 5px 15px;
   font-style: italic;
   max-width: 100%;
 
 }
 
 .random-stats-container{
-  width: 100%;
-  border: 1px solid black;
-  padding: 0;
-  margin-top: 10px;
+  width: 50%;
+  height: 220px;
+  border: 1px solid rgba(0, 0, 0, 0.219);
+  padding: 10px 20px;
+  margin: 10px auto 0 auto;
   margin-bottom: 15px;
-  border-radius: 10px;
+  border-radius: 20px;
   overflow: hidden;
   background: linear-gradient(150deg, rgb(241, 224, 224), rgb(211, 203, 203));
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.315);
+  position: relative;
+  animation: zoomIn 2s ease-in-out;
+  transition: scale 0.5s ease-in-out;
+}
+
+.random-stats-container:hover{
+  scale: 1.05;
+}
+.blur-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150%;
+  height: 150%;
+  background: url('images/guilloche-1337833_640.png') center/cover no-repeat;
+  filter: blur(0);
+  opacity: 0.1;
+  z-index: 0;
+  transform: scale(2); 
+}
+
+.divider-license{
+  width: 100%;
+  border-top: 2px solid rgba(0, 0, 0, 0.411);
+  margin: 5px auto;
+}
+.license-title{
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  font-family: sans-serif;
+  margin:  0 auto;
+  text-transform: uppercase;
+}
+
+.license-details-container{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 80%;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.names-player{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 8px;
+}
+
+.license-photo-name-container, .license-stats-container, .right-license-div{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding-right: 5px;
+}
+
+.license-photo-name-container{
+  flex: 30;
+  text-align: center;
+  font-size: 10px;
+  gap: 10px;
+  font-family: "Dancing Script", cursive;  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: italic;
+}
+.license-stats-container{
+  padding-top: 10px;
+  flex: 50;
+}
+.right-license-div{
+  flex: 20;
+}
+.license-photo-container{
+  background-color: rgb(39, 167, 206);
+  width: 100%;
+  flex: 70;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: hidden;
+}
+.license-photo-container img{
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  opacity: 0;
+  animation: fadeIn 1s forwards; 
+}
+
+.license-stats-container p{
+  font-size: 10px;
+  color: blue;
+}
+.license-stats-container p > span{
+  font-size: 16px;
+  font-style: normal;
+  font-family: sans-serif;
+  color: rgba(0, 0, 0, 0.568);
+}
+.street-name{
+  font-size: 10px;
+  color: black;
+  font-weight: normal;
+}
+
+.extra-player-dettails{
+  display: flex;
+  margin-top: 5px;
+  text-align: left;
+}
+.extra-player-dettails span{
+font-size: 10px !important;
+color: blue;
+}
+
+.extra-player-dettails p{
+  font-size: 10px;  
+  color: black;
+}
+
+.right-license-div{
+  justify-content: space-between;
+  padding: 10px;
+  gap: 2px;
+}
+.right-license-div h3{
+  font-size: 12px;
+}
+.right-license-div p{
+  font-size: 10px;
+}
+
+.blur-prof-pic-conttr{
+  background-color: aquamarine;
+  width: 60%;
+  display: flex;
+  padding-top: 5px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  opacity: 0.4;
+}
+.blur-prof-pic-conttr img{
+  width: 40px;
+  height: 40px;
+  opacity: 0;
+  animation: fadeIn 1s forwards; 
+}
+
+.random-belief-container{
+  width: 70%;
+  height: 100px;
+  margin: 0 auto;
+  background-color: black;
+  background: linear-gradient(150deg, rgba(0, 0, 0, 0.521), rgba(0, 0, 0, 0.904));
+  color: white;
+  border-radius: 50px 50px 10px 10px;
+  overflow: hidden;
+  animation: zoomIn 3s ease-in-out;
 }
 
 .colored{
@@ -241,10 +524,11 @@ details p{
   font-style: italic;
 }
 
-#gender {
+#gender, .license-photo-container img, .blur-prof-pic-conttr img {
   animation-delay: 2s;
+  margin-left: 0;
 }
-#player-name {
+#player-name ,#p-name{
   animation-delay: 3s;
 }
 #financial-status {
@@ -256,36 +540,39 @@ details p{
 
 .game-title{
   text-align: center;
-  margin-bottom: 15px;
-  font-size: 20px;
-  text-align: center;
+  margin-bottom: 8px;
+  font-family: "Dancing Script", cursive;  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: italic;
   width: 100%;
 }
 
 input{
-  margin: 10px 20px 20px 5px;
+  margin: 0 20px 0 5px;
 }
 
 #submit-player-stats{
   display: block;
-  width: 50%;
+  width: 30%;
   text-align: center;
   opacity: 0;
   animation: fadeIn 1s forwards; 
   animation-delay: 6s;
   margin: 10px auto;
-  padding: 8px 20px;
+  padding: 12px 20px;
   font-size: 14px;
   font-weight: bold;
   text-transform: uppercase;
   border: none;
   border-radius: 10px;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.315);
-  background: linear-gradient(160deg, rgba(120, 245, 82, 0.849), rgba(3, 224, 14, 0.726));
+  background: linear-gradient(160deg, rgb(173, 0, 23), rgba(95, 3, 0, 0.966));
+  color: white;
 }
 
 #submit-player-stats:hover{
   background: linear-gradient(190deg, rgba(120, 245, 82, 0.849), rgba(3, 224, 14, 0.726));
+  color: black;
 }
 
 /* PAGE 3*/

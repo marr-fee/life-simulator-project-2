@@ -3,6 +3,7 @@
 
 // START NAVIGATION BUTTONS AND DOM .........................................................
 
+export const startLifeBtnContr = document.getElementById('start-game-btn-contr'); // The start button container
 export const startLifeBtn = document.getElementById('start-game-btn'); // The glowing button that starts the game
 export const buttonSpan = document.getElementById('button-span'); // Span inside the glowing start button
 export const gameContainer = document.getElementById('main-game-container'); // Main game container where game happens
