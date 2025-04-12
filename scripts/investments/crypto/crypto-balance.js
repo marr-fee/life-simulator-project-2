@@ -2,12 +2,14 @@
 import { accountBalanceSpan } from "../../DOM.js";
 
 import { Player } from "../../player-stats.js";
+import { getCurrentDate } from "../../time.js";
 import { depositBtn, depositAmountField, depositFeedback, clearBtn, cryptoPortfolioBalanceSpan, cryptoMainPage } from "./crypto-DOM.js";
 import { cryptos } from "./crypto-index.js";
 import { formatCryptoAmount, clearCryptoTransacFeedbackMessage } from "./cryptoFunctions.js";
+import { addTransaction } from "../../bank-app/bank-app-functions.js";
 
 
-
+export const cryptoCompany = 'Marrfee Crypto Ex.';
 // Handle number button click events
 const numberButtons = document.querySelectorAll('.key[data-value]');
 numberButtons.forEach(button => {
@@ -62,6 +64,7 @@ depositBtn.addEventListener('click', () => {
 
     // display for 3 seconds
     depositFeedback.textContent = `You have successfully deposited $${depositAmount.toFixed(2)}${selectedCrypto.abbriviation}.`;
+    addTransaction(getCurrentDate() , -depositAmount, cryptoCompany, 'debit');
       depositFeedback.style.color = "green";
     // clear display after 3s
     clearCryptoTransacFeedbackMessage();
@@ -70,6 +73,7 @@ depositBtn.addEventListener('click', () => {
     cryptoBanalce += Number(depositAmount) 
     cryptoPortfolioBalanceSpan.innerText = `$${cryptoBanalce.toFixed(2)}`;
     accountBalanceSpan.innerHTML = `$${Player.financialStats.accountBalance}`;
+    
   }
   // Recalculate total crypto portfolio balance
 
@@ -124,7 +128,10 @@ export function updateCryptoPortfolioBalance() {
   // Optional: Update the visible balance in the UI
   if (cryptoPortfolioBalanceSpan) {
     cryptoPortfolioBalanceSpan.innerText = `$${totalBalance.toFixed(2)}`;
+
   }
+
+  localStorage.setItem("cryptoHoldings", JSON.stringify(Player.cryptoHoldings));
 }
 
- localStorage.setItem("cryptoHoldings", JSON.stringify(Player.cryptoHoldings));
+

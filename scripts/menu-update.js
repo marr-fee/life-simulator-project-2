@@ -9,7 +9,7 @@ import { openCalculatorApp } from "./calculator/calculator.js";
 import { checkAccess, openHouseListingPage } from "./houses/housing-functions.js";
 import { Player } from "./player-stats.js";
 import { openMessagingApp } from "./messaging/msg-functions.js";
-
+import { openBankingApp } from "./bank-app/bank-app-functions.js";
 
 export function updateMenus(menuTag){
 
@@ -44,7 +44,7 @@ export function updateMenus(menuTag){
   const gridItem = document.querySelectorAll('.grid-item');
 
   gridItem.forEach((item, index) => {
-    item.style.animation = `gridSmoothDrop 0.3s ease forwards`;
+    item.style.animation = `gridSmoothDrop 0.2s ease forwards`;
     item.style.animationDelay = `${index * 100}ms`; // 100ms stagger
   });
 
@@ -101,6 +101,16 @@ export function updateMenus(menuTag){
       }else if (branch.tag === "Messages"){
         gridItem.addEventListener('click', () => {
           openMessagingApp();
+          
+        });
+      }else if (branch.tag === "Apartment Complex" || branch.tag === "Real Estate" || branch.tag === "House Listing"){
+        gridItem.addEventListener('click', () => {
+          openHouseListingPage();
+          
+        });  
+      }else if (branch.tag === "Online Bank"){
+        gridItem.addEventListener('click', () => {
+          openBankingApp();
           
         });
       }else if (branch.tag === "Apartment Complex" || branch.tag === "Real Estate" || branch.tag === "House Listing"){

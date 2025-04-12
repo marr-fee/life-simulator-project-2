@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="scripts\calculator\calculator-style.css" />
     <link rel="stylesheet" href="scripts\houses\housing-page.css" />
     <link rel="stylesheet" href="scripts\messaging\messaging.css" />
+    <link rel="stylesheet" href="scripts\bank-app\bank-app.css" />
   </head>
   <body>
     <!--FULL GAME CONTAINER-->
@@ -682,6 +683,131 @@
       <!-- TEXT MESSAGE SECTION ENDS -->
 
       <!----------------------------------------------------------->
+      <!-- BANKING APP STARTS-->
+      <div class="bank-app-container" id="banking-app-container">
+        <!-- welcome page-->
+        <div class="bank-app-welcome-page" id="bank-app-wlcm-page">
+          <img
+            src="scripts\bank-app\images\letter-m(1).png"
+            alt="bank logo"
+            id="wlcm-pg-bank-logo"
+          />
+          <h3 id="wlcm-pg-bank-name">MARRFEE BANK</h3>
+          <p id="wlcm-pg-bank-motto">Enjoy Seemless Banking</p>
+        </div>
+        <!-- main page-->
+        <div class="bank-app-main-page" id="banking-app-main-page">
+          <div id="blur-overlay"></div>
+
+          <div class="side-bar" id="side-navigation">
+            <ul>
+              <li>
+                <img
+                  src="scripts\bank-app\images\home-icon-silhouette.png"
+                  alt="home logo"
+                  class="nav-logo"
+                />Home
+              </li>
+              <li>
+                <img
+                  src="scripts\bank-app\images\two-arrows.png"
+                  alt="transfers logo"
+                  class="nav-logo"
+                />Payments & Transfers
+              </li>
+              <li>
+                <img
+                  src="scripts\bank-app\images\wallet.png"
+                  alt="wallet logo"
+                  class="nav-logo"
+                />Accounts
+              </li>
+              <li>
+                <img
+                  src="scripts\bank-app\images\loan.png"
+                  alt="loan logo"
+                  class="nav-logo"
+                />Loans
+              </li>
+            </ul>
+
+            <div class="bank-profie-exit">
+              <div class="bank-profile">
+                <img
+                  src="scripts\bank-app\images\profile-user.png"
+                  alt="profile logo"
+                  class="nav-logo"
+                />Profile
+              </div>
+
+              <div class="exit-bank-app" id="exit-banking-app">
+                <img
+                  src="scripts\bank-app\images\log-out.png"
+                  alt="exit bank app button"
+                  class="nav-logo"
+                />Log Out
+              </div>
+            </div>
+          </div>
+          <div class="main-section" id="bank-app-top-secton">
+            <!-- header -->
+            <header class="app-head-section">
+              <div class="bank-greeting-div">
+                <span id="bank-time-greeting">Good Morning</span>
+                <span id="bank-player-name">Kenneth</span>
+              </div>
+              <div class="bank-logo-name">
+                <img
+                  src="scripts\bank-app\images\letter-m(1).png"
+                  alt="bank logo"
+                  class="bank-logo"
+                />
+                <h3 class="bank-name">MARRFEE</h3>
+                <img
+                  src="scripts\bank-app\images\hamburger(1).png"
+                  alt="menu logo"
+                  class="nav-logo"
+                  id="nav-toggler"
+                />
+              </div>
+            </header>
+            <!-- account details-->
+            <div class="account-details">
+              <div class="account-type">
+                <h4>Savings Account</h4>
+                <p>1234567824</p>
+              </div>
+              <div class="account-status-balance">
+                <div class="account-status">
+                  <p>Account Status</p>
+                  <div class="acc-status" id="accnt-status">REGULAR</div>
+                </div>
+                <div class="acc-bal">
+                  <p>Account Balance:</p>
+                  <span id="account-bal">$2330</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- withdrawal and deposit buttons-->
+          <div class="bank-deposit-withdraw-btns">
+            <button id="bank-deposit-btn">DEPOSIT</button>
+            <button id="bank-withdrawal-btn">WITHDRAW</button>
+          </div>
+          <!-- transaction history-->
+          <div
+            class="transaction-history-grid-container"
+            id="transac-hist-grid-cntr"
+          ></div>
+
+          <div class="bottom-nav"></div>
+        </div>
+      </div>
+
+      <!-- BANKING APP ENDS-->
+
+      <!------------------------------------------------------------->
     </div>
     <!--    FULL GAME CONTAINER ENDS    -->
 

@@ -4,7 +4,8 @@ import { Player } from "../player-stats.js";
 import { accountBalanceSpan } from "../DOM.js";
 import { exitAppBtn } from "../investments/crypto/crypto-DOM.js";
 import { calculateAmountAfterTax, rentHouse } from "./housing-functions.js";
-
+import { addTransaction } from "../bank-app/bank-app-functions.js";
+import { getCurrentDate } from "../time.js";
 
 
 
@@ -30,7 +31,7 @@ export const chatBubbleHousing = document.getElementById('chat-bbl');
 
 
 // Ensure that taxPercent and playerHousingBill are set before calculating the total amount
-
+export const houseCompany = 'MarrFee Living';
 let playerHousingBill;
 let taxPercent;
 let totlAmountAfterTax; // Declare this outside the function so it can be used later
@@ -86,22 +87,22 @@ export function initializeHouseList() {
       const buyChoiceDescriptionMsg = [
         `<p>Hello ${Player.name}! 😀<br>
         You have opted to buy the ${house.houseType} located in the ${house.location}. 😊<br>
-        The cost is $${house.purchaseCost.toLocaleString()}<br> You should also note that purchase comes with a ${taxPercent}% tax payment.<br> Which brings the total to $${totlAmountAfterTax.toLocaleString()}<br> Please press <span class="gold">confirm</span> to complete this transaction or <span class="red">cancel</span> to cancel.</p>`,
+        The cost is $${house.purchaseCost.toLocaleString()}<br> You should also note that purchase comes with a ${taxPercent}% tax payment.<br> Which brings the total to $${totlAmountAfterTax.toLocaleString()}<br> Please press <span class="gold">confirm</span> to complete this transaction or <span class="red">cancle</span> to cancle.</p>`,
       
       `<p>Hi ${Player.name}, thank you for considering the ${house.houseType}. 🏡<br>
-        It’s located in ${house.location} and the cost of this lovely house is $${house.purchaseCost.toLocaleString()}.<br> Keep in mind that there’s a ${taxPercent}% tax included, so the total comes to $${totlAmountAfterTax.toLocaleString()}<br> Would you like to proceed? Click <span class="gold">confirm</span> or <span class="red">cancel</span> to rethink your decision.</p>`,
+        It’s located in ${house.location} and the cost of this lovely house is $${house.purchaseCost.toLocaleString()}.<br> Keep in mind that there’s a ${taxPercent}% tax included, so the total comes to $${totlAmountAfterTax.toLocaleString()}<br> Would you like to proceed? Click <span class="gold">confirm</span> or <span class="red">cancle</span> to rethink your decision.</p>`,
       
       `<p>Welcome ${Player.name}! 🌟<br>
-        You've chosen the ${house.houseType} in ${house.location}, priced at $${house.purchaseCost.toLocaleString()}.<br> With the ${taxPercent}% tax, your final price is $${totlAmountAfterTax.toLocaleString()}<br> If you're happy with the price, please click <span class="gold">confirm</span>. If you'd like to back out, click <span class="red">cancel</span>.</p>`,
+        You've chosen the ${house.houseType} in ${house.location}, priced at $${house.purchaseCost.toLocaleString()}.<br> With the ${taxPercent}% tax, your final price is $${totlAmountAfterTax.toLocaleString()}<br> If you're happy with the price, please click <span class="gold">confirm</span>. If you'd like to back out, click <span class="red">cancle</span>.</p>`,
       
       `<p>Hey ${Player.name}, great choice! 🎉<br>
-        The ${house.houseType} you’ve selected is located in ${house.location}, and it costs $${house.purchaseCost.toLocaleString()}.<br> After adding the ${taxPercent}% tax, the total amount is $${totlAmountAfterTax.toLocaleString()}<br> You can click <span class="gold">confirm</span> to finalize the purchase or <span class="red">cancel</span> if you want to rethink your decision.</p>`,
+        The ${house.houseType} you’ve selected is located in ${house.location}, and it costs $${house.purchaseCost.toLocaleString()}.<br> After adding the ${taxPercent}% tax, the total amount is $${totlAmountAfterTax.toLocaleString()}<br> You can click <span class="gold">confirm</span> to finalize the purchase or <span class="red">cancle</span> if you want to rethink your decision.</p>`,
       
       `<p>Greetings ${Player.name}! 🌞<br>
-        You’re about to purchase the ${house.houseType} located in ${house.location}, priced at $${house.purchaseCost.toLocaleString()}.<br> The tax is ${taxPercent}%, making the total $${totlAmountAfterTax.toLocaleString()}.<br> If you're ready to go ahead, click <span class="gold">confirm</span>. Otherwise, hit <span class="red">cancel</span> to abort.</p>`,
+        You’re about to purchase the ${house.houseType} located in ${house.location}, priced at $${house.purchaseCost.toLocaleString()}.<br> The tax is ${taxPercent}%, making the total $${totlAmountAfterTax.toLocaleString()}.<br> If you're ready to go ahead, click <span class="gold">confirm</span>. Otherwise, hit <span class="red">cancle</span> to abort.</p>`,
       
       `<p>Hey there ${Player.name}! 👋<br>
-        The ${house.houseType} in ${house.location} is yours for $${house.purchaseCost.toLocaleString()}.<br> Including the ${taxPercent}% tax, the final price comes to $${totlAmountAfterTax.toLocaleString()}<br> Ready to make the purchase? Click <span class="gold">confirm</span>, or <span class="red">cancel</span> if you change your mind.</p>`
+        The ${house.houseType} in ${house.location} is yours for $${house.purchaseCost.toLocaleString()}.<br> Including the ${taxPercent}% tax, the final price comes to $${totlAmountAfterTax.toLocaleString()}<br> Ready to make the purchase? Click <span class="gold">confirm</span>, or <span class="red">cancle</span> if you change your mind.</p>`
       ];
       
       exitAppBtn.style.display = "none";
@@ -136,32 +137,32 @@ export function initializeHouseList() {
         `<p>Hello ${Player.name}! 😀<br>
         You have opted to rent the ${house.houseType} located in the ${house.location}. 😊<br>
         The monthly rent is $${house.rentCost.toLocaleString()}<br>
-        Please press <span class="gold">confirm</span> to complete this transaction or <span class="red">cancel</span> to cancel.</p>`,
+        Please press <span class="gold">confirm</span> to complete this transaction or <span class="red">cancle</span> to cancle.</p>`,
       
       `<p>Hi ${Player.name}! 👋<br>
         You've chosen to rent the ${house.houseType} in ${house.location}. 😊<br>
         The rent is $${house.rentCost.toLocaleString()}/month.<br>
-        To finalize your rental, press <span class="gold">confirm</span>, or hit <span class="red">cancel</span> to choose a different option.</p>`,
+        To finalize your rental, press <span class="gold">confirm</span>, or hit <span class="red">cancle</span> to choose a different option.</p>`,
       
       `<p>Welcome ${Player.name}! 🎉<br>
         You’ve selected the ${house.houseType} in ${house.location}. 🏡<br>
         The monthly rent is $${house.rentCost.toLocaleString()}<br>
-        Confirm by pressing <span class="gold">confirm</span> or cancel with <span class="red">cancel</span>.</p>`,
+        Confirm by pressing <span class="gold">confirm</span> or cancle with <span class="red">cancle</span>.</p>`,
       
       `<p>Hey ${Player.name}! 😎<br>
         You’re looking at renting the ${house.houseType} in ${house.location}. 😊<br>
         The rent is set at $${house.rentCost.toLocaleString()} per month.<br>
-        Ready to proceed? Hit <span class="gold">confirm</span> to complete, or <span class="red">cancel</span> if you change your mind.</p>`,
+        Ready to proceed? Hit <span class="gold">confirm</span> to complete, or <span class="red">cancle</span> if you change your mind.</p>`,
       
       `<p>Hello ${Player.name}! 🌟<br>
         You’ve opted for the ${house.houseType} located in ${house.location}. 🏠<br>
         The monthly rent is $${house.rentCost.toLocaleString()}<br>
-        To proceed, click <span class="gold">confirm</span>, or hit <span class="red">cancel</span> to back out.</p>`,
+        To proceed, click <span class="gold">confirm</span>, or hit <span class="red">cancle</span> to back out.</p>`,
       
       `<p>Hi ${Player.name}! 👋<br>
         You've selected to rent the ${house.houseType} in ${house.location}. 🏡<br>
         The monthly rent is $${house.rentCost.toLocaleString()}<br>
-        If you're ready to rent, click <span class="gold">confirm</span>, or <span class="red">cancel</span> to make a different choice.</p>`
+        If you're ready to rent, click <span class="gold">confirm</span>, or <span class="red">cancle</span> to make a different choice.</p>`
       ]
       exitAppBtn.style.display = "none";
       housePaymentCompletionDiv.style.display = "flex";
@@ -175,6 +176,7 @@ export function initializeHouseList() {
 cancleHousePayment.addEventListener('click', () => {
   closeHousingTransactionChatBubble();
 });
+
 let confirmStep = 0;
 confirmHousePaymentBtn.addEventListener('click', () => {
   if (!selectedHouse) return;
@@ -231,6 +233,8 @@ confirmHousePaymentBtn.addEventListener('click', () => {
   accountBalanceSpan.innerText = `$${Player.financialStats.accountBalance}`;
   Player.Possessions.playerHasHome = true;
   rentHouse(selectedHouse, playerHousingBill);
+  // push transaction to bank
+  addTransaction(getCurrentDate() , -finalAmount, houseCompany, 'debit');
 
   // === Rent flow ===
   if (isRenting) {
@@ -268,7 +272,7 @@ confirmHousePaymentBtn.addEventListener('click', () => {
     confirmHousePaymentBtn.style.display = "none";
     cancleHousePayment.textContent = "CLOSE";
     cancleHousePayment.style.right = "180px";
-//console.log(Player.Possessions.monthlyRent);
+    //console.log(Player.Possessions.monthlyRent);
   }
 
   // === Buy flow ===

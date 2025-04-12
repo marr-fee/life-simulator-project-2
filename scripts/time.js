@@ -183,7 +183,7 @@ function updateTime(minutesElem, hoursElem, daysElem) {
 
 
 export function getCurrentDate(){
-  const dateDisplay = `${currentDay} ${currentMonth}, ${currentYear}`;
+  const dateDisplay = `${day} ${currentMonth}`;
   return dateDisplay; 
 }
 
