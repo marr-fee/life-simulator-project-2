@@ -1,6 +1,6 @@
 // To handle all stats updates
 
-import { playerNameSpan, accountBalanceSpan, nameSpan, genderSpan, financialStatusSpan, ageSpan, welcomeDiv, gameContainer, gameMainNavMenuDiv, gamePlayContainer } from "./DOM.js";
+import { playerNameSpan, accountBalanceSpan, nameSpan, genderSpan, financialStatusSpan, ageSpan, welcomeDiv, gameContainer, gameMainNavMenuDiv, gamePlayContainer, lastNameSpan, playerLastNameSpan2, playerNameSpan2, playerProfilePic, blurredPlayerProfilePic } from "./DOM.js";
 import { updateFaith, updateFinance } from "./stat-update-func.js";
 import { updateMenus } from "./menu-update.js";
 import { resumeTime } from "./time.js";
@@ -12,6 +12,7 @@ export const Player = {
   name: "",
   age: 17,
   gender: "",
+  lastName: "",
   
   // Grouped personal stats
   personalStats: {
@@ -72,10 +73,19 @@ export const femaleNames = [
   'Suzanne', 'Kathryn', 'Janet', 'Diane', 'Tina', 'Annie', 'Julie', 'Heather', 'Victoria', 'Olivia'
 ];
 
+export const lastNames = [
+  "Anderson", "Bennett", "Carter", "Dawson", "Ellis", "Fletcher", "Garcia", "Harrison", "Ingram", "Jacobs", "Keller", "Lawson", "Mitchell", "Nolan", "Owens", "Parker", "Quinn", "Reynolds", "Sullivan", "Turner", "Underwood", "Vargas", "Walker", "Xavier", "Young", "Zimmerman", "Brooks", "Chambers", "Delaney", "Foster"
+];
+
+export const maleProfilePictures = ["images/boss.png"];
+
+export const femaleProfilePictures = ["images/woman.png" ];
+
 // Function to get random player stats (name, gender, financial status, age)
 export function getRandomPlayerStats() {
 
   const randomGender = Math.random() > 0.5 ? "male" : "female"; 
+  const randomLastName = lastNames[Math.floor(Math.random() * lastNames.length)];
   
   const financialStatusOptions = ["Poor", "Middle Class", "Extremely Poor", "Rich", "Extremely Rich"];
   let randomFinance;
@@ -87,17 +97,26 @@ export function getRandomPlayerStats() {
   // Based on the gender, select a random name
   if (randomGender === "male") {
     randomName = maleNames[Math.floor(Math.random() * maleNames.length)];
+    playerProfilePic.src = maleProfilePictures[Math.floor(Math.random() * maleProfilePictures.length)]
   } else {
     randomName = femaleNames[Math.floor(Math.random() * femaleNames.length)];
+    playerProfilePic.src = femaleProfilePictures[Math.floor(Math.random() * femaleProfilePictures.length)]
   }
+  blurredPlayerProfilePic.src = `${playerProfilePic.src}`;
+
+
 
   Player.name = randomName;
   Player.gender = randomGender;
+  Player.lastName = randomLastName;
   Player.financialStats.financialStatus = randomFinance;
 
   // Update the DOM with the randomly generated stats
   nameSpan.innerText = Player.name; // Display the selected name
   genderSpan.innerText = Player.gender; // Display the selected gender
+  lastNameSpan.innerText = Player.lastName;
+  playerLastNameSpan2.innerText = Player.lastName;
+  playerNameSpan2.innerText = Player.name;
   financialStatusSpan.innerText = Player.financialStats.financialStatus; // Display the selected financial status
   ageSpan.innerText = Player.age; // Set a default age (you can modify this as needed)
   

@@ -16,6 +16,11 @@ export const gamePlayContainer = document.getElementById('game-play-container');
 // Get references to the elements where the player's details will be displayed...............................
 
 export const nameSpan = document.getElementById('player-name'); // Name span where the player's name will be displayed
+export const lastNameSpan = document.getElementById('player-last-name');
+export const playerNameSpan2 = document.getElementById('p-name');
+export const playerLastNameSpan2 = document.getElementById('lst-name');
+export const playerProfilePic = document.getElementById('player-profile-pic');
+export const blurredPlayerProfilePic = document.getElementById('player-prof-pic-blur')
 export const genderSpan = document.getElementById('gender'); // Gender span where the player's gender will be displayed
 export const financialStatusSpan = document.getElementById('financial-status'); // Financial status span
 export let ageSpan = document.getElementById('age'); // Age span

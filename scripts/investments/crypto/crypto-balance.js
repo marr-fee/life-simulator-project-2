@@ -2,7 +2,7 @@
 import { accountBalanceSpan } from "../../DOM.js";
 
 import { Player } from "../../player-stats.js";
-import { depositBtn, depositAmountField, depositFeedback, clearBtn, cryptoPortfolioBalanceSpan } from "./crypto-DOM.js";
+import { depositBtn, depositAmountField, depositFeedback, clearBtn, cryptoPortfolioBalanceSpan, cryptoMainPage } from "./crypto-DOM.js";
 import { cryptos } from "./crypto-index.js";
 import { formatCryptoAmount, clearCryptoTransacFeedbackMessage } from "./cryptoFunctions.js";
 

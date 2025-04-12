@@ -1,4 +1,4 @@
-import { accountBalanceSpan, gameMainNavMenuDiv, gridContainer } from "../../DOM.js";
+import { accountBalanceSpan, gameMainNavMenuDiv, gamePlayContainer, gridContainer, menuTitle } from "../../DOM.js";
 import { cryptoMainPage, cryptoPageContainer, cryptoWelcomePage, coinGridContainer, exitAppBtn, addCryptoFundsContainer, depositAmountField, depositFeedback } from "./crypto-DOM.js";
 import { cryptos } from "./crypto-index.js";
 
@@ -6,18 +6,33 @@ export function openCryptoPage(){
   gridContainer.style.display = "none";
   cryptoPageContainer.style.display = "flex";
   cryptoWelcomePage.style.display = "flex";
-  gameMainNavMenuDiv.style.zIndex = "-1";
+  gameMainNavMenuDiv.style.display = "none";
+  gamePlayContainer.style.display ='none';
+  cryptoMainPage.style.display = "none";
+  menuTitle.style.display ='none';
+  updateCoinsOnCryptoPage();
   setTimeout (function(){
     cryptoWelcomePage.style.display = "none";
     cryptoMainPage.style.display = "flex";
-    updateCoinsOnCryptoPage();
+    gameMainNavMenuDiv.style.display = "flex";
     exitAppBtn.style.display = "flex";
     gameMainNavMenuDiv.style.display = "flex";
-    gameMainNavMenuDiv.style.zIndex = "5";
   }, 3000);
   
-
 }
+
+export function closeCryptoPage(){
+
+  cryptoPageContainer.style.display = "none";
+  cryptoWelcomePage.style.display = "none";
+  cryptoMainPage.style.display = "none";
+  exitAppBtn.style.display = 'none';
+  gridContainer.style.display = 'grid';
+  menuTitle.style.display = 'block';
+  gamePlayContainer.style.display ='flex';
+  gameMainNavMenuDiv.style.display = "flex";
+
+  };
 
 export function updateCoinsOnCryptoPage(){
   
@@ -31,7 +46,7 @@ export function updateCoinsOnCryptoPage(){
 
   gridItems = cryptos.map((crypto) => {
     return `<div class="crypto-grid-items">
-    <div class="crypto-title">${crypto.abbriviation}<span>/USDC</span></div>
+    <div class="crypto-title"><img src="${crypto.image}" alt="${crypto.abbriviation} logo" class="coin-logos"><div class="abbr-and-usdc">${crypto.abbriviation}<span>/USDC</span></div></div>
     <div class="${crypto.name}-last-price prices">$${crypto.pricePerUnit.toFixed(2)}</div>
     <div class="crypto-24hr-change" id="change-${crypto.abbriviation}"><span>${crypto.twentyFourHourChange.toFixed(2)}%</span></div>
     </div>`
@@ -40,14 +55,7 @@ export function updateCoinsOnCryptoPage(){
   coinGridContainer.innerHTML = currentGridItems + gridItems.join('');
 }
 
-export function closeCryptoPage(){
 
-  gridContainer.style.display = "grid";
-  cryptoPageContainer.style.display = "none";
-  cryptoWelcomePage.style.display = "none";
-  cryptoMainPage.style.display = "none";
-  exitAppBtn.style.top = '30px';
-  };
 
 export function updateCryptoPrices(minChange, maxChange){
   cryptos.forEach(crypto => {
@@ -85,6 +93,7 @@ export function closeAddFundsDiv(){
   addCryptoFundsContainer.style.display = "none";
   depositAmountField.value = '';  // Clear the input field
   depositFeedback.textContent = ''; // Clear feedback
+  
 }
 
 export function formatCryptoAmount(amount) {

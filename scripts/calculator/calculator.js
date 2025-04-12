@@ -88,7 +88,6 @@ export function openCalculatorApp(){
   exitAppBtn.style.display = "block";
   gridCntrHolder.style.display = 'none';
   gamePlayContainer.style.display = 'none';
-
   gameMainNavMenuDiv.style.display = "flex";
   menuTitle.style.display = "none";
 };
@@ -98,6 +97,7 @@ export function closeCalculatorApp(){
   gridContainer.style.display = "grid";
   exitAppBtn.style.display = "none";
   gamePlayContainer.style.display = 'flex';
+  menuTitle.style.display = "none";
 };
 
 // LONGER MORE DECRIPTIVE

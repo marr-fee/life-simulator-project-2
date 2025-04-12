@@ -1,10 +1,9 @@
 
 .calculator-holder{
   display: none;
-  background-color: rgba(0, 0, 0, 0.863);
-  min-width: 270px;
-  width: 300px;
-  height: 430px;
+  background-color: rgba(0, 0, 0, 0.836);
+  width: 64vw;
+  height: 65vh;
   border: 3px solid black;
   border-radius: 30px;
   flex-direction: column;
@@ -12,15 +11,15 @@
   justify-content: flex-start;
   align-items: center;
   position: relative;
-  box-shadow: 2px 8px 10px rgba(0, 0, 0, 0.226);
-  margin: 45px auto;
+  box-shadow: 2px 4px 8px rgba(138, 130, 130, 0.158);
+  margin: 15vh auto;
   animation: zoomIn 1s ease;
 }
 
 .calculator-holder h3{
   font-weight: bold;
-  font-size: 14px;
-  margin-top: 5px;
+  font-size: 12px;
+  margin-top: 3vh;
   text-decoration: underline;
   color: rgba(150, 148, 148, 0.822);
 }
@@ -32,10 +31,10 @@
   margin-top: 10px;
   border: 2px solid black;
   border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.226);
   position: relative;
   padding: 0;
 }
+
 .calc-display-screen-top, .calc-display-screen-bottom{
   width: 100%;
   display: flex;
@@ -79,15 +78,20 @@
 }
 
 .calc-buttons-container{
-  width: 280px;
-  margin: 15px auto;
+  width: 100%;
+  margin: 25px auto 15px;
   text-align: center;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(4, 12.5vw);
+  gap: 10px;
 }
 
 .calc-buttons-container button{
-  width: 55px;
+  width: 12.5vw;
   padding: 10px;
-  margin: 4px;
+  margin: 0;
   font-size: 16px;
   font-weight: bold;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.226);
@@ -95,11 +99,11 @@
 }
 
 .calc-clear-button{
-  display: block !important;
-  width: 60% !important;
   background-color: rgba(87, 33, 33, 0.726);
   color: white;
-  margin-left: 6px !important;
+  padding: 10px 25px;
+  width: 40%;
+  border-radius: 10px;
 }
 
 .calc-eval-btn{

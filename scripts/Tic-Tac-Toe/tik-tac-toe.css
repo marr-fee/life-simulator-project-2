@@ -1,7 +1,7 @@
 .tic-tac-toe-container{
-  width: 100%;
-  min-height: 450px;
-  background-color: #94949cd8;
+  width: 100vw;
+  height: 100vh;
+    background-color: #94949cd8;
   display: none;
   flex-direction: column;
   justify-content: center;
@@ -25,6 +25,7 @@
   font-size: 36px;
   cursor: pointer;
   transition: transform 0.2s ease;
+  color: rgb(112, 8, 8);
 }
 
 .cell:active{
@@ -36,8 +37,9 @@
 
 #restart{
   margin-top: 20px;
-  padding: 10px 20px;
+  padding: 15px 25px;
   background-color: #007bff;
+  border-radius: 10px;
   color: white;
   border: none;
   cursor: pointer;

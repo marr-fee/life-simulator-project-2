@@ -1,11 +1,10 @@
 /* CHAGE GAME DETAILS DISPLAY BACK TO FLEX */
 
 .messaging-app-container{
-  margin: auto;
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
-  height: 550px;
-  max-height: 550px;
+  height: 100vh;
   width: 100%;
   display: none;
   justify-content: center;
@@ -20,6 +19,7 @@
   position: relative;
   background-color: rgb(255, 255, 255);
   height: 100%;
+  display: none;
   flex: 30%;
   overflow: hidden;
   overflow-y: scroll;
@@ -32,8 +32,8 @@
   position: relative;
   background-color: white;
   background: linear-gradient(150deg, rgba(228, 222, 222, 0.897), rgba(255, 241, 241, 0.863));
-  flex: 70%;
-  height: 550px;
+  width: 100vw;;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,13 +42,13 @@
 }
 
 .message-date-time{
-  display:  flex;
+  display: flex;
   gap: 5px;
   justify-content: center;
   align-items: center;
   font-size: 12px;
   position: absolute;
-  right: 15px;
+  right: 20px;
   top: 10px;
 }
 .search-box-container{
@@ -131,12 +131,16 @@
 
 .chatbox-header-container{
   width: 100%;
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.89); /* semi-transparent */
+  backdrop-filter: blur(10px); /* actual blur */
+  -webkit-backdrop-filter: blur(10px); /* for Safari */
+  z-index: 999; /* make sure it's on top */
   color: black;
   padding: 5px 15px;
   margin: 0;
-  height: 10%;
-  position: relative;
+  height: 10vh;
+  position: absolute;
+  top: 0;
   display: flex;
   gap: 10px;
   text-align: left;
@@ -144,6 +148,12 @@
   justify-self: start;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.11);
   /*flex-shrink: 0;*/
+}
+
+.message-back-button{
+  width: 6vw;
+  height: 4vh;
+  margin: 0 5px;
 }
 
 .receiver-img-name{
@@ -178,7 +188,7 @@
 
 .chat-container {
   width: 100%;
-  padding: 10px;
+  padding: 10px 10px 30px 10px;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -203,7 +213,7 @@
   padding: 10px;
   border-radius: 20px 20px 20px 0;
   font-size: 14px;
-  max-width: 300px;
+  max-width: 70vw;
   color: black;
 }
 
@@ -214,7 +224,7 @@
   justify-content: flex-end;
 }
 .my-chat-bubble{
-  max-width: 300px;
+  max-width: 70vw;
   padding: 10px;
   font-size: 14px;
   background-color: blue;
@@ -225,25 +235,26 @@
 
 .user-input-section{
   position: relative;
-  height: 20%;
-  background-color: rgb(255, 255, 255);
-  background: linear-gradient(150deg, rgba(243, 184, 243, 0.699), rgba(170, 175, 245, 0.849));
-  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.137);
+  height: 10vh;
+  background-color: rgba(255, 255, 255, 0.89); /* semi-transparent */
+  backdrop-filter: blur(10px); /* actual blur */
+  -webkit-backdrop-filter: blur(10px); /* for Safari */
+  z-index: 999; /* make sure it's on top */
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 5px 20px 5px;
+  padding: 5px 5px 20px 5px;
 }
 .user-input-section textarea{
   margin: 0 auto;
-  width: 75%;
-  height: 70%;
+  width: 70%;
+  height: 75%;
   resize: none; /* disables manual resizing */
   overflow-y: auto; /* scrolls when needed */
   scrollbar-width: thin;
   font-family: 'Times New Roman', Times, serif;
-  padding: 8px;
+  padding: 8px 10px;
   font-size: 16px;
   box-sizing: border-box;
   line-height: 1.4;
@@ -251,22 +262,22 @@
   word-break: break-word; /* breaks long words if needed */
   outline: none;
   border: none;
-  border-radius: 10px;
-  background-color: aliceblue;
+  border-radius: 50px;
+  background-color: rgba(236, 227, 227, 0.856);
 }
 
 .link-icon{
-  left: 15px;
-  width: 26px;
-  height: 26px;
+  left: 4vw;
+  width: 22px;
+  height: 22px;
   position: absolute;
 }
 .send-icon{
-  right: 7px;
+  right: 4vw;
   background-color: rgba(0, 0, 0, 0.658);
   padding: 10px;
-  width: 43px;
-  height: 43px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   position: absolute;
   transition: background-color 0.3s ease-in-out;

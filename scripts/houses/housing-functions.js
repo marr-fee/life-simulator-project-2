@@ -1,5 +1,5 @@
 import { exitAppBtn } from "../investments/crypto/crypto-DOM.js";
-import { gridContainer, menuTitle } from "../DOM.js";
+import { gamePlayContainer, gridContainer, menuTitle } from "../DOM.js";
 import { houseingWebsiteMainDiv, housePaymentCompletionDiv, chatBubbleHousing, housePurchaseFeeedbackDiv, housingWebsiteContainer, housingWebsiteWelcomDiv, initializeHouseList } from "./housing-homepage.js";
 import { gameMainNavMenuDiv } from "../DOM.js";
 import { Player } from "../player-stats.js";
@@ -24,16 +24,19 @@ export function openHouseListingPage(){
     housingWebsiteWelcomDiv.style.display = "flex";
     houseingWebsiteMainDiv.style.display = "none";
     gameMainNavMenuDiv.style.display = "none";
+    gridContainer.style.display = "none";
+    menuTitle.style.display = "none";
+    gamePlayContainer.style.display = 'none';
     setTimeout(() => {
       housingWebsiteWelcomDiv.style.display = "none";
       houseingWebsiteMainDiv.style.display = "flex";
       gameMainNavMenuDiv.style.display = "flex";
+      housingWebsiteContainer.style.display = "flex";
       exitAppBtn.style.display = "flex";
-      exitAppBtn.style.top = "120px";
+      exitAppBtn.style.top = "105px";
     }, 3000);
     
-    gridContainer.style.display = "none";
-    menuTitle.style.display = "none";
+    
     //gamePlayContainer.style.paddingTop = "10px";
     //exitAppBtn.style.display = "none";
     //gameMainNavMenuDiv.style.marginBottom = "-30px"

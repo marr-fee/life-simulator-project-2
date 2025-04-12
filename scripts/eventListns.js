@@ -46,6 +46,8 @@ submitPlayerStatBtn.addEventListener('click', () => {
   const timeResponses = chatData.responses.mood.good.response.time;
   const randomTimeResponse = timeResponses[Math.floor(Math.random() * timeResponses.length)](); // Get random time
   gameMainNavMenuDiv.style.display = 'flex';
-  
-  
+  gameContainer.classList.remove("change-background"); 
+  gameContainer.background = "linear-gradient(150deg, rgba(0, 0, 0, 0.815), black)";
+  gameContainer.style.color = "rgb(255, 255, 255)"; 
+
 })

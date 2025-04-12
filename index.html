@@ -62,6 +62,7 @@
       </div>
 
       <!--START GAME BUTTON-->
+
       <div class="start-game-button-container" id="start-game-btn-contr">
         <button id="start-game-btn" class="start-game-button">
           <span id="button-span">Start&nbsp;Life</span>
@@ -69,6 +70,7 @@
       </div>
 
       <!--WELCOME DIV AND STAT ASSIGNMENT SECTION-->
+
       <div class="welcome-display" id="welcome-div">
         <div class="game-title"><h2>Born Again</h2></div>
         <h3 class="welcm-2-life">Welcome to Life</h3>
@@ -101,15 +103,15 @@
                 />
               </div>
               <div class="names-player">
-                <h1><span id="p-name">FgcvyqwN</span></h1>
-                <h1><span>LjhdcyvN</span></h1>
+                <h1><span id="p-name"></span></h1>
+                <h1><span id="lst-name"></span></h1>
               </div>
             </div>
             <div class="license-stats-container">
-              <p>LN: <span class="stat-span">37588BW9</span></p>
+              <p>CNM: <span class="stat-span">37588BW9</span></p>
               <p>EXP: <span class="stat-span">07/11/2030</span></p>
               <p>FN: <span id="player-name" class="stat-span"></span></p>
-              <p>LN: <span class="stat-span"></span></p>
+              <p>LN: <span class="stat-span" id="player-last-name"></span></p>
               <p class="street-name">
                 0123 ANYSTREET,<br />
                 ANYTOWN, CA012345
@@ -365,9 +367,12 @@
       <!-- TIK TAC TOE GAME SECTION ENDS-->
       <!----------------------------------------------------------->
       <!-- CRYPTO INVESTMENT SECTION STARTS -->
-      <button class="exit-app-button" id="exit-app-btn">
-        <img src="images\back.png" alt="exit icon" />Exit
-      </button>
+      <img
+        src="images\back.png"
+        alt="exit icon"
+        class="exit-app-button"
+        id="exit-app-btn"
+      />
 
       <div class="crypto-ex-container" id="crypto-container">
         <div class="crypto-ex-welcome-page" id="crypto-welcome-page">
@@ -476,19 +481,16 @@
           <button class="calculator-button" data-value="2">2</button>
           <button class="calculator-button" data-value="3">3</button>
           <button class="calculator-button" data-value=" + ">+</button>
-          <br />
 
           <button class="calculator-button" data-value="4">4</button>
           <button class="calculator-button" data-value="5">5</button>
           <button class="calculator-button" data-value="6">6</button>
           <button class="calculator-button" data-value=" - ">-</button>
-          <br />
 
           <button class="calculator-button" data-value="7">7</button>
           <button class="calculator-button" data-value="8">8</button>
           <button class="calculator-button" data-value="9">9</button>
           <button class="calculator-button" data-value=" * ">*</button>
-          <br />
 
           <button class="calculator-button" data-value="0">0</button>
           <button class="calculator-button" data-value=".">.</button>
@@ -497,15 +499,10 @@
           <button class="calc-eval-btn calculator-button" data-value=" = ">
             =
           </button>
-          <br />
-
-          <button
-            class="calc-clear-button calculator-button"
-            data-value="clear"
-          >
-            Clear
-          </button>
         </div>
+        <button class="calc-clear-button calculator-button" data-value="clear">
+          Clear
+        </button>
       </div>
 
       <!-- CALCULATOR SECTION ENDS -->
@@ -533,7 +530,7 @@
         <!-- main page-->
         <div class="housing-webpage" id="housing-webpg">
           <!--header-->
-          <div class="housing-page-header">
+          <header class="housing-page-header">
             <!-- company title and logo-->
             <div class="website-name">
               <img
@@ -541,16 +538,8 @@
                 alt="house emoji"
               />MarrFee&nbsp;Living
             </div>
-            <div class="housing-page-greeting">Hello Kenneth</div>
-            <div class="search-bar">
-              <input
-                type="search"
-                name="search"
-                id="search-bar"
-                placeholder="Search"
-              />
-            </div>
-          </div>
+            <div class="housing-page-greeting"></div>
+          </header>
           <!--promo message-->
           <div class="promo-message">
             <p>
@@ -558,15 +547,13 @@
             </p>
           </div>
           <!-- housing list grid-->
-          <section>
-            <div
-              class="housing-grid-container"
-              id="housing-list-grid-container"
-            ></div>
-            <div class="footer">
-              we hope you found what you were looking for 😊
-            </div>
-          </section>
+          <div
+            class="housing-grid-container"
+            id="housing-list-grid-container"
+          ></div>
+          <div class="footer">
+            we hope you found what you were looking for 😊
+          </div>
         </div>
       </div>
 
@@ -644,6 +631,12 @@
         <div class="right-section-container">
           <!-- recepient name and active status -->
           <div class="chatbox-header-container">
+            <img
+              src="scripts\messaging\images\left-arrow.png"
+              alt="back buttonn"
+              id="messaging-back-btn"
+              class="message-back-button"
+            />
             <img
               src="scripts\messaging\images\profile(1).png"
               alt="user icon"

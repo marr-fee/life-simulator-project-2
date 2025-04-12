@@ -24,12 +24,13 @@ export function updateMenus(menuTag){
 
   gridItems = menu.branches.map((branch)=>{
     return `
-    <div class="grid-item" id="${branch.id}">
+    <div class="grid-item " id="${branch.id}">
     <img src="${branch.image}" alt="${branch.tag} image" class="menu-grid-icons">
     <p class="menu-grid-tag">${branch.tag}</p>
     </div>`;
 
   })
+
   // Append each grid item into the grid container
   gridContainer.innerHTML = gridItems.join('') + `<div class="grid-item" id="back-to-previous">
     <img src="images/back.png" alt="Return image" class="menu-grid-icons">
@@ -39,6 +40,13 @@ export function updateMenus(menuTag){
     <img src="images/icons8-return-100.png" alt="Return to main menu image" class="menu-grid-icons">
     <p class="menu-grid-tag">Main Menu</p>
   </div>`;
+
+  const gridItem = document.querySelectorAll('.grid-item');
+
+  gridItem.forEach((item, index) => {
+    item.style.animation = `gridSmoothDrop 0.3s ease forwards`;
+    item.style.animationDelay = `${index * 100}ms`; // 100ms stagger
+  });
 
 
   // add event listeners to each grid item after the HTML is generated
