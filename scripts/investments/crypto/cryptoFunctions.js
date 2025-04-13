@@ -1,6 +1,7 @@
 import { accountBalanceSpan, gameMainNavMenuDiv, gamePlayContainer, gridContainer, menuTitle } from "../../DOM.js";
-import { cryptoMainPage, cryptoPageContainer, cryptoWelcomePage, coinGridContainer, exitAppBtn, addCryptoFundsContainer, depositAmountField, depositFeedback } from "./crypto-DOM.js";
+import { cryptoMainPage, cryptoPageContainer, cryptoWelcomePage, coinGridContainer, exitAppBtn, addCryptoFundsContainer, depositAmountField, depositFeedback, portforlioPageBtn, portforlioPage } from "./crypto-DOM.js";
 import { cryptos } from "./crypto-index.js";
+import { openPortfolioPage, closePortfolioPage, initializePortfolioPage } from "./crypto-portfolio.js";
 
 export function openCryptoPage(){
   gridContainer.style.display = "none";
@@ -11,11 +12,13 @@ export function openCryptoPage(){
   cryptoMainPage.style.display = "none";
   menuTitle.style.display ='none';
   updateCoinsOnCryptoPage();
+  initializePortfolioPage();
   setTimeout (function(){
     cryptoWelcomePage.style.display = "none";
     cryptoMainPage.style.display = "flex";
     gameMainNavMenuDiv.style.display = "flex";
     exitAppBtn.style.display = "flex";
+    exitAppBtn.style.top = '5vh';
     gameMainNavMenuDiv.style.display = "flex";
   }, 3000);
   
@@ -88,12 +91,14 @@ export function openAddFundsDiv(){
   addCryptoFundsContainer.style.zIndex = "4";
   depositAmountField.value = '';  // Clear the input field
   depositFeedback.textContent = ''; // Clear feedback
+  exitAppBtn.style.display ='none';
 }
 export function closeAddFundsDiv(){
   addCryptoFundsContainer.style.display = "none";
   depositAmountField.value = '';  // Clear the input field
   depositFeedback.textContent = ''; // Clear feedback
-  
+  exitAppBtn.style.display ='flex';
+
 }
 
 export function formatCryptoAmount(amount) {
@@ -161,3 +166,8 @@ export function getCryptoAllTimeLow() {
     const allTimeLow = storedData[crypto.abbriviation] || crypto.pricePerUnit;
   });
 }
+
+
+portforlioPageBtn.addEventListener('click', ()=>{
+  openPortfolioPage();
+})

@@ -389,7 +389,7 @@
         <div class="crypto-ex-main-page" id="crypto-main-page">
           <div class="head-section">
             <h2>Crypto Exchange</h2>
-            <h3>My Portfolio</h3>
+            <h3 id="portfolio-toggler">My Portfolio</h3>
           </div>
           <div class="divider"></div>
           <!-- portfolio balance section-->
@@ -452,6 +452,22 @@
             </div>
 
             <button id="close-add-crypto-funds-btn">Close</button>
+          </div>
+        </div>
+
+        <!--Portfolio page-->
+        <div id="portfolio-container">
+          <h2>Your Cryptocurrency Portfolio</h2>
+
+          <div id="total-portfolio">
+            <h3>
+              Total Portfolio Value: <span id="total-value">Loading...</span>
+            </h3>
+          </div>
+
+          <button id="back-to-main-page">Back to Main Page</button>
+          <div id="coins-container">
+            <!-- Each coin will be dynamically generated here -->
           </div>
         </div>
       </div>
@@ -813,5 +829,6 @@
     <!--    FULL GAME CONTAINER ENDS    -->
 
     <script type="module" src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </body>
 </html>

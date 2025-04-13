@@ -3,7 +3,7 @@ import { accountBalanceSpan } from "../../DOM.js";
 
 import { Player } from "../../player-stats.js";
 import { getCurrentDate } from "../../time.js";
-import { depositBtn, depositAmountField, depositFeedback, clearBtn, cryptoPortfolioBalanceSpan, cryptoMainPage } from "./crypto-DOM.js";
+import { depositBtn, depositAmountField, depositFeedback, clearBtn, cryptoPortfolioBalanceSpan, cryptoMainPage, cryptoPortfPageBalncSpan } from "./crypto-DOM.js";
 import { cryptos } from "./crypto-index.js";
 import { formatCryptoAmount, clearCryptoTransacFeedbackMessage } from "./cryptoFunctions.js";
 import { addTransaction } from "../../bank-app/bank-app-functions.js";
@@ -128,10 +128,12 @@ export function updateCryptoPortfolioBalance() {
   // Optional: Update the visible balance in the UI
   if (cryptoPortfolioBalanceSpan) {
     cryptoPortfolioBalanceSpan.innerText = `$${totalBalance.toFixed(2)}`;
+    cryptoPortfPageBalncSpan.innerText = `$${totalBalance.toFixed(2)}`;
 
   }
-
   localStorage.setItem("cryptoHoldings", JSON.stringify(Player.cryptoHoldings));
+  return totalBalance;
+
 }
 
 

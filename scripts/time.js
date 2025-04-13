@@ -6,6 +6,7 @@ import { getCryptoAllTimeHigh, getCryptoAllTimeLow } from "./investments/crypto/
 import { Player } from "./player-stats.js";
 import { autoStatUpdatePerHour } from "./stat-update-func.js";
 import { chatData } from "./messaging/messg-chat.js";
+import { initializePortfolioPage } from "./investments/crypto/crypto-portfolio.js";
 
 
 
@@ -59,6 +60,8 @@ export function startTime() {
       autoStatUpdatePerHour();
       getCryptoAllTimeHigh();
       getCryptoAllTimeLow();
+      
+      
       const timeResponses = chatData.responses.mood.good.response.time;
       const randomTimeResponse = timeResponses[Math.floor(Math.random() * timeResponses.length)](); // Get random time
  // console.log(Player.Possessions.playerHasHome);

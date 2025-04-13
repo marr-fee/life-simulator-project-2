@@ -15,3 +15,8 @@ export let depositAmountField = document.getElementById('deposit-amount');
 export const depositFeedback = document.getElementById('deposit-feedback');
 export const clearBtn = document.getElementById('clear');
 export const depositBtn = document.getElementById('submit');
+
+export const portforlioPageBtn = document.getElementById('portfolio-toggler');
+export const portforlioPage = document.getElementById('portfolio-container');
+export const leavePortforlioPageBtn = document.getElementById('back-to-main-page');
+export const cryptoPortfPageBalncSpan = document.getElementById('total-value');
