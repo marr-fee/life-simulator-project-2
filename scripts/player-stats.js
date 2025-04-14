@@ -16,23 +16,25 @@ export const Player = {
   
   // Grouped personal stats
   personalStats: {
-    energy: 80,
-    workXp: 0, // Work experience
-    HP: 80, // Health Points
-    stomach: 50,
-    hygiene: 50,
-    criminality: 0,
+    energy: 90,
+    workXp: 10, // Work experience
+    HP: 90, // Health Points
+    stomach: 80,
+    bladder: 20,
+    hygiene: 90,
+    criminality: 10,
     faith: 50,
-    popularity: 1,
-    influence: 1,
-    moral: 50,
+    educationXp: 30,
+    selfEsteem: 50, // Represents how confident the player feels about themselves
+    popularity: 20,
+    influence: 20,
   },
 
   // Grouped social stats
   socialStats: {
     socialStatus: "", // Could represent the player's social standing, e.g., "popular", "introverted", etc.
     relationshipStatus: "Single",
-    selfEsteem: 50, // Represents how confident the player feels about themselves
+    lifeLevel: "Outcast",
   },
 
   // Financial-related stats
@@ -87,11 +89,20 @@ export function getRandomPlayerStats() {
   const randomGender = Math.random() > 0.5 ? "male" : "female"; 
   const randomLastName = lastNames[Math.floor(Math.random() * lastNames.length)];
   
+  // Just for reference
   const financialStatusOptions = ["Poor", "Middle Class", "Extremely Poor", "Rich", "Extremely Rich"];
-  let randomFinance;
 
-  randomFinance = financialStatusOptions[Math.floor(Math.random() * financialStatusOptions.length)];
- 
+  //  a weighted array to have control over start financial status
+  const weightedOptions = [
+    ...Array(20).fill("Extremely Poor"),
+    ...Array(25).fill("Poor"),
+    ...Array(30).fill("Middle Class"),
+    ...Array(20).fill("Rich"),
+    ...Array(5).fill("Extremely Rich")
+  ];
+
+  // Pick randomly from weighted array
+  const randomFinance = weightedOptions[Math.floor(Math.random() * weightedOptions.length)];
   let randomName;
 
   // Based on the gender, select a random name
@@ -124,6 +135,39 @@ export function getRandomPlayerStats() {
   
 }
 
+export function calculateNetWorth(){
+  return `$${Player.financialStats.accountBalance + Player.financialStats.cryptoBalance}`; 
+  /**
+   * 
+   * Net Worth = Total Assets - Total Liabilities
+
+In your game, that might include:
+
+✅ Assets
+💵 Account Balance (Player.financialStats.accountBalance)
+
+🪙 Crypto Balance (Player.financialStats.cryptoBalance)
+
+🏠 Properties (if you have them)
+
+📈 Investments (stocks, businesses)
+
+🎁 Inventory items with value
+
+🏅 Achievements (if you assign monetary value)
+
+💎 Collectibles or valuables
+
+❌ Liabilities (Optional)
+💳 Debt / Loans
+
+🚗 Bills / Expenses
+
+🧾 Ongoing fees
+
+
+   */
+}
 
 
 export let playerBelief; // variable to save player selected belief in God

@@ -96,6 +96,7 @@
   font-weight: bold;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.226);
   border-radius: 5px;
+  background-color: rgb(88, 86, 86);
 }
 
 .calc-clear-button{

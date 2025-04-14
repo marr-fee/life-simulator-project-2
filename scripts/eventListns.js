@@ -49,5 +49,5 @@ submitPlayerStatBtn.addEventListener('click', () => {
   gameContainer.classList.remove("change-background"); 
   gameContainer.background = "linear-gradient(150deg, rgba(0, 0, 0, 0.815), black)";
   gameContainer.style.color = "rgb(255, 255, 255)"; 
-
+  
 })

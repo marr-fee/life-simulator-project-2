@@ -10,6 +10,7 @@ import { checkAccess, openHouseListingPage } from "./houses/housing-functions.js
 import { Player } from "./player-stats.js";
 import { openMessagingApp } from "./messaging/msg-functions.js";
 import { openBankingApp } from "./bank-app/bank-app-functions.js";
+import { openPlayerDashBoard } from "./player/player-main.js";
 
 export function updateMenus(menuTag){
 
@@ -111,6 +112,11 @@ export function updateMenus(menuTag){
       }else if (branch.tag === "Online Bank"){
         gridItem.addEventListener('click', () => {
           openBankingApp();
+          
+        });
+      }else if (branch.tag === "My Dashboard"){
+        gridItem.addEventListener('click', () => {
+          openPlayerDashBoard();
           
         });
       }else if (branch.tag === "Apartment Complex" || branch.tag === "Real Estate" || branch.tag === "House Listing"){

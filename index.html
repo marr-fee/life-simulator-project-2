@@ -24,12 +24,14 @@
     <link rel="stylesheet" href="scripts\houses\housing-page.css" />
     <link rel="stylesheet" href="scripts\messaging\messaging.css" />
     <link rel="stylesheet" href="scripts\bank-app\bank-app.css" />
+    <link rel="stylesheet" href="scripts\player\player-page.css" />
   </head>
   <body>
     <!--FULL GAME CONTAINER-->
     <!--    START     -->
 
     <div class="game-container" id="main-game-container">
+      <div class="notification-div" id="notification-block"></div>
       <!--INTRO PAGE-->
       <div class="game-details" id="game-detail">
         <h1>Born Again</h1>
@@ -823,6 +825,182 @@
       </div>
 
       <!-- BANKING APP ENDS-->
+
+      <!------------------------------------------------------------->
+
+      <!-- PLAYER PROFILE SECTION STARTS-->
+
+      <div class="player-profile-container" id="player-data-container">
+        <!-- head section-->
+        <div class="player-profile-pic-name-age-gender">
+          <div class="profile-page-prof-pic">
+            <img
+              src="images\boss.png"
+              alt="player profile picture"
+              id="profile-page-profile-pic"
+            />
+          </div>
+          <div class="profile-page-player-details">
+            <h4>
+              <span id="profile-page-player-last-name"></span>
+              <span id="profile-page-player-name"></span>
+            </h4>
+            <div class="prof-page-player-age-gender">
+              <p>Age: <span id="profile-page-player-age">17</span></p>
+              <p id="profile-page-player-gender">M</p>
+              <p>DoB: 20 March 2008</p>
+            </div>
+          </div>
+          <div class="buttons-container">
+            <button id="exit-dashboard-btn">Exit</button>
+            <button id="inventory-button">My&nbsp;Inventory</button>
+          </div>
+        </div>
+
+        <!-- social ladder section-->
+        <div class="social-ladder-container">
+          <h3>Social Ladder</h3>
+
+          <div class="bars-container">
+            <!-------------------------------------------------------------->
+
+            <img
+              src="scripts\player\images\lightning(2).png"
+              alt=""
+              class="status-img"
+            />
+
+            <div class="bar-title"><p class="myth-title">Myth</p></div>
+
+            <img
+              src="scripts\player\images\hiking.png"
+              alt="climbing emoji"
+              class="progress-icon-1 progress-icon"
+            />
+            <img
+              src="scripts\player\images\hiking.png"
+              alt="climbing emoji"
+              class="progress-icon-2 progress-icon"
+            />
+            <img
+              src="scripts\player\images\hiking.png"
+              alt="climbing emoji"
+              class="progress-icon-3 progress-icon"
+            />
+            <img
+              src="scripts\player\images\hiking.png"
+              alt="climbing emoji"
+              class="progress-icon-4 progress-icon"
+            />
+            <img
+              src="scripts\player\images\hiking.png"
+              alt="climbing emoji"
+              class="progress-icon-5 progress-icon"
+            />
+            <img
+              src="scripts\player\images\hiking.png"
+              alt="climbing emoji"
+              class="progress-icon-6 progress-icon"
+            />
+            <!-------------------------------------------------------------->
+            <div class="social-step-1 social-steps">
+              <div class="bar-title"><p class="bar-title">Outcast</p></div>
+            </div>
+            <div class="social-step-2 social-steps">
+              <div class="bar-title"><p class="bar-title">Local</p></div>
+            </div>
+            <div class="social-step-3 social-steps">
+              <div class="bar-title">
+                <p class="bar-title">Cool Kid</p>
+              </div>
+            </div>
+            <div class="social-step-4 social-steps">
+              <div class="bar-title"><p class="bar-title">Influencer</p></div>
+            </div>
+            <div class="social-step-5 social-steps">
+              <div class="bar-title"><p class="bar-title">Elite</p></div>
+            </div>
+            <div class="social-step-6 social-steps">
+              <div class="bar-title"><p class="bar-title">Icon</p></div>
+            </div>
+            <div class="social-step-7 social-steps">
+              <div class="glow-orbit"></div>
+            </div>
+          </div>
+        </div>
+        <!-- stats section-->
+        <div class="stats-title"><p>Personal Stats</p></div>
+        <div
+          class="player-stats-container"
+          id="personal-stats-grid-contr"
+        ></div>
+
+        <!-- social-stats container -->
+        <div class="stats-title">Social Stats</div>
+        <div class="social-stats-container" id="social-stats-cntnr">
+          <div class="social-stats-block">
+            <div class="social-stats-img-tag">
+              <img
+                src="scripts\player\images\relationship.png"
+                alt="love couples image"
+                class="stats-logo"
+              />
+              <h3>Relationship Status</h3>
+            </div>
+            <div class="social-stat-status">In a Relationship</div>
+          </div>
+        </div>
+
+        <!-- financial stats container -->
+        <div class="stats-title">Financial Stats</div>
+        <div class="financial-stats-container" id="financial-stats-cntnr"></div>
+
+        <!-- Achievements section -->
+        <div class="stats-title">Achievements</div>
+        <div class="achievements-container" id="achievements-grid-cntr">
+          <div class="achievements-block">
+            <div class="achievement-img-title">
+              <img
+                src="images\icons8-home-48.png"
+                alt="home icon"
+                class="achievement-img"
+              />
+              <h3 class="achievement-title">Start Life</h3>
+            </div>
+            <div class="acievement-status">
+              <div class="achievement-trophy-img-status">
+                <img
+                  src="scripts\player\images\trophy.png"
+                  alt="golden trophy"
+                  class="achievement-trophy-img"
+                />
+                <p class="status-of-achievement">Achieved</p>
+              </div>
+            </div>
+          </div>
+          <div class="achievements-block">
+            <div class="achievement-img-title">
+              <img
+                src="images\icons8-home-48.png"
+                alt="home icon"
+                class="achievement-img"
+              />
+              <h3 class="achievement-title">Rent a Home</h3>
+            </div>
+            <div class="acievement-status">
+              <div class="achievement-trophy-img-status">
+                <img
+                  src="scripts\player\images\trophy(1).png"
+                  alt="grey trophy"
+                  class="achievement-trophy-img"
+                />
+                <p class="status-of-achievement">Unachieved</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- PLAYER PROFILE SECTION ENDS-->
 
       <!------------------------------------------------------------->
     </div>

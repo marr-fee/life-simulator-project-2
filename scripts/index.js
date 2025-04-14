@@ -30,5 +30,7 @@ export * from "./messaging/messg-chat.js";
 export * from "./bank-app/bank-DOM.js";
 export * from "./bank-app/bank-app-enent-listnr.js";
 export * from "./bank-app/bank-app-functions.js";
+export * from "./player/player.DOM.js";
+export * from "./player/player-main.js";
 
 

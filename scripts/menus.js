@@ -12,7 +12,7 @@ export const menus = {
     {tag: "My Home", image: "images/icons8-home-48.png"},
     {tag: "Locations", image: "images/icons8-location-100.png"},
     {tag: "Phone", image: "images/icons8-phone-48.png"},
-    {tag: "Stats", image: "images/icons8-bar-chart-48.png"},
+    {tag: "My Dashboard", image: "images/icons8-bar-chart-48.png"},
     {tag: "Settings", image: "images/icons8-options-100.png"},
     {tag: "House Listing", image: "scripts/houses/images/agreement.png"}
   ]

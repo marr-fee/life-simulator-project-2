@@ -7,6 +7,7 @@ import { Player } from "./player-stats.js";
 import { autoStatUpdatePerHour } from "./stat-update-func.js";
 import { chatData } from "./messaging/messg-chat.js";
 import { initializePortfolioPage } from "./investments/crypto/crypto-portfolio.js";
+import { updateHousingMarketMonthly } from "./houses/house-list.js";
 
 
 
@@ -53,7 +54,6 @@ export function startTime() {
 
     // Increase minutes by 1 every second
     minutes++;
-  
     if ( minutes === 60 ) {
       hours++;
       minutes = 0;
@@ -76,6 +76,7 @@ export function startTime() {
   
     if (day > daysInMonth[currentMonthIndex]) {
       updateMonth();
+      updateHousingMarketMonthly();
     };
   
     if (currentMonth === 'December' && day === 31 && hours === 23 && minutes === 59) {
