@@ -117,55 +117,55 @@ export function clampStat(value) {
   return Math.max(0, Math.min(100, value));
 }
 
-export function clampAllPlayerStats() {
+//export function clampAllPlayerStats() {
   // Clamp personalStats
-  for (let key in Player.personalStats) {
-    const value = Player.personalStats[key];
-    if (typeof value === "number") {
-      Player.personalStats[key] = clampStat(value);
-    }
-  }
+  //for (let key in Player.personalStats) {
+   // const value = Player.personalStats[key];
+   // if (typeof value === "number") {
+      //Player.personalStats[key] = clampStat(value);
+    //}
+  //}
 
   // Clamp socialStats (if numeric)
-  for (let key in Player.socialStats) {
-    const value = Player.socialStats[key];
-    if (typeof value === "number") {
-      Player.socialStats[key] = clampStat(value);
-    }
-  }
+  //for (let key in Player.socialStats) {
+    //const value = Player.socialStats[key];
+    //if (typeof value === "number") {
+      //Player.socialStats[key] = clampStat(value);
+    //}
+  //}
 
   // Clamp financialStats (if numeric)
-  for (let key in Player.financialStats) {
-    const value = Player.financialStats[key];
-    if (typeof value === "number") {
-      Player.financialStats[key] = clampStat(value);
-    }
-  }
+  //for (let key in Player.financialStats) {
+    //const value = Player.financialStats[key];
+    //if (typeof value === "number") {
+      //Player.financialStats[key] = clampStat(value);
+   // }
+ // }
 
   // Clamp numeric values inside Possessions (just in case)
-  for (let key in Player.Possessions) {
-    const value = Player.Possessions[key];
-    if (typeof value === "number") {
-      Player.Possessions[key] = clampStat(value);
-    }
-  }
+ // for (let key in Player.Possessions) {
+    //const value = Player.Possessions[key];
+    //if (typeof value === "number") {
+      //Player.Possessions[key] = clampStat(value);
+    //}
+  //}
 
-  // Clamp crypto holdings (e.g. "MAF": 12.5)
-  for (let coin in Player.cryptoHoldings) {
-    const value = Player.cryptoHoldings[coin];
-    if (typeof value === "number") {
-      Player.cryptoHoldings[coin] = Math.max(0, value); // Crypto can go 0 → ∞, only prevent negatives
-    }
-  }
+  //// Clamp crypto holdings (e.g. "MAF": 12.5)
+  //for (let coin in Player.cryptoHoldings) {
+    //const value = Player.cryptoHoldings[coin];
+    //if (typeof value === "number") {
+      //Player.cryptoHoldings[coin] = Math.max(0, value); // Crypto can go 0 → ∞, only prevent negatives
+ //  // }
+  //}
 
   // Clamp employment-related stats if numeric
-  for (let key in Player.employmentStatus) {
-    const value = Player.employmentStatus[key];
-    if (typeof value === "number") {
-      Player.employmentStatus[key] = clampStat(value);
-    }
-  }
-}
+  //for (let key in Player.employmentStatus) {
+   // const value = Player.employmentStatus[key];
+   // if (typeof value === "number") {
+    //  Player.employmentStatus[key] = clampStat(value);
+   // }
+ // }
+//}
 
 
 // Player . current activity === "" add later
