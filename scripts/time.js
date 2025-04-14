@@ -118,7 +118,7 @@ export function startTime() {
     return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
   }
 
-let timeLoop = setInterval(startTime, 1000);
+let timeLoop = setInterval(startTime, 3000);
 
   
   export function pauseTime() {
